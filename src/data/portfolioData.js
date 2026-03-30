@@ -3,7 +3,7 @@ const portfolioData = {
     name: 'Qadir Salman',
     shortName: 'QS',
     title: 'Senior Full-Stack Software Engineer',
-    heroTitle: 'Senior Full-Stack Engineer',
+    heroTitle: 'Senior Full-Stack Software Engineer',
     location: 'Karachi, Pakistan',
     locationShort: 'Karachi',
     email: 'qadir.salman7751@gmail.com',

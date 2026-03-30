@@ -27,13 +27,14 @@ function Navbar({ sections, activeSection, personal }) {
     <header className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container-shell navbar-inner">
         <button type="button" className="logo-block interactive" onClick={() => scrollToSection('home')}>
-          <span className="logo-mark" aria-hidden="true">
-            <span />
-            <span />
-            <span />
-            <span />
+          <span className="logo-badge" aria-hidden="true">
+            <span className="logo-badge-ring" />
+            <span className="logo-badge-text">{personal.shortName}</span>
           </span>
-          <span className="logo-text">{personal.shortName}</span>
+          <span className="logo-copy">
+            <span className="logo-name">{personal.name}</span>
+            <span className="logo-subtitle">{personal.title}</span>
+          </span>
         </button>
 
         <nav className="navbar-links" aria-label="Primary navigation">
@@ -52,10 +53,13 @@ function Navbar({ sections, activeSection, personal }) {
         <div className="navbar-cta">
           <div className="availability-pill">
             <span className="availability-pulse" aria-hidden="true" />
-            <span>{personal.available === 'Yes' ? 'Available' : personal.available}</span>
+            <span className="availability-copy">
+              <strong>Available</strong>
+              <small>{personal.locationShort}</small>
+            </span>
           </div>
           <button type="button" className="hire-button interactive" onClick={() => scrollToSection('contact')}>
-            Hire Me
+            Book a Call
           </button>
           <button
             type="button"
