@@ -29,10 +29,12 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   font-weight: 300;
-  font-size: 11px;
-  line-height: 1.9;
+  font-size: 12px;
+  line-height: 1.8;
   color: var(--text-primary);
-  background: var(--bg-page);
+  background:
+    radial-gradient(circle at top, rgba(0, 229, 160, 0.08), transparent 24%),
+    linear-gradient(180deg, #08100c 0%, var(--bg-page) 24%, #040906 100%);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -398,6 +400,7 @@ button {
   display: flex;
   align-items: center;
   overflow: hidden;
+  isolation: isolate;
 }
 
 .hero-canvas {
@@ -411,7 +414,9 @@ button {
 .hero-radial {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 15% 60%, rgba(0, 229, 160, 0.1), transparent 30%);
+  background:
+    radial-gradient(circle at 15% 60%, rgba(0, 229, 160, 0.1), transparent 30%),
+    radial-gradient(circle at 85% 24%, rgba(255, 255, 255, 0.05), transparent 22%);
   pointer-events: none;
 }
 
@@ -462,9 +467,10 @@ button {
 }
 
 .hero-tagline {
-  max-width: 340px;
-  color: var(--text-muted);
+  max-width: 440px;
+  color: rgba(226, 239, 232, 0.66);
   margin: 0 0 28px;
+  font-size: 13px;
 }
 
 .hero-actions {
@@ -491,21 +497,50 @@ button {
   display: flex;
   justify-content: center;
   min-height: 560px;
+  align-items: center;
+}
+
+.hero-visual-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(0, 229, 160, 0.24), rgba(0, 229, 160, 0.08) 36%, transparent 68%);
+  filter: blur(22px);
+  opacity: 0.78;
 }
 
 .qs-card {
   position: relative;
-  width: 200px;
-  margin-top: 70px;
-  background: var(--accent);
-  color: var(--bg-page);
-  border-radius: 4px;
-  box-shadow: var(--shadow-soft);
+  z-index: 1;
+  width: min(100%, 280px);
+  margin-top: 36px;
+  padding: 18px;
+  background:
+    linear-gradient(180deg, rgba(16, 30, 23, 0.94), rgba(9, 17, 13, 0.9)),
+    linear-gradient(135deg, rgba(0, 229, 160, 0.22), rgba(255, 255, 255, 0.03));
+  color: var(--text-primary);
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
   overflow: hidden;
+  backdrop-filter: blur(24px);
+}
+
+.qs-card-noise {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(140deg, rgba(0, 229, 160, 0.16), transparent 38%),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.1), transparent 26%);
+  pointer-events: none;
 }
 
 .qs-card-top {
-  padding: 18px;
+  position: relative;
+  padding: 10px 8px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .qs-card-top span {
@@ -513,20 +548,28 @@ button {
   font-size: 8px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  color: rgba(226, 239, 232, 0.62);
 }
 
 .qs-card-top strong {
   display: block;
-  margin-top: 18px;
+  margin-top: 22px;
   font-family: 'Syne', sans-serif;
-  font-size: 68px;
+  font-size: 84px;
   font-weight: 800;
-  line-height: 0.9;
+  line-height: 0.88;
+  letter-spacing: -4px;
+  color: #f4fbf7;
+  text-shadow: 0 0 32px rgba(0, 229, 160, 0.18);
 }
 
 .qs-card-bottom {
-  background: rgba(0, 0, 0, 0.15);
-  padding: 14px 18px;
+  position: relative;
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .qs-card-bottom p,
@@ -539,28 +582,29 @@ button {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  color: rgba(6, 13, 10, 0.82);
+  margin-top: 10px;
+  color: rgba(226, 239, 232, 0.72);
 }
 
 .floating-cards {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 26px;
+  right: -10px;
   display: flex;
   flex-direction: column;
   gap: 14px;
+  z-index: 2;
 }
 
 .floating-info-card {
-  width: 200px;
+  width: 220px;
   padding: 16px 16px 16px 18px;
-  border-left: 2px solid var(--accent);
-  border-radius: 8px;
-  background: rgba(17, 28, 22, 0.84);
-  border-top: 1px solid var(--border-faint);
-  border-right: 1px solid var(--border-faint);
-  border-bottom: 1px solid var(--border-faint);
-  backdrop-filter: blur(18px);
+  border-left: 2px solid rgba(0, 229, 160, 0.7);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(17, 28, 22, 0.86), rgba(12, 19, 15, 0.76));
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(22px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
 }
 
 .floating-info-card span {
@@ -934,11 +978,13 @@ button {
   min-height: 128px;
   padding: 0 48px;
   border-top: 1px solid var(--border-faint-2);
-  transition: background 0.2s ease;
+  border-radius: 22px;
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .project-row:hover {
-  background: rgba(0, 229, 160, 0.025);
+  background: rgba(0, 229, 160, 0.04);
+  border-color: rgba(0, 229, 160, 0.08);
 }
 
 .project-bar {
@@ -1054,25 +1100,44 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  width: 300px;
+  width: 290px;
   pointer-events: none;
   z-index: 70;
   border: 1px solid var(--accent-line);
-  border-radius: 14px;
+  border-radius: 22px;
   overflow: hidden;
-  background: rgba(11, 20, 16, 0.94);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
-  backdrop-filter: blur(16px);
+  background: linear-gradient(180deg, rgba(11, 20, 16, 0.96), rgba(8, 14, 11, 0.92));
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(22px);
 }
 
 .preview-visual {
   position: relative;
-  height: 180px;
-  padding: 14px;
+  height: 190px;
+  padding: 16px;
   background:
     radial-gradient(circle at 50% 55%, rgba(0, 229, 160, 0.18), transparent 42%),
+    linear-gradient(140deg, rgba(255, 255, 255, 0.04), transparent 40%),
     #0d1713;
   overflow: hidden;
+}
+
+.preview-accent-tag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(226, 239, 232, 0.84);
+  font-size: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .preview-grid {
@@ -1145,7 +1210,7 @@ button {
   justify-content: space-between;
   gap: 12px;
   align-items: center;
-  padding: 14px 16px;
+  padding: 16px 18px 18px;
 }
 
 .preview-meta strong {
@@ -1298,6 +1363,10 @@ button {
   border-radius: 8px;
   border: 1px solid var(--accent-line);
   background: var(--accent-dim);
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .contact-form-title {

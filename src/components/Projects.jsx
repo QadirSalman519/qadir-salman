@@ -86,7 +86,7 @@ function Projects({ data }) {
               <div className="project-main">
                 <div className="project-title-block">
                   <span className="project-category">
-                    {project.category} · {project.type}
+                    {project.category} / {project.type}
                   </span>
                   <h3>{project.title}</h3>
                 </div>
@@ -101,7 +101,7 @@ function Projects({ data }) {
               <p className="project-description">{project.description}</p>
               <div className="project-year">
                 <span>{project.year}</span>
-                <span className="project-arrow">↗</span>
+                <span className="project-arrow">-&gt;</span>
               </div>
             </article>
           ))}
@@ -135,6 +135,7 @@ function Projects({ data }) {
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="preview-visual">
+              <span className="preview-accent-tag">{hoveredProject.accent || hoveredProject.category}</span>
               <div className="preview-chrome">
                 <span className="red" />
                 <span className="yellow" />

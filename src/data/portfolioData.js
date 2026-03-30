@@ -11,8 +11,8 @@ const portfolioData = {
     available: 'Yes',
     established: '2019',
     experience: '5+ years',
-    quote: 'I take full responsibility for production — not just the code, the outcome.',
-    bio: `I don't write code to close a ticket. I write code to own what happens after it closes — the scaling, the 3am production issue, the refactor nobody wants to touch.
+    quote: 'I take full responsibility for production - not just the code, the outcome.',
+    bio: `I don't write code to close a ticket. I write code to own what happens after it closes - the scaling, the 3am production issue, the refactor nobody wants to touch.
 
 Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthcare platforms. Real clients, real traffic. Architecture decisions, junior mentoring, full production ownership.`,
   },
@@ -28,9 +28,9 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
       "Built for clients who care about what happens after launch: payment reliability, clean architecture, production calm, and systems that stay maintainable when the pressure's real.",
     stats: ['5+ Years Exp.', '40+ Projects', '6+ Gateways'],
     cards: [
-      { label: 'Specialization', value: 'Laravel · React · Node.js' },
-      { label: 'Payments', value: 'Stripe · Clover · PayPal' },
-      { label: 'Architecture', value: 'Multi-Tenant · RBAC' },
+      { label: 'Specialization', value: 'Laravel / React / Node.js' },
+      { label: 'Payments', value: 'Stripe / Clover / PayPal' },
+      { label: 'Architecture', value: 'Multi-Tenant / RBAC' },
     ],
   },
   ticker: [
@@ -51,8 +51,8 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
   ],
   about: {
     heading: 'Engineer with ownership mentality.',
-    subtext: 'Full production responsibility — not just the code, the outcome.',
-    quote: 'I take full responsibility for production — not just the code, the outcome.',
+    subtext: 'Full production responsibility - not just the code, the outcome.',
+    quote: 'I take full responsibility for production - not just the code, the outcome.',
     skills: ['Laravel', 'React', 'Next.js', 'Node.js', 'MySQL', 'AWS', 'Docker', 'REST APIs'],
     stats: [
       { label: 'Years', value: '5+' },
@@ -67,22 +67,22 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
     categories: [
       {
         name: 'Frontend',
-        icon: '🖥️',
+        icon: 'FE',
         tools: ['React.js', 'Next.js', 'JavaScript ES6+', 'Tailwind CSS', 'Bootstrap', 'HTML5/CSS3', 'jQuery/AJAX'],
       },
       {
         name: 'Backend',
-        icon: '⚙️',
+        icon: 'BE',
         tools: ['Laravel', 'PHP', 'Node.js', 'Express.js', 'CodeIgniter', 'REST APIs'],
       },
       {
         name: 'Databases',
-        icon: '🗄️',
+        icon: 'DB',
         tools: ['MySQL', 'MongoDB', 'PostgreSQL', 'MSSQL'],
       },
       {
         name: 'Payments & Integrations',
-        icon: '💳',
+        icon: 'PI',
         tools: [
           'Stripe',
           'PayPal',
@@ -100,12 +100,12 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
       },
       {
         name: 'DevOps & Cloud',
-        icon: '☁️',
+        icon: 'DC',
         tools: ['Git/GitHub', 'AWS', 'Docker', 'CI/CD', 'CRON Jobs', 'Server Mgmt'],
       },
       {
         name: 'Architecture & Systems',
-        icon: '🏗️',
+        icon: 'AS',
         tools: ['Multi-Tenant', 'RBAC', 'Performance Opt.', 'ERP Systems', 'Automation', 'Reporting'],
       },
     ],
@@ -123,7 +123,8 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
         type: 'Full-Stack',
         year: '2024',
         stack: ['Laravel', 'React.js', 'Stripe', 'PayPal', 'ShipStation'],
-        description: 'End-to-end eCommerce with 5 payment gateways, UPS/USPS shipping, checkout optimization.',
+        description: 'End-to-end commerce platform with 5 payment gateways, shipping automation, and tighter checkout flow.',
+        accent: 'Payments',
       },
       {
         id: 2,
@@ -134,7 +135,8 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
         type: 'Multi-Tenant',
         year: '2024',
         stack: ['Laravel', 'React', 'RBAC', 'MySQL', 'Tailwind'],
-        description: 'Multi-tenant portal with role-based access, admin dashboards & automated reporting.',
+        description: 'Multi-tenant portal with role-based access, admin dashboards, and automated reporting.',
+        accent: 'SaaS',
       },
       {
         id: 3,
@@ -145,7 +147,8 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
         type: 'Automation',
         year: '2023',
         stack: ['Laravel', 'Node.js', 'GoDaddy API', 'CRON'],
-        description: 'Domain lifecycle management with GoDaddy API, automated renewal alerts & background jobs.',
+        description: 'Domain lifecycle management with GoDaddy API, automated renewal alerts, and background jobs.',
+        accent: 'ERP',
       },
       {
         id: 4,
@@ -156,7 +159,8 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
         type: 'Real-time',
         year: '2023',
         stack: ['React', 'Pusher', 'Firebase FCM', 'Twilio', 'Google Maps'],
-        description: 'Caregiver coordination with real-time tracking, push notifications, SMS alerts.',
+        description: 'Caregiver coordination with real-time tracking, push notifications, and SMS alerts.',
+        accent: 'Health',
       },
       {
         id: 5,
@@ -167,7 +171,8 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
         type: 'Manufacturing',
         year: '2023',
         stack: ['Laravel', 'AJAX', 'MySQL', 'jQuery'],
-        description: 'Quality control ERP with automated QC workflows and AJAX real-time dashboards.',
+        description: 'Quality control ERP with automated QC workflows and AJAX-driven dashboards.',
+        accent: 'Ops',
       },
       {
         id: 6,
@@ -179,6 +184,7 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
         year: '2022',
         stack: ['Laravel', 'Tailwind', 'MySQL', 'Node.js'],
         description: 'Multi-domain booking system with dynamic pricing and automated client pipelines.',
+        accent: 'Travel',
       },
     ],
     stats: [
@@ -192,19 +198,19 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
     heading: "Where I've shipped.",
     items: [
       {
-        period: 'Mar 2023 — Present',
+        period: 'Mar 2023 - Present',
         company: 'SOFTNOX TECHNOLOGIES',
         title: 'Senior Full Stack Developer',
         description:
-          'Architected multi-tenant systems across healthcare, travel & eCommerce. Owned 6+ payment gateway integrations. Built GoDaddy domain automation. Mentored juniors. Defined REST API architecture standards across org.',
+          'Architected multi-tenant systems across healthcare, travel, and eCommerce. Owned 6+ payment gateway integrations. Built GoDaddy domain automation. Mentored juniors. Defined REST API architecture standards across the org.',
         badge: 'Current',
       },
       {
-        period: 'Jun 2021 — Feb 2023',
+        period: 'Jun 2021 - Feb 2023',
         company: 'DIGI TRESTLE',
         title: 'Associate Backend Developer',
         description:
-          'Built & maintained 20+ live eCommerce stores. Contributed to ERP systems via Laravel Lumen. Optimized backend performance and collaborated on API design with senior engineers.',
+          'Built and maintained 20+ live eCommerce stores. Contributed to ERP systems via Laravel Lumen. Optimized backend performance and collaborated on API design with senior engineers.',
         badge: '2 yrs',
       },
     ],
@@ -236,8 +242,8 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
     ],
   },
   footer: {
-    left: 'Qadir Salman · FSE',
-    right: '© 2025 All Rights Reserved',
+    left: 'Qadir Salman / FSE',
+    right: 'Copyright 2025. All rights reserved.',
   },
 };
 

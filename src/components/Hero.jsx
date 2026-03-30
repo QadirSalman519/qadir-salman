@@ -136,7 +136,7 @@ function Hero({ data }) {
             <span>01</span>
           </motion.div>
           <motion.p className="hero-overline" variants={fadeUp} initial="hidden" animate="show" custom={0.1}>
-            {personal.heroTitle} · {personal.locationShort}
+            {personal.heroTitle} / {personal.locationShort}
           </motion.p>
 
           <div className="hero-headline-wrap">
@@ -190,9 +190,11 @@ function Hero({ data }) {
         </div>
 
         <div className="hero-visual">
+          <div className="hero-visual-glow" aria-hidden="true" />
           <motion.div className="qs-card" variants={fadeUp} initial="hidden" animate="show" custom={0.3}>
+            <div className="qs-card-noise" aria-hidden="true" />
             <div className="qs-card-top">
-              <span>Senior Engineer · Est. 2019</span>
+              <span>Senior Engineer / Est. 2019</span>
               <strong>QS</strong>
             </div>
             <div className="qs-card-bottom">

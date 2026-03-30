@@ -47,7 +47,7 @@ function About({ data }) {
                 Qadir <span className="accent-italic">Salman</span>
               </h3>
               <p className="role-tag">{personal.title}</p>
-              <span className="availability-chip">Available for Hire · 2025</span>
+              <span className="availability-chip">Available for Hire / 2025</span>
             </div>
           </motion.article>
 

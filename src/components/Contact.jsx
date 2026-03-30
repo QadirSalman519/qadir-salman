@@ -45,13 +45,13 @@ function Contact({ data }) {
 
     setErrors({});
     setFormValues(initialForm);
-    toast.success('Message sent! ✦');
+    toast.success('Message sent successfully.');
   };
 
   const infoRows = [
-    { icon: '📧', value: personal.email, href: `mailto:${personal.email}` },
-    { icon: '📱', value: personal.phone, href: `tel:${personal.phone.replace(/\s+/g, '')}` },
-    { icon: '📍', value: personal.location, href: null },
+    { icon: '@', value: personal.email, href: `mailto:${personal.email}` },
+    { icon: 'PH', value: personal.phone, href: `tel:${personal.phone.replace(/\s+/g, '')}` },
+    { icon: 'PK', value: personal.location, href: null },
   ];
 
   return (
