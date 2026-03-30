@@ -13,7 +13,6 @@ function About({ data }) {
   const { personal, about } = data;
   const bioParts = personal.bio.split('\n\n');
   const primaryBio = bioParts[0];
-  const supportingBio = bioParts[1];
   const featuredStats = about.stats.slice(0, 3);
 
   return (
@@ -36,21 +35,28 @@ function About({ data }) {
 
         <div className="about-grid">
           <motion.article
-            className="about-panel about-left"
+            className="about-stage"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.07 }}
             variants={reveal}
-            custom={0.08}
+            custom={0.1}
           >
             <div className="about-gridlines" aria-hidden="true" />
             <div className="about-orb" aria-hidden="true" />
 
-            <div className="about-value-shell">
-              <span className="about-panel-kicker">Why Clients Keep Reading</span>
-              <h3 className="about-selling-headline">Not just another intro block. This is where trust should start.</h3>
-              <p className="about-selling-copy">{about.lead}</p>
+            <div className="about-stage-header">
+              <div className="about-stage-intro">
+                <span className="about-panel-kicker">Why It Matters</span>
+                <p className="about-lead">{about.lead}</p>
+              </div>
 
+              <div className="about-copy">
+                <p>{primaryBio}</p>
+              </div>
+            </div>
+
+            <div className="about-stage-body">
               <div className="about-proof-grid">
                 {about.highlights.map((item) => (
                   <article key={item.label} className="about-highlight-card">
@@ -59,49 +65,19 @@ function About({ data }) {
                   </article>
                 ))}
               </div>
-            </div>
-          </motion.article>
 
-          <motion.article
-            className="about-panel about-right"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.07 }}
-            variants={reveal}
-            custom={0.16}
-          >
-            <div className="about-right-top">
-              <span className="about-right-kicker">What You Actually Get</span>
-              <p className="about-lead">A hands-on engineer who thinks beyond delivery and makes the product feel safer to grow.</p>
-            </div>
-
-            <div className="about-copy">
-              <p>{primaryBio}</p>
-              <p className="about-supporting-copy">{supportingBio}</p>
-            </div>
-
-            <blockquote className="quote-card">
-              <span className="quote-mark" aria-hidden="true">
-                "
-              </span>
-              <p>{about.quote}</p>
-            </blockquote>
-
-            <div className="about-stats-grid">
-              {featuredStats.map((item) => (
-                <div key={item.label} className="about-stat-cell">
-                  <strong>{item.value}</strong>
-                  <span>{item.label}</span>
+              <aside className="about-side-rail">
+                <div className="about-stats-grid">
+                  {featuredStats.map((item) => (
+                    <div key={item.label} className="about-stat-cell">
+                      <strong>{item.value}</strong>
+                      <span>{item.label}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            <div className="pill-row">
-              {about.skills.map((skill) => (
-                <span key={skill} className="skill-pill">
-                  {skill}
-                </span>
-              ))}
+                <p className="about-proof-note">{about.quote}</p>
+              </aside>
             </div>
           </motion.article>
         </div>
