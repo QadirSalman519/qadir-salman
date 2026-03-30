@@ -13,42 +13,52 @@ const introReveal = {
 function TechStack({ data }) {
   const [activeCategory, setActiveCategory] = useState(data.categories[0]?.name || '');
   const frameRef = useRef(null);
+  const stepsRef = useRef(null);
 
   useEffect(() => {
-    const cards = Array.from(document.querySelectorAll('[data-stack-step]'));
+    const updateActiveCategory = () => {
+      const cards = Array.from(stepsRef.current?.querySelectorAll('[data-stack-step]') || []);
+      if (!cards.length) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+      const viewportAnchor = window.innerHeight * 0.42;
+      let closestCard = cards[0];
+      let closestDistance = Number.POSITIVE_INFINITY;
 
-        if (visible[0]) {
-          const nextCategory = visible[0].target.getAttribute('data-stack-step') || '';
+      cards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(cardCenter - viewportAnchor);
 
-          if (frameRef.current) {
-            window.cancelAnimationFrame(frameRef.current);
-          }
-
-          frameRef.current = window.requestAnimationFrame(() => {
-            setActiveCategory((current) => (current === nextCategory ? current : nextCategory));
-          });
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestCard = card;
         }
-      },
-      {
-        rootMargin: '-14% 0px -24% 0px',
-        threshold: [0.2, 0.35, 0.5, 0.65, 0.8],
-      },
-    );
+      });
 
-    cards.forEach((card) => observer.observe(card));
-    return () => {
-      observer.disconnect();
+      const nextCategory = closestCard.getAttribute('data-stack-step') || '';
+      setActiveCategory((current) => (current === nextCategory ? current : nextCategory));
+    };
+
+    const onScroll = () => {
       if (frameRef.current) {
         window.cancelAnimationFrame(frameRef.current);
       }
+
+      frameRef.current = window.requestAnimationFrame(updateActiveCategory);
     };
-  }, [data.categories]);
+
+    updateActiveCategory();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+
+    return () => {
+      if (frameRef.current) {
+        window.cancelAnimationFrame(frameRef.current);
+      }
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, []);
 
   const currentCategory = useMemo(
     () => data.categories.find((category) => category.name === activeCategory) || data.categories[0],
@@ -119,14 +129,13 @@ function TechStack({ data }) {
             </div>
           </div>
 
-          <div className="stack-steps">
+          <div ref={stepsRef} className="stack-steps">
             {data.categories.map((category, index) => {
               const isActive = currentCategory.name === category.name;
 
               return (
                 <motion.article
                   key={category.name}
-                  layout
                   className={`stack-step-card ${isActive ? 'active' : ''}`}
                   data-stack-step={category.name}
                   initial={{ opacity: 0, y: 22 }}

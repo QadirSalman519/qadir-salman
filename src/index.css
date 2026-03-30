@@ -939,6 +939,8 @@ button {
 }
 
 .stack-spotlight-inner {
+  position: relative;
+  min-height: 430px;
   padding: 28px;
   border-radius: 32px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1077,6 +1079,7 @@ button {
     border-color 0.38s cubic-bezier(0.22, 1, 0.36, 1),
     background 0.38s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.38s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
 }
 
 .stack-step-card.active {
@@ -1094,6 +1097,10 @@ button {
   gap: 16px;
   align-items: center;
   margin-bottom: 16px;
+}
+
+.stack-step-preview {
+  min-height: 34px;
 }
 
 .stack-step-name {
