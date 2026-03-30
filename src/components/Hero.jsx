@@ -132,13 +132,11 @@ function Hero({ data }) {
       <div className="hero-radial" aria-hidden="true" />
       <div className="container-shell hero-grid">
         <div className="hero-copy">
-          <motion.div className="section-kicker" variants={fadeUp} initial="hidden" animate="show" custom={0}>
-            <span className="section-line" />
-            <span>01</span>
+          <motion.div className="hero-kicker" variants={fadeUp} initial="hidden" animate="show" custom={0}>
+            <span className="hero-kicker-label">Intro</span>
+            <span className="hero-kicker-divider" aria-hidden="true" />
+            <span className="hero-kicker-index">01</span>
           </motion.div>
-          <motion.p className="hero-overline" variants={fadeUp} initial="hidden" animate="show" custom={0.1}>
-            {personal.heroTitle} / {personal.locationShort}
-          </motion.p>
 
           <div className="hero-headline-wrap">
             {hero.headline.map((line, index) => (
@@ -176,7 +174,10 @@ function Hero({ data }) {
             >
               View My Work
             </button>
-            <a className="ghost-button interactive" href="/qadir-salman-cv.txt" download>
+            <a className="ghost-button cv-button interactive" href="/qadir-salman-cv.txt" download>
+              <span className="cv-button-icon" aria-hidden="true">
+                ↓
+              </span>
               Download CV
             </a>
           </motion.div>
@@ -206,7 +207,6 @@ function Hero({ data }) {
 
             <div className="hero-image-caption">
               <span>{personal.name}</span>
-              <strong>{personal.title}</strong>
             </div>
           </motion.div>
         </div>
