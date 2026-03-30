@@ -100,6 +100,9 @@ function Projects({ data }) {
                 </div>
               </div>
               <p className="project-description">{project.description}</p>
+              <span className="project-link-arrow" aria-hidden="true">
+                ↗
+              </span>
             </article>
           ))}
         </div>
@@ -133,18 +136,7 @@ function Projects({ data }) {
           >
             <div className="preview-visual">
               <span className="preview-accent-tag">{hoveredProject.accent || hoveredProject.category}</span>
-              <div className="preview-chrome">
-                <span className="red" />
-                <span className="yellow" />
-                <span className="green" />
-              </div>
-              <div className="preview-grid" />
-              <div className="preview-content-lines">
-                <span />
-                <span />
-                <span />
-                <span />
-              </div>
+              <img className="preview-image" src={hoveredProject.previewImage} alt={`${hoveredProject.title} preview`} />
             </div>
             <div className="preview-meta">
               <strong>{hoveredProject.title}</strong>

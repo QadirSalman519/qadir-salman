@@ -1,3 +1,38 @@
+const createProjectPreview = (title, accent, palette) => {
+  const svg = `
+    <svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="800" y2="520" gradientUnits="userSpaceOnUse">
+          <stop stop-color="${palette[0]}"/>
+          <stop offset="1" stop-color="${palette[1]}"/>
+        </linearGradient>
+        <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(620 120) rotate(138) scale(250 250)">
+          <stop stop-color="${palette[2]}" stop-opacity="0.36"/>
+          <stop offset="1" stop-color="${palette[2]}" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="800" height="520" rx="34" fill="url(#bg)"/>
+      <rect x="34" y="34" width="732" height="452" rx="28" fill="#0F1714" fill-opacity="0.88" stroke="rgba(255,255,255,0.08)"/>
+      <rect x="34" y="34" width="732" height="452" rx="28" fill="url(#glow)"/>
+      <rect x="72" y="84" width="112" height="32" rx="16" fill="${palette[2]}" fill-opacity="0.16"/>
+      <text x="92" y="105" fill="#E4F1EB" font-family="Arial, sans-serif" font-size="13" letter-spacing="2">${accent.toUpperCase()}</text>
+      <text x="72" y="164" fill="#F3F8F5" font-family="Arial, sans-serif" font-size="44" font-weight="700">${title}</text>
+      <rect x="72" y="212" width="268" height="12" rx="6" fill="#E4F1EB" fill-opacity="0.78"/>
+      <rect x="72" y="238" width="228" height="12" rx="6" fill="#E4F1EB" fill-opacity="0.46"/>
+      <rect x="72" y="302" width="656" height="148" rx="22" fill="#121D19" stroke="rgba(255,255,255,0.06)"/>
+      <rect x="96" y="334" width="186" height="18" rx="9" fill="${palette[2]}" fill-opacity="0.82"/>
+      <rect x="96" y="374" width="282" height="12" rx="6" fill="#E4F1EB" fill-opacity="0.32"/>
+      <rect x="96" y="398" width="248" height="12" rx="6" fill="#E4F1EB" fill-opacity="0.18"/>
+      <rect x="520" y="96" width="172" height="104" rx="24" fill="#131F1A" stroke="rgba(255,255,255,0.06)"/>
+      <rect x="544" y="128" width="64" height="64" rx="18" fill="${palette[2]}" fill-opacity="0.18"/>
+      <rect x="624" y="130" width="44" height="10" rx="5" fill="#E4F1EB" fill-opacity="0.68"/>
+      <rect x="624" y="150" width="34" height="10" rx="5" fill="#E4F1EB" fill-opacity="0.26"/>
+    </svg>
+  `;
+
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+};
+
 const portfolioData = {
   personal: {
     name: 'Qadir Salman',
@@ -146,6 +181,7 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
         stack: ['Laravel', 'React.js', 'Stripe', 'PayPal', 'ShipStation'],
         description: 'End-to-end commerce platform with 5 payment gateways, shipping automation, and tighter checkout flow.',
         accent: 'Payments',
+        previewImage: createProjectPreview('Pulse Commerce', 'Payments', ['#15261F', '#0C1411', '#36E9AE']),
       },
       {
         id: 2,
@@ -158,6 +194,7 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
         stack: ['Laravel', 'React', 'RBAC', 'MySQL', 'Tailwind'],
         description: 'Multi-tenant portal with role-based access, admin dashboards, and automated reporting.',
         accent: 'SaaS',
+        previewImage: createProjectPreview('Cipher Notes', 'SaaS', ['#14231F', '#0A1412', '#5BE4D1']),
       },
       {
         id: 3,
@@ -170,6 +207,7 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
         stack: ['Laravel', 'Node.js', 'GoDaddy API', 'CRON'],
         description: 'Domain lifecycle management with GoDaddy API, automated renewal alerts, and background jobs.',
         accent: 'ERP',
+        previewImage: createProjectPreview('Nexus Board', 'ERP', ['#1A2118', '#0C130F', '#8BEA6B']),
       },
       {
         id: 4,
@@ -182,6 +220,7 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
         stack: ['React', 'Pusher', 'Firebase FCM', 'Twilio', 'Google Maps'],
         description: 'Caregiver coordination with real-time tracking, push notifications, and SMS alerts.',
         accent: 'Health',
+        previewImage: createProjectPreview('Atlas Health', 'Health', ['#152227', '#0B1317', '#59D6FF']),
       },
       {
         id: 5,
@@ -194,6 +233,7 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
         stack: ['Laravel', 'AJAX', 'MySQL', 'jQuery'],
         description: 'Quality control ERP with automated QC workflows and AJAX-driven dashboards.',
         accent: 'Ops',
+        previewImage: createProjectPreview('Helix Ops', 'Ops', ['#221D18', '#11100D', '#FFB86E']),
       },
       {
         id: 6,
@@ -206,6 +246,7 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
         stack: ['Laravel', 'Tailwind', 'MySQL', 'Node.js'],
         description: 'Multi-domain booking system with dynamic pricing and automated client pipelines.',
         accent: 'Travel',
+        previewImage: createProjectPreview('Orbit Travel', 'Travel', ['#161E28', '#0B1016', '#7BB8FF']),
       },
     ],
     stats: [

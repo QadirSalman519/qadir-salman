@@ -330,6 +330,16 @@ button {
   transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
+.filter-tab {
+  padding: 13px 18px;
+  color: rgba(226, 239, 232, 0.74);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.1px;
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
 .nav-link.active,
 .filter-tab.active,
 .mobile-nav-link.active {
@@ -1287,8 +1297,8 @@ button {
 .filter-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 28px;
+  gap: 12px;
+  margin-bottom: 30px;
 }
 
 .projects-list {
@@ -1298,7 +1308,7 @@ button {
 .project-row {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(260px, 320px);
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 320px) 64px;
   align-items: center;
   gap: 24px;
   min-height: 128px;
@@ -1362,6 +1372,33 @@ button {
   line-height: 1.72;
 }
 
+.project-link-arrow {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-left: auto;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(226, 239, 232, 0.54);
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  line-height: 1;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.28s ease,
+    background 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.project-row:hover .project-link-arrow {
+  transform: translate(4px, -4px);
+  color: rgba(242, 249, 245, 1);
+  background: rgba(0, 229, 160, 0.1);
+  border-color: rgba(0, 229, 160, 0.18);
+}
+
 .project-stats-bar {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1399,7 +1436,7 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  width: 290px;
+  width: 320px;
   pointer-events: none;
   z-index: 70;
   border: 1px solid var(--accent-line);
@@ -1412,8 +1449,8 @@ button {
 
 .preview-visual {
   position: relative;
-  height: 190px;
-  padding: 16px;
+  height: 214px;
+  padding: 14px;
   background:
     radial-gradient(circle at 50% 55%, rgba(0, 229, 160, 0.18), transparent 42%),
     linear-gradient(140deg, rgba(255, 255, 255, 0.04), transparent 40%),
@@ -1439,69 +1476,13 @@ button {
   text-transform: uppercase;
 }
 
-.preview-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(0, 229, 160, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 229, 160, 0.06) 1px, transparent 1px);
-  background-size: 22px 22px;
-}
-
-.preview-chrome {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  gap: 6px;
-}
-
-.preview-chrome span {
-  width: 9px;
-  height: 9px;
-  border-radius: 999px;
-}
-
-.preview-chrome .red {
-  background: #ff5f57;
-}
-
-.preview-chrome .yellow {
-  background: #febc2e;
-}
-
-.preview-chrome .green {
-  background: #28c840;
-}
-
-.preview-content-lines {
-  position: absolute;
-  inset: 48px 18px 18px;
-  z-index: 1;
-  display: grid;
-  gap: 12px;
-}
-
-.preview-content-lines span {
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  height: 8px;
-  border-radius: 999px;
-  background: rgba(0, 229, 160, 0.18);
-}
-
-.preview-content-lines span:nth-child(1) {
-  width: 62%;
-}
-
-.preview-content-lines span:nth-child(2) {
-  width: 84%;
-}
-
-.preview-content-lines span:nth-child(3) {
-  width: 48%;
-}
-
-.preview-content-lines span:nth-child(4) {
-  width: 72%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .preview-meta {
@@ -1988,6 +1969,13 @@ button {
 
   .project-description {
     display: none;
+  }
+
+  .project-link-arrow {
+    width: 44px;
+    height: 44px;
+    margin-left: 0;
+    font-size: 24px;
   }
 
   .about-stage,
