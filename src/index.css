@@ -977,13 +977,17 @@ button {
 }
 
 .about-left-note {
-  max-width: 520px;
-  margin: 18px 0 0;
-  padding-left: 14px;
-  border-left: 2px solid rgba(0, 229, 160, 0.42);
-  color: rgba(226, 239, 232, 0.78);
-  font-size: 15px;
-  line-height: 1.68;
+  max-width: 460px;
+  margin: 30px 0 0;
+  padding: 18px 0 0;
+  border-top: 1px solid rgba(0, 229, 160, 0.24);
+  color: rgba(241, 248, 244, 0.9);
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1.48;
+  letter-spacing: -0.24px;
 }
 
 .pill-row,
