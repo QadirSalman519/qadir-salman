@@ -1,0 +1,17 @@
+Qadir Salman
+Senior Full-Stack Developer
+Karachi, Pakistan
+
+Email: qadir.salman7751@gmail.com
+Phone: +92 310-2010954
+Experience: 5+ years
+Available: Yes
+Established: 2019
+
+Profile
+I don't write code to close a ticket. I write code to own what happens after it closes — the scaling, the 3am production issue, the refactor nobody wants to touch.
+
+Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthcare platforms. Real clients, real traffic. Architecture decisions, junior mentoring, full production ownership.
+
+Quote
+I take full responsibility for production — not just the code, the outcome.
