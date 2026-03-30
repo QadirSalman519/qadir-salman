@@ -52,11 +52,10 @@ function About({ data }) {
                 <div className="about-copy">
                   <p>{primaryBio}</p>
                 </div>
+                <p className="about-left-note">{about.quote}</p>
               </div>
 
               <aside className="about-side-rail">
-                <p className="about-proof-note">{about.quote}</p>
-
                 <div className="about-proof-grid">
                   {about.highlights.map((item) => (
                     <article key={item.label} className="about-highlight-card">

@@ -976,6 +976,16 @@ button {
   margin-top: 18px;
 }
 
+.about-left-note {
+  max-width: 520px;
+  margin: 18px 0 0;
+  padding-left: 14px;
+  border-left: 2px solid rgba(0, 229, 160, 0.42);
+  color: rgba(226, 239, 232, 0.78);
+  font-size: 15px;
+  line-height: 1.68;
+}
+
 .pill-row,
 .project-pills,
 .social-row {
@@ -1032,16 +1042,6 @@ button {
   align-content: start;
   gap: 14px;
   padding-top: 18px;
-}
-
-.about-proof-note {
-  margin: 0;
-  max-width: 360px;
-  padding-left: 14px;
-  border-left: 2px solid rgba(0, 229, 160, 0.42);
-  color: rgba(226, 239, 232, 0.72);
-  font-size: 14px;
-  line-height: 1.65;
 }
 
 .stack-story {
