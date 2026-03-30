@@ -49,9 +49,30 @@ function Contact({ data }) {
   };
 
   const infoRows = [
-    { icon: '@', value: personal.email, href: `mailto:${personal.email}` },
-    { icon: 'PH', value: personal.phone, href: `tel:${personal.phone.replace(/\s+/g, '')}` },
-    { icon: 'PK', value: personal.location, href: null },
+    {
+      icon: '@',
+      label: 'Email',
+      value: personal.email,
+      href: `mailto:${personal.email}`,
+    },
+    {
+      icon: 'PH',
+      label: 'Phone',
+      value: personal.phone,
+      href: `tel:${personal.phone.replace(/\s+/g, '')}`,
+    },
+    {
+      icon: 'PK',
+      label: 'Location',
+      value: personal.location,
+      href: null,
+    },
+  ];
+
+  const contactHighlights = [
+    { label: 'Response Window', value: 'Within 24 hours' },
+    { label: 'Best Fit', value: 'Product builds and scalable web apps' },
+    { label: 'Project Style', value: 'Clean delivery, direct communication' },
   ];
 
   return (
@@ -67,9 +88,7 @@ function Contact({ data }) {
           <span className="ghost-number">06</span>
           <div className="section-intro-copy">
             <p className="eyebrow-label">Contact</p>
-            <h2>
-              Let's build something that doesn't feel <span className="accent-italic">replaceable.</span>
-            </h2>
+            <h2>{contact.heading}</h2>
           </div>
         </motion.div>
 
@@ -81,38 +100,63 @@ function Contact({ data }) {
             viewport={{ once: true, amount: 0.07 }}
             transition={{ duration: 0.65, delay: 0.08, ease: 'easeOut' }}
           >
-            <p className="eyebrow-label">{contact.intro}</p>
-            <h3>
-              Have a project in <span className="accent-italic">mind?</span>
-            </h3>
+            <div className="contact-left-top">
+              <span className="contact-panel-kicker">{contact.intro}</span>
+              <h3>
+                Let&apos;s turn the idea into something <span className="accent-italic">launch-ready.</span>
+              </h3>
+              <p className="contact-lead-copy">
+                If you&apos;re planning a product, redesign, or production-grade web platform, this is the best place
+                to start the conversation. Share the goal, context, and constraints and we&apos;ll move fast from there.
+              </p>
+            </div>
 
-            <div className="contact-info-list">
-              {infoRows.map((row) => (
-                <div key={row.value} className="contact-info-row">
-                  <span className="contact-icon-box">{row.icon}</span>
-                  {row.href ? (
-                    <a className="interactive" href={row.href}>
-                      {row.value}
-                    </a>
-                  ) : (
-                    <span>{row.value}</span>
-                  )}
-                </div>
+            <div className="contact-highlight-grid">
+              {contactHighlights.map((item) => (
+                <article key={item.label} className="contact-highlight-card">
+                  <span>{item.label}</span>
+                  <strong>{item.value}</strong>
+                </article>
               ))}
             </div>
 
-            <div className="social-row">
-              {contact.social.map((social) => (
-                <a
-                  key={social.name}
-                  className="social-button interactive"
-                  href={social.href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {social.name}
-                </a>
-              ))}
+            <div className="contact-direct-card">
+              <div className="contact-direct-head">
+                <span className="contact-direct-badge">Direct Contact</span>
+                <p>Prefer direct reach-out? Use any channel below and I&apos;ll get back with the right next step.</p>
+              </div>
+
+              <div className="contact-info-list">
+                {infoRows.map((row) => (
+                  <div key={row.value} className="contact-info-row">
+                    <span className="contact-icon-box">{row.icon}</span>
+                    <div className="contact-info-copy">
+                      <small>{row.label}</small>
+                      {row.href ? (
+                        <a className="interactive" href={row.href}>
+                          {row.value}
+                        </a>
+                      ) : (
+                        <span>{row.value}</span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="social-row">
+                {contact.social.map((social) => (
+                  <a
+                    key={social.name}
+                    className="social-button interactive"
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {social.name}
+                  </a>
+                ))}
+              </div>
             </div>
           </motion.article>
 
@@ -123,41 +167,51 @@ function Contact({ data }) {
             viewport={{ once: true, amount: 0.07 }}
             transition={{ duration: 0.65, delay: 0.16, ease: 'easeOut' }}
           >
-            <p className="contact-form-title">{contact.formTitle}</p>
+            <div className="contact-form-head">
+              <p className="contact-form-title">{contact.formTitle}</p>
+              <p className="contact-form-subtitle">
+                Clear briefs get better replies. Share your goals, timeline, and budget range.
+              </p>
+            </div>
             <form className="contact-form" onSubmit={handleSubmit} noValidate>
-              {[
-                { label: 'Full Name', name: 'name', type: 'text' },
-                { label: 'Email Address', name: 'email', type: 'email' },
-                { label: 'Project Budget', name: 'budget', type: 'text' },
-              ].map((field) => (
-                <label key={field.name} className={`field-shell ${errors[field.name] ? 'has-error' : ''}`}>
-                  <input
-                    type={field.type}
-                    name={field.name}
-                    placeholder=" "
-                    value={formValues[field.name]}
-                    onChange={handleChange}
-                  />
-                  <span>{field.label}</span>
-                  {errors[field.name] && <small>{errors[field.name]}</small>}
-                </label>
-              ))}
+              <div className="contact-form-grid">
+                {[
+                  { label: 'Full Name', name: 'name', type: 'text' },
+                  { label: 'Email Address', name: 'email', type: 'email' },
+                  { label: 'Project Budget', name: 'budget', type: 'text' },
+                ].map((field) => (
+                  <label key={field.name} className={`field-shell ${errors[field.name] ? 'has-error' : ''}`}>
+                    <input
+                      type={field.type}
+                      name={field.name}
+                      placeholder=" "
+                      value={formValues[field.name]}
+                      onChange={handleChange}
+                    />
+                    <span>{field.label}</span>
+                    {errors[field.name] && <small>{errors[field.name]}</small>}
+                  </label>
+                ))}
+              </div>
 
-              <label className={`field-shell ${errors.message ? 'has-error' : ''}`}>
+              <label className={`field-shell field-shell-message ${errors.message ? 'has-error' : ''}`}>
                 <textarea
                   name="message"
-                  rows="4"
+                  rows="6"
                   placeholder=" "
                   value={formValues.message}
                   onChange={handleChange}
                 />
-                <span>Message</span>
+                <span>Project Details</span>
                 {errors.message && <small>{errors.message}</small>}
               </label>
 
-              <button type="submit" className="submit-button interactive">
-                Send Message
-              </button>
+              <div className="contact-submit-row">
+                <p className="contact-submit-note">Best for new builds, redesigns, dashboards, and product support.</p>
+                <button type="submit" className="submit-button interactive">
+                  Send Message
+                </button>
+              </div>
             </form>
           </motion.article>
         </div>
