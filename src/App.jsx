@@ -8,7 +8,6 @@ import About from './components/About';
 import TechStack from './components/TechStack';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
-import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import portfolioData from './data/portfolioData';
@@ -83,7 +82,6 @@ function App() {
           <TechStack data={portfolioData.techStack} />
           <Projects data={portfolioData.projects} />
           <Experience data={portfolioData.experience} />
-          <Skills data={portfolioData.skills} />
           <Contact data={portfolioData} />
         </main>
         <Footer data={portfolioData.footer} />
