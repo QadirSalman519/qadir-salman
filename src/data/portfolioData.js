@@ -30,8 +30,8 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
       { text: 'artifact,', accent: true },
       { text: 'not a template.', accentDim: true },
     ],
-    tagline:
-      "Built for clients who care about what happens after launch: payment reliability, clean architecture, production calm, and systems that stay maintainable when the pressure's real.",
+    // tagline:
+    //   "Built for clients who care about what happens after launch: payment reliability, clean architecture, production calm, and systems that stay maintainable when the pressure's real.",
     stats: ['6+ Years Exp.', '40+ Projects', '6+ Gateways'],
     cards: [
       { label: 'Specialization', value: 'Laravel / React / Node.js' },

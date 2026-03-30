@@ -1,15 +1,7 @@
-import { motion } from 'framer-motion';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
-const container = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.08,
-    },
-  },
-};
-
-const item = {
+const introReveal = {
   hidden: { opacity: 0, y: 22 },
   visible: {
     opacity: 1,
@@ -19,63 +11,147 @@ const item = {
 };
 
 function TechStack({ data }) {
+  const [activeCategory, setActiveCategory] = useState(data.categories[0]?.name || '');
+  const frameRef = useRef(null);
+
+  useEffect(() => {
+    const cards = Array.from(document.querySelectorAll('[data-stack-step]'));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visible[0]) {
+          const nextCategory = visible[0].target.getAttribute('data-stack-step') || '';
+
+          if (frameRef.current) {
+            window.cancelAnimationFrame(frameRef.current);
+          }
+
+          frameRef.current = window.requestAnimationFrame(() => {
+            setActiveCategory((current) => (current === nextCategory ? current : nextCategory));
+          });
+        }
+      },
+      {
+        rootMargin: '-14% 0px -24% 0px',
+        threshold: [0.2, 0.35, 0.5, 0.65, 0.8],
+      },
+    );
+
+    cards.forEach((card) => observer.observe(card));
+    return () => {
+      observer.disconnect();
+      if (frameRef.current) {
+        window.cancelAnimationFrame(frameRef.current);
+      }
+    };
+  }, [data.categories]);
+
+  const currentCategory = useMemo(
+    () => data.categories.find((category) => category.name === activeCategory) || data.categories[0],
+    [activeCategory, data.categories],
+  );
+
   return (
-    <section id="stack" className="section-block">
+    <section id="stack" className="section-block stack-section">
       <div className="container-shell">
         <motion.div
-          className="section-intro"
+          className="section-intro stack-section-intro"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.07 }}
-          variants={item}
+          variants={introReveal}
         >
-          <span className="ghost-number">03</span>
-          <div className="section-intro-copy">
+          <span className="ghost-number stack-ghost-number">03</span>
+          <div className="section-intro-copy stack-intro-copy">
             <p className="eyebrow-label">Stack</p>
             <h2>{data.heading}</h2>
             <p>{data.subtext}</p>
           </div>
         </motion.div>
 
-        <motion.div
-          className="stack-grid"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.07 }}
-          variants={container}
-        >
-          {data.categories.map((category) => (
-            <motion.article key={category.name} className="stack-category" variants={item}>
-              <div className="stack-header">
-                <div className="stack-title-wrap">
-                  <span className="stack-icon-box">{category.icon}</span>
-                  <div>
-                    <h3>{category.name}</h3>
-                    <span>{category.tools.length} tools</span>
+        <div className="stack-story">
+          <div className="stack-spotlight">
+            <div className="stack-spotlight-inner">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentCategory.name}
+                  className="stack-spotlight-content"
+                  initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  exit={{ opacity: 0, y: -12, filter: 'blur(6px)' }}
+                  transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <div className="stack-spotlight-top">
+                    <span className="stack-spotlight-kicker">Active Capability</span>
+                    <span className="stack-spotlight-count">{currentCategory.tools.length} tools</span>
                   </div>
-                </div>
-                <div className="stack-line" />
-              </div>
 
-              <div className="tool-grid">
-                {category.tools.map((toolName, index) => (
-                  <motion.div
-                    key={toolName}
-                    className="tool-card interactive"
-                    initial={{ opacity: 0, y: 18 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.07 }}
-                    transition={{ duration: 0.55, delay: index * 0.05, ease: 'easeOut' }}
-                  >
-                    <span className="tool-dot" />
-                    <span className="tool-emoji">{category.icon}</span>
-                    <small>{toolName}</small>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.article>
-          ))}
-        </motion.div>
+                  <div className="stack-hero-row">
+                    <span className="stack-icon-box stack-icon-box-large">{currentCategory.icon}</span>
+                    <div>
+                      <h3>{currentCategory.name}</h3>
+                      <p>{data.subtext}</p>
+                    </div>
+                  </div>
+
+                  <div className="stack-spotlight-line" />
+
+                  <div className="stack-tool-cloud">
+                    {currentCategory.tools.map((toolName, toolIndex) => (
+                      <motion.span
+                        key={toolName}
+                        className="stack-tool-pill"
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -6 }}
+                        transition={{ duration: 0.24, delay: toolIndex * 0.018, ease: 'easeOut' }}
+                      >
+                        {toolName}
+                      </motion.span>
+                    ))}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+
+          <div className="stack-steps">
+            {data.categories.map((category, index) => {
+              const isActive = currentCategory.name === category.name;
+
+              return (
+                <motion.article
+                  key={category.name}
+                  layout
+                  className={`stack-step-card ${isActive ? 'active' : ''}`}
+                  data-stack-step={category.name}
+                  initial={{ opacity: 0, y: 22 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.55, delay: index * 0.05, ease: 'easeOut' }}
+                >
+                  <div className="stack-step-header">
+                    <span className="stack-step-index">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="stack-step-name">{category.name}</span>
+                    <span className="stack-step-badge">{category.tools.length} tools</span>
+                  </div>
+
+                  <div className="stack-step-preview">
+                    {category.tools.slice(0, 4).map((tool) => (
+                      <span key={tool} className="stack-step-preview-pill">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </motion.article>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );
