@@ -122,12 +122,12 @@ button {
 
 .section-block {
   position: relative;
-  padding: 110px 0;
+  padding: 40px 0;
 }
 
 .section-intro {
   position: relative;
-  margin-bottom: 42px;
+  margin-bottom: 30px;
 }
 
 .ghost-number {
@@ -180,7 +180,7 @@ button {
 }
 
 .stack-section-intro {
-  margin-bottom: 58px;
+  margin-bottom: 42px;
 }
 
 .stack-ghost-number {
@@ -848,6 +848,7 @@ button {
   border-top: 1px solid rgba(0, 229, 160, 0.1);
   border-bottom: 1px solid rgba(0, 229, 160, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  margin-bottom: 40px;
 }
 
 .ticker-track {
@@ -1482,7 +1483,7 @@ button {
 }
 
 .experience-section {
-  padding-top: 56px;
+  padding-top: 36px;
 }
 
 .project-preview {
@@ -1940,7 +1941,7 @@ button {
   }
 
   .section-block {
-    padding: 88px 0;
+    padding: 30px 0;
   }
 
   .hero-section {
@@ -2057,7 +2058,7 @@ button {
   }
 
   .experience-section {
-    padding-top: 34px;
+    padding-top: 24px;
   }
 
   .footer-inner span:last-child {
