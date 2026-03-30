@@ -44,19 +44,21 @@ function Projects({ data }) {
     <section id="work" className="section-block">
       <div className="container-shell projects-shell">
         <motion.div
-          className="projects-header"
-          initial={{ opacity: 0, y: 22 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          className="section-intro"
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, amount: 0.07 }}
-          transition={{ duration: 0.65, ease: 'easeOut' }}
+          variants={{
+            hidden: { opacity: 0, y: 22 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: 'easeOut' } },
+          }}
         >
-          <div>
+          <span className="ghost-number">04</span>
+          <div className="section-intro-copy">
             <p className="eyebrow-label">Selected Work</p>
-            <h2>
-              Work that <span className="accent-italic">shipped,</span> scaled, and stayed.
-            </h2>
+            <h2>{data.heading}</h2>
+            <p>Selected projects with real shipping pressure, scale, and production ownership.</p>
           </div>
-          <span className="projects-index">04 / 06</span>
         </motion.div>
 
         <div className="filter-tabs">
@@ -82,7 +84,6 @@ function Projects({ data }) {
               onMouseMove={handleMouseMove}
             >
               <span className="project-bar" aria-hidden="true" />
-              <div className="project-number">{project.number}</div>
               <div className="project-main">
                 <div className="project-title-block">
                   <span className="project-category">
@@ -99,10 +100,6 @@ function Projects({ data }) {
                 </div>
               </div>
               <p className="project-description">{project.description}</p>
-              <div className="project-year">
-                <span>{project.year}</span>
-                <span className="project-arrow">-&gt;</span>
-              </div>
             </article>
           ))}
         </div>
