@@ -180,14 +180,6 @@ function Hero({ data }) {
               Download CV
             </a>
           </motion.div>
-
-          <motion.div className="hero-stats" variants={fadeUp} initial="hidden" animate="show" custom={0.82}>
-            {hero.stats.map((item) => (
-              <div key={item} className="hero-stat">
-                {item}
-              </div>
-            ))}
-          </motion.div>
         </div>
 
         <div className="hero-visual">
@@ -212,30 +204,9 @@ function Hero({ data }) {
               </div>
             )}
 
-            <div className="hero-info-rail">
-              <div className="qs-card">
-                <div className="qs-card-noise" aria-hidden="true" />
-                <div className="qs-card-top">
-                  <span>Senior Engineer / Est. 2019</span>
-                  <strong>QS</strong>
-                </div>
-                <div className="qs-card-bottom">
-                  <p>{personal.title}</p>
-                  <div>
-                    <span>{personal.name}</span>
-                    <span>{personal.experience}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="floating-cards">
-                {hero.cards.map((card) => (
-                  <article key={card.label} className="floating-info-card">
-                    <span>{card.label}</span>
-                    <strong>{card.value}</strong>
-                  </article>
-                ))}
-              </div>
+            <div className="hero-image-caption">
+              <span>{personal.name}</span>
+              <strong>{personal.title}</strong>
             </div>
           </motion.div>
         </div>

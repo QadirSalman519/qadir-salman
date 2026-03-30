@@ -55,7 +55,7 @@ function Navbar({ sections, activeSection, personal }) {
             <span className="availability-pulse" aria-hidden="true" />
             <span className="availability-copy">
               <strong>Available</strong>
-              <small>{personal.locationShort}</small>
+              <small>For projects</small>
             </span>
           </div>
           <button type="button" className="hire-button interactive" onClick={() => scrollToSection('contact')}>
