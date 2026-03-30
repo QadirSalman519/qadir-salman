@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 function Experience({ data }) {
   return (
-    <section className="section-block experience-section">
+    <section id="experience" className="section-block experience-section">
       <div className="container-shell">
         <motion.div
           className="section-intro"

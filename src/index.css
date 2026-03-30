@@ -1669,14 +1669,17 @@ button {
 }
 
 .contact-grid {
+  position: relative;
   grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
-  gap: 24px;
+  gap: 0;
+  border: 1px solid var(--border-faint);
+  background: linear-gradient(180deg, rgba(12, 21, 17, 0.94), rgba(8, 14, 11, 0.98));
 }
 
 .contact-left,
 .contact-right {
   padding: 38px;
-  border: 1px solid var(--border-faint);
+  border: 0;
   background:
     radial-gradient(circle at top left, rgba(0, 229, 160, 0.09), transparent 30%),
     linear-gradient(180deg, rgba(12, 21, 17, 0.94), rgba(8, 14, 11, 0.98));
@@ -1686,6 +1689,10 @@ button {
 .contact-left {
   display: grid;
   gap: 24px;
+}
+
+.contact-right {
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .contact-left-top {
@@ -1849,15 +1856,33 @@ button {
 }
 
 .contact-form-head {
-  margin-bottom: 22px;
+  position: relative;
+  margin-bottom: 26px;
+  padding-bottom: 18px;
+}
+
+.contact-form-head::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 88px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(0, 229, 160, 0.82), rgba(0, 229, 160, 0));
 }
 
 .contact-form-title {
-  color: rgba(242, 249, 245, 0.92);
-  letter-spacing: 2px;
-  margin: 0 0 10px;
+  max-width: 420px;
+  color: rgba(246, 251, 248, 0.98);
+  letter-spacing: -1.2px;
+  margin: 0;
   font-family: 'Syne', sans-serif;
-  font-size: 24px;
+  font-size: clamp(32px, 3.4vw, 44px);
+  font-weight: 700;
+  line-height: 0.94;
+  text-transform: none;
+  text-wrap: balance;
+  text-shadow: 0 0 18px rgba(0, 229, 160, 0.04);
 }
 
 .contact-form-subtitle {
@@ -2234,6 +2259,16 @@ button {
 
   .contact-left h3 {
     font-size: 28px;
+  }
+
+  .contact-grid {
+    gap: 16px;
+    border: 0;
+    background: transparent;
+  }
+
+  .contact-right {
+    border-left: 0;
   }
 
   .contact-info-copy a,

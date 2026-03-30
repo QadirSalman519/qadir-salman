@@ -12,7 +12,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import portfolioData from './data/portfolioData';
 
-const sectionIds = ['home', 'about', 'stack', 'work', 'contact'];
+const sectionIds = ['home', 'about', 'stack', 'work', 'experience', 'contact'];
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -65,6 +65,7 @@ function App() {
       { id: 'about', label: 'About' },
       { id: 'stack', label: 'Stack' },
       { id: 'work', label: 'Work' },
+      { id: 'experience', label: 'Experience' },
       { id: 'contact', label: 'Contact' },
     ],
     [],
