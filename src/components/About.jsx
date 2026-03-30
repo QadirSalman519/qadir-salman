@@ -45,28 +45,27 @@ function About({ data }) {
             <div className="about-gridlines" aria-hidden="true" />
             <div className="about-orb" aria-hidden="true" />
 
-            <div className="about-stage-header">
+            <div className="about-stage-layout">
               <div className="about-stage-intro">
                 <span className="about-panel-kicker">Why It Matters</span>
                 <p className="about-lead">{about.lead}</p>
-              </div>
-
-              <div className="about-copy">
-                <p>{primaryBio}</p>
-              </div>
-            </div>
-
-            <div className="about-stage-body">
-              <div className="about-proof-grid">
-                {about.highlights.map((item) => (
-                  <article key={item.label} className="about-highlight-card">
-                    <span className="about-highlight-label">{item.label}</span>
-                    <p>{item.text}</p>
-                  </article>
-                ))}
+                <div className="about-copy">
+                  <p>{primaryBio}</p>
+                </div>
               </div>
 
               <aside className="about-side-rail">
+                <p className="about-proof-note">{about.quote}</p>
+
+                <div className="about-proof-grid">
+                  {about.highlights.map((item) => (
+                    <article key={item.label} className="about-highlight-card">
+                      <span className="about-highlight-label">{item.label}</span>
+                      <p>{item.text}</p>
+                    </article>
+                  ))}
+                </div>
+
                 <div className="about-stats-grid">
                   {featuredStats.map((item) => (
                     <div key={item.label} className="about-stat-cell">
@@ -75,8 +74,6 @@ function About({ data }) {
                     </div>
                   ))}
                 </div>
-
-                <p className="about-proof-note">{about.quote}</p>
               </aside>
             </div>
           </motion.article>

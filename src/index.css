@@ -846,30 +846,18 @@ button {
   overflow: hidden;
 }
 
-.about-stage-header,
-.about-stage-body {
+.about-stage-layout {
   position: relative;
   z-index: 1;
-}
-
-.about-stage-header {
   display: grid;
-  grid-template-columns: minmax(0, 1.06fr) minmax(320px, 0.94fr);
-  gap: 30px;
-  align-items: end;
-  padding-bottom: 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  grid-template-columns: minmax(0, 1.12fr) minmax(340px, 0.88fr);
+  gap: 36px;
+  align-items: start;
 }
 
 .about-stage-intro {
   max-width: 720px;
-}
-
-.about-stage-body {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.84fr);
-  gap: 22px;
-  padding-top: 24px;
+  padding-top: 8px;
 }
 
 .about-panel-kicker {
@@ -907,8 +895,9 @@ button {
 
 .about-proof-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 12px;
+  margin-top: 12px;
 }
 
 .about-highlight-card {
@@ -984,6 +973,7 @@ button {
 
 .about-copy {
   max-width: 500px;
+  margin-top: 18px;
 }
 
 .pill-row,
@@ -1010,10 +1000,10 @@ button {
 
 .about-stats-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
-  margin-top: 0;
-  margin-bottom: 14px;
+  margin-top: 16px;
+  margin-bottom: 0;
   background: var(--border-faint);
 }
 
@@ -1040,10 +1030,13 @@ button {
 .about-side-rail {
   display: grid;
   align-content: start;
+  gap: 14px;
+  padding-top: 18px;
 }
 
 .about-proof-note {
   margin: 0;
+  max-width: 360px;
   padding-left: 14px;
   border-left: 2px solid rgba(0, 229, 160, 0.42);
   color: rgba(226, 239, 232, 0.72);
@@ -1820,8 +1813,7 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .about-stage-header,
-  .about-stage-body,
+  .about-stage-layout,
   .about-proof-grid {
     grid-template-columns: 1fr;
   }
@@ -2005,6 +1997,11 @@ button {
 
   .about-lead {
     font-size: 27px;
+  }
+
+  .about-stage-body,
+  .about-stage-layout {
+    gap: 18px;
   }
 
   .contact-left h3,
