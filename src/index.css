@@ -89,13 +89,10 @@ button {
 }
 
 .container-shell {
-  width: min(1200px, calc(100% - 40px));
+  width: min(1420px, calc(100% - 72px));
   margin: 0 auto;
 }
 
-.hero-grid.container-shell {
-  width: min(1340px, calc(100% - 72px));
-}
 
 .eyebrow-label,
 .hero-overline,
