@@ -1050,14 +1050,64 @@ button {
 
 .stack-story {
   display: grid;
-  grid-template-columns: minmax(320px, 0.84fr) minmax(0, 1fr);
-  gap: 28px;
+  grid-template-columns: minmax(320px, 0.84fr) 92px minmax(0, 1fr);
+  gap: 22px;
   align-items: start;
 }
 
 .stack-spotlight {
   position: sticky;
   top: 122px;
+}
+
+.stack-process-rail {
+  position: sticky;
+  top: 140px;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 0;
+  padding-top: 16px;
+}
+
+.stack-process-step {
+  display: grid;
+  justify-items: center;
+}
+
+.stack-process-node {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(226, 239, 232, 0.46);
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  transition:
+    transform 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stack-process-line {
+  width: 1px;
+  height: 58px;
+  background: linear-gradient(180deg, rgba(0, 229, 160, 0.22), rgba(255, 255, 255, 0.06));
+}
+
+.stack-process-step.active .stack-process-node {
+  transform: scale(1.08);
+  border-color: rgba(0, 229, 160, 0.3);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(0, 229, 160, 0.22), rgba(0, 229, 160, 0.08) 58%, rgba(255, 255, 255, 0.04));
+  color: rgba(236, 248, 242, 0.98);
+  box-shadow: 0 14px 34px rgba(0, 229, 160, 0.16);
 }
 
 .stack-spotlight-inner {
@@ -1824,6 +1874,10 @@ button {
 
   .stack-spotlight {
     position: static;
+  }
+
+  .stack-process-rail {
+    display: none;
   }
 
   .projects-header,

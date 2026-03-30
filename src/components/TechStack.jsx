@@ -129,6 +129,19 @@ function TechStack({ data }) {
             </div>
           </div>
 
+          <div className="stack-process-rail" aria-hidden="true">
+            {data.categories.map((category, index) => {
+              const isActive = currentCategory.name === category.name;
+
+              return (
+                <div key={category.name} className={`stack-process-step ${isActive ? 'active' : ''}`}>
+                  <div className="stack-process-node">{category.icon}</div>
+                  {index < data.categories.length - 1 ? <div className="stack-process-line" /> : null}
+                </div>
+              );
+            })}
+          </div>
+
           <div ref={stepsRef} className="stack-steps">
             {data.categories.map((category, index) => {
               const isActive = currentCategory.name === category.name;
