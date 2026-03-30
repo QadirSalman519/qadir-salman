@@ -84,7 +84,7 @@ function App() {
           <Experience data={portfolioData.experience} />
           <Contact data={portfolioData} />
         </main>
-        <Footer data={portfolioData.footer} />
+        <Footer personal={portfolioData.personal} />
       </div>
       <Toaster
         position="top-right"
