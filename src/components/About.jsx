@@ -12,6 +12,9 @@ const reveal = {
 function About({ data }) {
   const { personal, about } = data;
   const bioParts = personal.bio.split('\n\n');
+  const primaryBio = bioParts[0];
+  const supportingBio = bioParts[1];
+  const featuredStats = about.stats.slice(0, 3);
 
   return (
     <section id="about" className="section-block">
@@ -41,13 +44,21 @@ function About({ data }) {
             custom={0.08}
           >
             <div className="about-gridlines" aria-hidden="true" />
-            <div className="about-mono">QS</div>
-            <div className="about-left-content">
-              <h3>
-                Qadir <span className="accent-italic">Salman</span>
-              </h3>
-              <p className="role-tag">{personal.title}</p>
-              <span className="availability-chip">Available for Hire / 2025</span>
+            <div className="about-orb" aria-hidden="true" />
+
+            <div className="about-value-shell">
+              <span className="about-panel-kicker">Why Clients Keep Reading</span>
+              <h3 className="about-selling-headline">Not just another intro block. This is where trust should start.</h3>
+              <p className="about-selling-copy">{about.lead}</p>
+
+              <div className="about-proof-grid">
+                {about.highlights.map((item) => (
+                  <article key={item.label} className="about-highlight-card">
+                    <span className="about-highlight-label">{item.label}</span>
+                    <p>{item.text}</p>
+                  </article>
+                ))}
+              </div>
             </div>
           </motion.article>
 
@@ -59,30 +70,37 @@ function About({ data }) {
             variants={reveal}
             custom={0.16}
           >
+            <div className="about-right-top">
+              <span className="about-right-kicker">What You Actually Get</span>
+              <p className="about-lead">A hands-on engineer who thinks beyond delivery and makes the product feel safer to grow.</p>
+            </div>
+
             <div className="about-copy">
-              {bioParts.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+              <p>{primaryBio}</p>
+              <p className="about-supporting-copy">{supportingBio}</p>
             </div>
 
             <blockquote className="quote-card">
+              <span className="quote-mark" aria-hidden="true">
+                "
+              </span>
               <p>{about.quote}</p>
             </blockquote>
+
+            <div className="about-stats-grid">
+              {featuredStats.map((item) => (
+                <div key={item.label} className="about-stat-cell">
+                  <strong>{item.value}</strong>
+                  <span>{item.label}</span>
+                </div>
+              ))}
+            </div>
 
             <div className="pill-row">
               {about.skills.map((skill) => (
                 <span key={skill} className="skill-pill">
                   {skill}
                 </span>
-              ))}
-            </div>
-
-            <div className="about-stats-grid">
-              {about.stats.map((item) => (
-                <div key={item.label} className="about-stat-cell">
-                  <strong>{item.value}</strong>
-                  <span>{item.label}</span>
-                </div>
               ))}
             </div>
           </motion.article>

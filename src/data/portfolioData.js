@@ -59,6 +59,21 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
     heading: 'Engineer with ownership mentality.',
     subtext: 'Full production responsibility - not just the code, the outcome.',
     quote: 'I take full responsibility for production - not just the code, the outcome.',
+    lead: 'I build reliable products with the mindset that launch is the start of responsibility, not the finish line.',
+    highlights: [
+      {
+        label: 'Systems Thinking',
+        text: 'Architecture decisions that stay maintainable when real traffic, edge cases, and business pressure show up.',
+      },
+      {
+        label: 'Production Ownership',
+        text: 'From payments to alerts to background jobs, I care about what breaks at 3am and how quickly it recovers.',
+      },
+      {
+        label: 'Team Impact',
+        text: 'Clear APIs, cleaner handoffs, and better patterns so the next engineer can move faster instead of guessing.',
+      },
+    ],
     skills: ['Laravel', 'React', 'Next.js', 'Node.js', 'MySQL', 'AWS', 'Docker', 'REST APIs'],
     stats: [
       { label: 'Years', value: '6+' },
