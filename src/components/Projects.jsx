@@ -107,16 +107,6 @@ function Projects({ data }) {
           ))}
         </div>
 
-        <div className="project-stats-bar">
-          {data.stats.map((stat) => (
-            <div key={stat.label} className="project-stat">
-              <span>{stat.label}</span>
-              <div className="project-stat-line">
-                <i style={{ width: stat.line }} />
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
 
       <AnimatePresence>

@@ -1481,37 +1481,8 @@ button {
   border-color: rgba(0, 229, 160, 0.18);
 }
 
-.project-stats-bar {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
-  margin-top: 28px;
-  background: var(--border-faint);
-}
-
-.project-stat {
-  background: rgba(11, 20, 16, 0.86);
-  padding: 18px;
-}
-
-.project-stat span {
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 8px;
-  color: rgba(226, 239, 232, 0.72);
-  margin-bottom: 16px;
-}
-
-.project-stat-line {
-  height: 1px;
-  background: rgba(0, 229, 160, 0.1);
-}
-
-.project-stat-line i {
-  display: block;
-  height: 1px;
-  background: var(--accent);
+.experience-section {
+  padding-top: 56px;
 }
 
 .project-preview {
@@ -2002,8 +1973,7 @@ button {
   }
 
   .hero-stats,
-  .about-stats-grid,
-  .project-stats-bar {
+  .about-stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -2084,6 +2054,10 @@ button {
   .contact-left h3,
   .skills-column h3 {
     font-size: 22px;
+  }
+
+  .experience-section {
+    padding-top: 34px;
   }
 
   .footer-inner span:last-child {
