@@ -150,7 +150,6 @@ function Contact({ data }) {
           >
             <div className="contact-form-head">
               <p className="contact-form-title">{contact.formTitle}</p>
-              <p className="contact-form-subtitle">{contact.formSubtitle}</p>
             </div>
             <form className="contact-form" onSubmit={handleSubmit} noValidate>
               <div className="contact-form-grid">
