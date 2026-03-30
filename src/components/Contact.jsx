@@ -22,7 +22,7 @@ function Contact({ data }) {
     } else if (!/\S+@\S+\.\S+/.test(formValues.email)) {
       nextErrors.email = 'Enter a valid email address.';
     }
-    if (!formValues.budget.trim()) nextErrors.budget = 'Project budget is required.';
+    if (!formValues.budget.trim()) nextErrors.budget = 'Contact is required.';
     if (!formValues.message.trim() || formValues.message.trim().length < 20) {
       nextErrors.message = 'Share at least a few project details.';
     }
@@ -95,20 +95,16 @@ function Contact({ data }) {
             transition={{ duration: 0.65, delay: 0.08, ease: 'easeOut' }}
           >
             <div className="contact-left-top">
-              {/* <span className="contact-panel-kicker">{contact.intro}</span> */}
               <h3>
-                Let&apos;s turn the idea into something <span className="accent-italic">launch-ready.</span>
+                {contact.leftHeading.before} <span className="accent-italic">{contact.leftHeading.accent}</span>
+                {contact.leftHeading.after}
               </h3>
-              <p className="contact-lead-copy">
-                If you&apos;re planning a product, redesign, or production-grade web platform, this is the best place
-                to start the conversation. Share the goal, context, and constraints and we&apos;ll move fast from there.
-              </p>
+              <p className="contact-lead-copy">{contact.leftCopy}</p>
             </div>
 
             <div className="contact-direct-card">
               <div className="contact-direct-head">
                 <span className="contact-direct-badge">Direct Contact</span>
-                <p>Prefer direct reach-out? Use any channel below and I&apos;ll get back with the right next step.</p>
               </div>
 
               <div className="contact-info-list">
@@ -154,9 +150,7 @@ function Contact({ data }) {
           >
             <div className="contact-form-head">
               <p className="contact-form-title">{contact.formTitle}</p>
-              <p className="contact-form-subtitle">
-                Clear briefs get better replies. Share your goals, timeline, and budget range.
-              </p>
+              <p className="contact-form-subtitle">{contact.formSubtitle}</p>
             </div>
             <form className="contact-form" onSubmit={handleSubmit} noValidate>
               <div className="contact-form-grid">

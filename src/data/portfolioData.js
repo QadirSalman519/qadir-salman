@@ -294,9 +294,18 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
     ],
   },
   contact: {
-    heading: "Let's build something that doesn't feel replaceable.",
+    heading: "Let's talk about your project.",
     intro: 'Get in Touch',
     formTitle: 'Send me a message',
+    formSubtitle: 'Share a short overview and I will get back with the next step.',
+    leftHeading: {
+      before: 'Need a reliable build,',
+      accent: 'cleanup,',
+      after: ' or second opinion?',
+    },
+    leftCopy:
+      'If you are planning a new product, improving an existing system, or need help with a messy codebase, send the details here and I will review it properly.',
+    directCopy: 'Prefer email, phone, or WhatsApp? Reach out directly using the details below.',
     social: [
       { name: 'GitHub', href: 'https://github.com/qadirsalman' },
       { name: 'LinkedIn', href: 'https://www.linkedin.com/in/qadirsalman' },
