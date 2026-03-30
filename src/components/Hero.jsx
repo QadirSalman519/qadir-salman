@@ -15,6 +15,7 @@ function Hero({ data }) {
   const mouseRef = useRef({ x: null, y: null });
   const personal = data.personal;
   const hero = data.hero;
+  const hasProfileImage = Boolean(hero.profileImage?.enabled && hero.profileImage?.src);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -191,28 +192,51 @@ function Hero({ data }) {
 
         <div className="hero-visual">
           <div className="hero-visual-glow" aria-hidden="true" />
-          <motion.div className="qs-card" variants={fadeUp} initial="hidden" animate="show" custom={0.3}>
-            <div className="qs-card-noise" aria-hidden="true" />
-            <div className="qs-card-top">
-              <span>Senior Engineer / Est. 2019</span>
-              <strong>QS</strong>
-            </div>
-            <div className="qs-card-bottom">
-              <p>{personal.title}</p>
-              <div>
-                <span>{personal.name}</span>
-                <span>{personal.experience}</span>
+          <motion.div className="hero-visual-stage" variants={fadeUp} initial="hidden" animate="show" custom={0.3}>
+            {hasProfileImage ? (
+              <div className="profile-figure-wrap">
+                <div className="profile-frame-outline" aria-hidden="true" />
+                <div className="profile-figure">
+                  <img
+                    className="profile-image"
+                    src={hero.profileImage.src}
+                    alt={hero.profileImage.alt || `${personal.name} profile image`}
+                  />
+                  <div className="profile-image-overlay" aria-hidden="true" />
+                </div>
+                <div className="profile-badge-chip">{hero.profileImage.badge}</div>
+              </div>
+            ) : (
+              <div className="profile-figure profile-figure-placeholder">
+                <span>{personal.shortName}</span>
+              </div>
+            )}
+
+            <div className="hero-info-rail">
+              <div className="qs-card">
+                <div className="qs-card-noise" aria-hidden="true" />
+                <div className="qs-card-top">
+                  <span>Senior Engineer / Est. 2019</span>
+                  <strong>QS</strong>
+                </div>
+                <div className="qs-card-bottom">
+                  <p>{personal.title}</p>
+                  <div>
+                    <span>{personal.name}</span>
+                    <span>{personal.experience}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="floating-cards">
+                {hero.cards.map((card) => (
+                  <article key={card.label} className="floating-info-card">
+                    <span>{card.label}</span>
+                    <strong>{card.value}</strong>
+                  </article>
+                ))}
               </div>
             </div>
-          </motion.div>
-
-          <motion.div className="floating-cards" variants={fadeUp} initial="hidden" animate="show" custom={0.5}>
-            {hero.cards.map((card) => (
-              <article key={card.label} className="floating-info-card">
-                <span>{card.label}</span>
-                <strong>{card.value}</strong>
-              </article>
-            ))}
           </motion.div>
         </div>
       </div>

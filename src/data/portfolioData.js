@@ -2,7 +2,7 @@ const portfolioData = {
   personal: {
     name: 'Qadir Salman',
     shortName: 'QS',
-    title: 'Senior Full-Stack Developer',
+    title: 'Senior Full-Stack Software Engineer',
     heroTitle: 'Senior Full-Stack Engineer',
     location: 'Karachi, Pakistan',
     locationShort: 'Karachi',
@@ -10,13 +10,19 @@ const portfolioData = {
     phone: '+92 310-2010954',
     available: 'Yes',
     established: '2019',
-    experience: '5+ years',
+    experience: '6+ years',
     quote: 'I take full responsibility for production - not just the code, the outcome.',
     bio: `I don't write code to close a ticket. I write code to own what happens after it closes - the scaling, the 3am production issue, the refactor nobody wants to touch.
 
 Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthcare platforms. Real clients, real traffic. Architecture decisions, junior mentoring, full production ownership.`,
   },
   hero: {
+    profileImage: {
+      src: '/profile-hero.jpg',
+      alt: 'Qadir Salman profile portrait',
+      enabled: true,
+      badge: 'Available for new work',
+    },
     headline: [
       { text: 'A portfolio', accent: false },
       { text: 'that feels like', accent: false },
@@ -26,7 +32,7 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
     ],
     tagline:
       "Built for clients who care about what happens after launch: payment reliability, clean architecture, production calm, and systems that stay maintainable when the pressure's real.",
-    stats: ['5+ Years Exp.', '40+ Projects', '6+ Gateways'],
+    stats: ['6+ Years Exp.', '40+ Projects', '6+ Gateways'],
     cards: [
       { label: 'Specialization', value: 'Laravel / React / Node.js' },
       { label: 'Payments', value: 'Stripe / Clover / PayPal' },
@@ -55,7 +61,7 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
     quote: 'I take full responsibility for production - not just the code, the outcome.',
     skills: ['Laravel', 'React', 'Next.js', 'Node.js', 'MySQL', 'AWS', 'Docker', 'REST APIs'],
     stats: [
-      { label: 'Years', value: '5+' },
+      { label: 'Years', value: '6+' },
       { label: 'Projects', value: '40+' },
       { label: 'Gateways', value: '6+' },
       { label: 'Stores', value: '20+' },
@@ -189,7 +195,7 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
     ],
     stats: [
       { label: '6+ Projects Shipped', line: '100%' },
-      { label: '5+ Payment Gateways', line: '70%' },
+      { label: '6+ Payment Gateways', line: '70%' },
       { label: '20+ Live Stores', line: '45%' },
       { label: '100% Production Owned', line: '25%' },
     ],
