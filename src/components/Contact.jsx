@@ -69,12 +69,6 @@ function Contact({ data }) {
     },
   ];
 
-  const contactHighlights = [
-    { label: 'Response Window', value: 'Within 24 hours' },
-    { label: 'Best Fit', value: 'Product builds and scalable web apps' },
-    { label: 'Project Style', value: 'Clean delivery, direct communication' },
-  ];
-
   return (
     <section id="contact" className="section-block contact-section">
       <div className="container-shell">
@@ -101,7 +95,7 @@ function Contact({ data }) {
             transition={{ duration: 0.65, delay: 0.08, ease: 'easeOut' }}
           >
             <div className="contact-left-top">
-              <span className="contact-panel-kicker">{contact.intro}</span>
+              {/* <span className="contact-panel-kicker">{contact.intro}</span> */}
               <h3>
                 Let&apos;s turn the idea into something <span className="accent-italic">launch-ready.</span>
               </h3>
@@ -109,15 +103,6 @@ function Contact({ data }) {
                 If you&apos;re planning a product, redesign, or production-grade web platform, this is the best place
                 to start the conversation. Share the goal, context, and constraints and we&apos;ll move fast from there.
               </p>
-            </div>
-
-            <div className="contact-highlight-grid">
-              {contactHighlights.map((item) => (
-                <article key={item.label} className="contact-highlight-card">
-                  <span>{item.label}</span>
-                  <strong>{item.value}</strong>
-                </article>
-              ))}
             </div>
 
             <div className="contact-direct-card">
@@ -178,7 +163,7 @@ function Contact({ data }) {
                 {[
                   { label: 'Full Name', name: 'name', type: 'text' },
                   { label: 'Email Address', name: 'email', type: 'email' },
-                  { label: 'Project Budget', name: 'budget', type: 'text' },
+                  { label: 'Contact', name: 'budget', type: 'text' },
                 ].map((field) => (
                   <label key={field.name} className={`field-shell ${errors[field.name] ? 'has-error' : ''}`}>
                     <input
@@ -207,7 +192,6 @@ function Contact({ data }) {
               </label>
 
               <div className="contact-submit-row">
-                <p className="contact-submit-note">Best for new builds, redesigns, dashboards, and product support.</p>
                 <button type="submit" className="submit-button interactive">
                   Send Message
                 </button>
