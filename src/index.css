@@ -160,9 +160,26 @@ button {
 
 .section-intro-copy p:last-child,
 .projects-header p {
-  margin: 12px 0 0;
-  max-width: 520px;
-  color: var(--text-muted);
+  position: relative;
+  margin: 18px 0 0;
+  max-width: 620px;
+  padding-left: 18px;
+  color: rgba(226, 239, 232, 0.72);
+  font-size: 15px;
+  line-height: 1.9;
+  letter-spacing: 0.1px;
+}
+
+.section-intro-copy p:last-child::before,
+.projects-header p::before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 2px;
+  height: calc(100% - 8px);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(0, 229, 160, 0.8), rgba(0, 229, 160, 0.12));
 }
 
 .stack-section-intro {
@@ -186,10 +203,9 @@ button {
 }
 
 .stack-intro-copy p:last-child {
-  max-width: 660px;
-  font-size: 15px;
-  line-height: 1.9;
-  color: rgba(226, 239, 232, 0.7);
+  max-width: 700px;
+  font-size: 16px;
+  line-height: 1.95;
 }
 
 .cursor-dot,
@@ -557,6 +573,7 @@ button {
   margin: 0 0 28px;
   font-size: 18px;
   line-height: 1.8;
+  font-weight: 400;
 }
 
 .hero-actions {
@@ -862,8 +879,11 @@ button {
 
 .about-copy p,
 .timeline-content p {
-  margin: 0 0 14px;
-  color: rgba(226, 239, 232, 0.72);
+  margin: 0 0 16px;
+  color: rgba(226, 239, 232, 0.74);
+  font-size: 14px;
+  line-height: 1.95;
+  letter-spacing: 0.08px;
 }
 
 .quote-card {
@@ -1006,10 +1026,11 @@ button {
 }
 
 .stack-hero-row p {
-  margin: 10px 0 0;
-  color: rgba(226, 239, 232, 0.62);
-  font-size: 13px;
-  line-height: 1.8;
+  margin: 12px 0 0;
+  color: rgba(226, 239, 232, 0.74);
+  font-size: 14px;
+  line-height: 1.9;
+  letter-spacing: 0.08px;
 }
 
 .stack-icon-box {
