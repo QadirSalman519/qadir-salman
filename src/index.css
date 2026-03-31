@@ -1841,30 +1841,18 @@ button {
 }
 
 .testimonials-side-score span {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  display: inline-block;
   width: fit-content;
-  padding: 6px 10px 6px 8px;
-  border: 1px solid rgba(0, 229, 160, 0.12);
-  border-radius: 999px;
-  background: rgba(0, 229, 160, 0.06);
-  color: rgba(226, 239, 232, 0.72);
+  padding-left: 12px;
+  border-left: 2px solid rgba(0, 229, 160, 0.58);
+  color: rgba(226, 239, 232, 0.5);
   font-family: 'Inter', sans-serif;
   font-size: 10px;
   font-style: normal;
   font-weight: 500;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-}
-
-.testimonials-side-score span::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--accent);
-  box-shadow: 0 0 12px rgba(0, 229, 160, 0.45);
+  line-height: 1;
 }
 
 .testimonials-side-author {
