@@ -49,8 +49,11 @@ function Testimonials({ data }) {
               <span className="testimonials-side-dot" aria-hidden="true" />
               Client Feedback Highlights
             </p>
-            <h3>{data.heading}</h3>
-            <p className="testimonials-side-copy">{data.subtext}</p>
+            <div className="testimonials-side-score">
+              <strong>{data.summary.score}</strong>
+              <span>Client confidence</span>
+            </div>
+            <p className="testimonials-side-copy">{data.summary.note}</p>
 
             <div className="testimonials-trust-row">
               <div className="testimonials-avatar-stack">
