@@ -19,29 +19,30 @@ function Experience({ data }) {
           </div>
         </motion.div>
 
-        <div className="timeline">
+        <div className="experience-list">
           {data.items.map((item, index) => (
             <motion.article
               key={item.company}
-              className={`timeline-entry interactive ${item.badge.toLowerCase().includes('current') ? 'timeline-entry-current' : ''}`}
+              className={`experience-card interactive ${item.badge.toLowerCase().includes('current') ? 'experience-card-current' : ''}`}
               initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.07 }}
               transition={{ duration: 0.65, delay: index * 0.08, ease: 'easeOut' }}
             >
-              <div className="timeline-bullet" aria-hidden="true" />
-              <div className="timeline-period-wrap">
-                <span className="timeline-period">{item.period}</span>
+              <div className="experience-card-side">
+                <span className="experience-card-label">
+                  {item.badge.toLowerCase().includes('current') ? 'Current Chapter' : 'Previous Chapter'}
+                </span>
+                <span className="experience-card-period">{item.period}</span>
+                <span className="experience-card-company">{item.company}</span>
+                <span className="experience-card-focus">{item.focus}</span>
               </div>
-              <div className="timeline-content">
-                <div className="timeline-header-row">
-                  <div className="timeline-header-meta">
-                    <span className="timeline-company">{item.company}</span>
-                    <span className="timeline-focus">{item.focus}</span>
-                  </div>
+
+              <div className="experience-card-main">
+                <div className="experience-card-head">
+                  <h3>{item.title}</h3>
                   <span className="timeline-badge">{item.badge}</span>
                 </div>
-                <h3>{item.title}</h3>
                 <p>{item.description}</p>
                 <div className="timeline-highlights" aria-label={`${item.company} highlights`}>
                   {item.highlights.map((highlight) => (
