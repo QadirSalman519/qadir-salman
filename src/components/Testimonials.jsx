@@ -104,10 +104,7 @@ function Testimonials({ data }) {
               >
                 <span className="testimonial-quote-icon" aria-hidden="true">
                   <svg viewBox="0 0 64 64">
-                    <path
-                      fill="currentColor"
-                      d="M24 18c-8.5 3.7-13.5 10.4-14 21.6h10.9c-.5 4 1.9 7.4 6.5 7.4 4.7 0 8.1-3.6 8.1-8.8 0-7.7-5.3-12.5-11.5-12.5H21c1.1-2.8 3.3-5 6.6-6.7L24 18Zm26 0c-8.5 3.7-13.5 10.4-14 21.6h10.9c-.5 4 1.9 7.4 6.5 7.4 4.7 0 8.1-3.6 8.1-8.8 0-7.7-5.3-12.5-11.5-12.5H47c1.1-2.8 3.3-5 6.6-6.7L50 18Z"
-                    />
+                    <path fill="currentColor" d="M8 14h22v20c0 11.2-7.4 18-18.2 20v-9.8c5.1-1.3 8.2-4.3 8.8-9.4H8V14Zm26 0h22v20c0 11.2-7.4 18-18.2 20v-9.8c5.1-1.3 8.2-4.3 8.8-9.4H34V14Z" />
                   </svg>
                 </span>
                 <p className="testimonial-slide-quote">{activeItem.quote}</p>

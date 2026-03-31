@@ -280,7 +280,7 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
   testimonials: {
     heading: 'What working together felt like.',
     subtext: 'Not just shipped features. Calmer launches, cleaner handoffs, and fewer surprises after go-live.',
-    signals: ['Launch Calm', 'Clear Communication', 'Production Ownership'],
+    signals: ['eCommerce', 'Multi-Tenant', 'ERP / SaaS'],
     summary: {
       label: 'Client Signal',
       score: '5.0',

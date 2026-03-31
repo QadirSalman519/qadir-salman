@@ -1814,13 +1814,14 @@ button {
 
 .testimonial-quote-icon {
   position: absolute;
-  right: 8px;
-  bottom: 18px;
+  right: 10px;
+  bottom: 16px;
   z-index: 1;
-  width: 64px;
-  height: 64px;
-  color: rgba(0, 229, 160, 0.28);
+  width: 58px;
+  height: 58px;
+  color: rgba(0, 229, 160, 0.32);
   pointer-events: none;
+  filter: drop-shadow(0 0 10px rgba(0, 229, 160, 0.08));
 }
 
 .testimonial-quote-icon svg {
