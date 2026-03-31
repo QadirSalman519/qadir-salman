@@ -57,7 +57,7 @@ function Projects({ data }) {
           <div className="section-intro-copy">
             <p className="eyebrow-label">Selected Work</p>
             <h2>{data.heading}</h2>
-            <p>Selected projects with real shipping pressure, scale, and production ownership.</p>
+            <p>{data.subtext}</p>
           </div>
         </motion.div>
 

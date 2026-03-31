@@ -53,7 +53,7 @@ function Testimonials({ data }) {
 
           <div className="testimonials-slider-side">
             <div className="testimonials-side-score">
-              <span>Client confidence</span>
+              <span>{data.summary.label}</span>
               <strong>{data.summary.score}</strong>
             </div>
 
