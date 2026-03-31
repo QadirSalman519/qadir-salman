@@ -50,6 +50,7 @@ function Contact({ data }) {
   const { personal, contact } = data;
   const [formValues, setFormValues] = useState(initialForm);
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validate = () => {
     const nextErrors = {};
@@ -72,7 +73,7 @@ function Contact({ data }) {
     setErrors((current) => ({ ...current, [name]: '' }));
   };
 
-  const handleSubmit = (event) => {
+  const submitForm = async (event) => {
     event.preventDefault();
     const nextErrors = validate();
     if (Object.keys(nextErrors).length) {
@@ -80,9 +81,49 @@ function Contact({ data }) {
       return;
     }
 
-    setErrors({});
-    setFormValues(initialForm);
-    toast.success('Message sent successfully.');
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      toast.error('Form service key missing. Add VITE_WEB3FORMS_ACCESS_KEY to enable submissions.');
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      setErrors({});
+
+      const payload = {
+        access_key: accessKey,
+        subject: `Portfolio inquiry from ${formValues.name}`,
+        from_name: formValues.name,
+        email: formValues.email,
+        replyto: formValues.email,
+        name: formValues.name,
+        contact: formValues.budget,
+        message: formValues.message,
+      };
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Unable to send message right now.');
+      }
+
+      setFormValues(initialForm);
+      toast.success('Message sent successfully.');
+    } catch (error) {
+      toast.error(error.message || 'Something went wrong while sending the message.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const infoRows = [
@@ -191,7 +232,7 @@ function Contact({ data }) {
             <div className="contact-form-head">
               <p className="contact-form-title">{contact.formTitle}</p>
             </div>
-            <form className="contact-form" onSubmit={handleSubmit} noValidate>
+            <form className="contact-form" onSubmit={submitForm} noValidate>
               <div className="contact-form-grid">
                 {[
                   { label: 'Full Name', name: 'name', type: 'text' },
@@ -225,8 +266,8 @@ function Contact({ data }) {
               </label>
 
               <div className="contact-submit-row">
-                <button type="submit" className="submit-button interactive">
-                  Send Message
+                <button type="submit" className="submit-button interactive" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </div>
             </form>
