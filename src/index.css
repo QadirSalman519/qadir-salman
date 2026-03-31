@@ -1754,6 +1754,15 @@ button {
   gap: 10px;
 }
 
+.testimonials-side-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
 .testimonials-signal-pill {
   display: inline-flex;
   align-items: center;
@@ -1770,9 +1779,8 @@ button {
 
 .testimonials-slider-main {
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 20px;
-  padding: 28px 30px 24px;
+  align-items: center;
+  padding: 24px 30px 20px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 24%),
     radial-gradient(circle at right bottom, rgba(0, 229, 160, 0.06), transparent 28%);
@@ -1780,7 +1788,6 @@ button {
 
 .testimonials-slider-controls {
   display: flex;
-  justify-content: flex-end;
   gap: 10px;
 }
 
@@ -1914,6 +1921,7 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .testimonials-dot {

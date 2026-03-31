@@ -81,18 +81,34 @@ function Testimonials({ data }) {
                 </span>
               ))}
             </div>
+
+            <div className="testimonials-side-controls">
+              <div className="testimonials-slider-controls">
+                <button type="button" className="testimonials-arrow interactive" onClick={goToPrevious} aria-label="Previous review">
+                  <span aria-hidden="true">{'<'}</span>
+                </button>
+                <button type="button" className="testimonials-arrow interactive" onClick={goToNext} aria-label="Next review">
+                  <span aria-hidden="true">{'>'}</span>
+                </button>
+              </div>
+
+              <div className="testimonials-dots" role="tablist" aria-label="Testimonial slides">
+                {data.items.map((item, index) => (
+                  <button
+                    key={item.name}
+                    type="button"
+                    className={`testimonials-dot ${index === activeIndex ? 'active' : ''}`}
+                    onClick={() => goToSlide(index)}
+                    aria-label={`Show review ${index + 1}`}
+                    aria-selected={index === activeIndex}
+                    role="tab"
+                  />
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="testimonials-slider-main">
-            <div className="testimonials-slider-controls">
-              <button type="button" className="testimonials-arrow interactive" onClick={goToPrevious} aria-label="Previous review">
-                <span aria-hidden="true">{'<'}</span>
-              </button>
-              <button type="button" className="testimonials-arrow interactive" onClick={goToNext} aria-label="Next review">
-                <span aria-hidden="true">{'>'}</span>
-              </button>
-            </div>
-
             <AnimatePresence mode="wait">
               <motion.article
                 key={activeItem.name}
@@ -124,20 +140,6 @@ function Testimonials({ data }) {
                 </div>
               </motion.article>
             </AnimatePresence>
-
-            <div className="testimonials-dots" role="tablist" aria-label="Testimonial slides">
-              {data.items.map((item, index) => (
-                <button
-                  key={item.name}
-                  type="button"
-                  className={`testimonials-dot ${index === activeIndex ? 'active' : ''}`}
-                  onClick={() => goToSlide(index)}
-                  aria-label={`Show review ${index + 1}`}
-                  aria-selected={index === activeIndex}
-                  role="tab"
-                />
-              ))}
-            </div>
           </div>
         </motion.div>
       </div>
