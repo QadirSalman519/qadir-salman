@@ -116,7 +116,7 @@ function Contact({ data }) {
           viewport={{ once: true, amount: 0.07 }}
           transition={{ duration: 0.65, ease: 'easeOut' }}
         >
-          <span className="ghost-number">06</span>
+          <span className="ghost-number">07</span>
           <div className="section-intro-copy">
             <p className="eyebrow-label">Contact</p>
             <h2>{contact.heading}</h2>

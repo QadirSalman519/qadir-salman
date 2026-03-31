@@ -277,6 +277,57 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
       },
     ],
   },
+  testimonials: {
+    heading: 'What working together felt like.',
+    subtext: 'Not just shipped features. Calmer launches, cleaner handoffs, and fewer surprises after go-live.',
+    signals: ['Launch Calm', 'Clear Communication', 'Production Ownership'],
+    summary: {
+      label: 'Client Signal',
+      score: '5.0',
+      note: 'Trusted across product, ops, and founder-facing builds.',
+      trustLine: '40+ projects shipped with production ownership',
+      stats: [
+        { label: 'Roles', value: 'Product / Ops / Founder' },
+        { label: 'Focus', value: 'Shipping with less chaos' },
+      ],
+    },
+    items: [
+      {
+        name: 'Hassan R.',
+        role: 'Product Lead',
+        company: 'Pulse Commerce',
+        project: 'Checkout Rebuild',
+        tag: 'Featured Note',
+        rating: '5.0 / 5',
+        quote:
+          'Qadir did not behave like a contractor waiting for tickets. He thought like an owner, challenged weak decisions early, and turned a risky payment flow into something the team could trust.',
+        outcome: 'Gateway failures dropped and release confidence went way up.',
+        emphasis: 'Ownership over output',
+      },
+      {
+        name: 'Sarah Khan',
+        role: 'Operations Manager',
+        company: 'Nexus Board ERP',
+        project: 'ERP Automation',
+        rating: '5 stars',
+        quote:
+          'The biggest difference was clarity. We always knew what was changing, what could break, and what had already been protected before launch.',
+        outcome: 'Automation replaced several manual renewal follow-ups.',
+        emphasis: 'No-surprise delivery',
+      },
+      {
+        name: 'Ali M.',
+        role: 'Founder',
+        company: 'Cipher Notes',
+        project: 'Multi-tenant Platform',
+        rating: '5 stars',
+        quote:
+          'He brought structure to a messy product very quickly. Permissions, admin flows, and reporting all started feeling intentional instead of patched together.',
+        outcome: 'The team moved faster after the architecture cleanup.',
+        emphasis: 'Architecture that helped the team move',
+      },
+    ],
+  },
   skills: {
     leftTitle: 'Core Proficiency',
     rightTitle: 'Infrastructure & Integration',

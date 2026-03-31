@@ -8,11 +8,12 @@ import About from './components/About';
 import TechStack from './components/TechStack';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
+import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import portfolioData from './data/portfolioData';
 
-const sectionIds = ['home', 'about', 'stack', 'work', 'experience', 'contact'];
+const sectionIds = ['home', 'about', 'stack', 'work', 'experience', 'testimonials', 'contact'];
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -66,6 +67,7 @@ function App() {
       { id: 'stack', label: 'Stack' },
       { id: 'work', label: 'Work' },
       { id: 'experience', label: 'Experience' },
+      { id: 'testimonials', label: 'Voices' },
       { id: 'contact', label: 'Contact' },
     ],
     [],
@@ -83,6 +85,7 @@ function App() {
           <TechStack data={portfolioData.techStack} />
           <Projects data={portfolioData.projects} />
           <Experience data={portfolioData.experience} />
+          <Testimonials data={portfolioData.testimonials} />
           <Contact data={portfolioData} />
         </main>
         <Footer personal={portfolioData.personal} />
