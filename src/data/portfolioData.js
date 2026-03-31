@@ -41,7 +41,7 @@ const portfolioData = {
     heroTitle: 'Senior Full-Stack Software Engineer',
     location: 'Karachi, Pakistan',
     locationShort: 'Karachi',
-    email: 'qadir.salman7751@gmail.com',
+    email: 'qadirsalman019@gmail.com',
     phone: '+92 310-2010954',
     available: 'Yes',
     established: '2019',
