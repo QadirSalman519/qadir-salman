@@ -1667,11 +1667,12 @@ button {
 
 .testimonials-side-score strong {
   display: block;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Syne', sans-serif;
   font-size: clamp(54px, 7vw, 88px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 0.9;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.08em;
+  font-variant-numeric: lining-nums tabular-nums;
   color: rgba(246, 251, 248, 0.98);
 }
 
@@ -1781,10 +1782,10 @@ button {
 .testimonial-quote-icon {
   position: absolute;
   right: 10px;
-  top: 6px;
+  top: auto;
+  bottom: 14px;
   z-index: 1;
-  width: 52px;
-  height: 52px;
+  width: 80px;
   color: rgba(0, 229, 160, 0.32);
   pointer-events: none;
   filter: drop-shadow(0 0 10px rgba(0, 229, 160, 0.08));
