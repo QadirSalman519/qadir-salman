@@ -45,15 +45,10 @@ function Testimonials({ data }) {
           <div className="testimonials-slider-pattern" aria-hidden="true" />
 
           <div className="testimonials-slider-side">
-            <p className="testimonials-side-kicker">
-              <span className="testimonials-side-dot" aria-hidden="true" />
-              Client Feedback Highlights
-            </p>
             <div className="testimonials-side-score">
               <strong>{data.summary.score}</strong>
               <span>Client confidence</span>
             </div>
-            <p className="testimonials-side-copy">{data.summary.note}</p>
 
             <div className="testimonials-trust-row">
               <div className="testimonials-avatar-stack">
@@ -66,9 +61,9 @@ function Testimonials({ data }) {
                   +
                 </span>
               </div>
+
               <div className="testimonials-trust-copy">
                 <strong>{data.summary.trustLine}</strong>
-                <span>{data.summary.note}</span>
               </div>
             </div>
 
@@ -84,10 +79,10 @@ function Testimonials({ data }) {
           <div className="testimonials-slider-main">
             <div className="testimonials-slider-controls">
               <button type="button" className="testimonials-arrow interactive" onClick={goToPrevious} aria-label="Previous review">
-                <span aria-hidden="true">←</span>
+                <span aria-hidden="true">{'<'}</span>
               </button>
               <button type="button" className="testimonials-arrow interactive" onClick={goToNext} aria-label="Next review">
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">{'>'}</span>
               </button>
             </div>
 
@@ -100,14 +95,6 @@ function Testimonials({ data }) {
                 exit={{ opacity: 0, y: -18 }}
                 transition={{ duration: 0.38, ease: 'easeOut' }}
               >
-                <div className="testimonial-slide-top">
-                  <div className="testimonial-card-labels">
-                    <span className="testimonial-chip">{activeItem.project}</span>
-                    <small>{activeItem.emphasis}</small>
-                  </div>
-                  <span className="testimonial-stars">{activeItem.rating}</span>
-                </div>
-
                 <p className="testimonial-slide-quote">{activeItem.quote}</p>
 
                 <div className="testimonial-slide-footer">
@@ -120,7 +107,6 @@ function Testimonials({ data }) {
                       </span>
                     </div>
                   </div>
-                  <small>{activeItem.outcome}</small>
                 </div>
               </motion.article>
             </AnimatePresence>

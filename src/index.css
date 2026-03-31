@@ -1660,25 +1660,6 @@ button {
   border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.testimonials-side-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0;
-  color: rgba(242, 249, 245, 0.92);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.2px;
-}
-
-.testimonials-side-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: var(--accent);
-  box-shadow: 0 0 0 4px rgba(0, 229, 160, 0.08);
-}
-
 .testimonials-side-score {
   display: grid;
   gap: 8px;
@@ -1698,14 +1679,6 @@ button {
   font-size: 10px;
   letter-spacing: 2.2px;
   text-transform: uppercase;
-}
-
-.testimonials-side-copy {
-  max-width: 320px;
-  margin: 0;
-  color: rgba(226, 239, 232, 0.64);
-  font-size: 14px;
-  line-height: 1.85;
 }
 
 .testimonials-trust-row {
@@ -1758,29 +1731,10 @@ button {
   line-height: 1.25;
 }
 
-.testimonials-trust-copy span {
-  color: rgba(226, 239, 232, 0.48);
-  font-size: 12px;
-  line-height: 1.7;
-}
-
 .testimonials-signal-row {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-}
-
-.testimonials-signal-pill,
-.testimonial-chip,
-.testimonial-stars {
-  display: inline-flex;
-  align-items: center;
-  min-height: 32px;
-  padding: 0 12px;
-  border-radius: 999px;
-  letter-spacing: 2px;
-  font-size: 9px;
-  text-transform: uppercase;
 }
 
 .testimonials-signal-pill {
@@ -1841,7 +1795,7 @@ button {
 }
 
 .testimonial-slide::after {
-  content: '”';
+  content: '"';
   position: absolute;
   right: 0;
   bottom: -12px;
@@ -1851,29 +1805,12 @@ button {
   color: rgba(0, 229, 160, 0.86);
 }
 
-.testimonial-slide-top,
 .testimonial-slide-footer {
   position: relative;
   z-index: 1;
   display: flex;
   justify-content: space-between;
   gap: 16px;
-}
-
-.testimonial-slide-top {
-  align-items: flex-start;
-}
-
-.testimonial-card-labels {
-  display: grid;
-  gap: 10px;
-}
-
-.testimonial-card-labels small {
-  color: rgba(226, 239, 232, 0.48);
-  font-size: 10px;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
 }
 
 .testimonial-slide-quote {
@@ -1928,14 +1865,6 @@ button {
   font-size: 10px;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-}
-
-.testimonial-slide-footer small {
-  max-width: 160px;
-  color: rgba(226, 239, 232, 0.58);
-  font-size: 11px;
-  line-height: 1.6;
-  text-align: right;
 }
 
 .testimonials-dots {
@@ -2690,3 +2619,4 @@ button {
     text-align: center;
   }
 }
+
