@@ -347,7 +347,7 @@ button {
   border-radius: 0;
   padding: 12px 6px;
   background: transparent;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 3px;
 }
 
@@ -1606,6 +1606,17 @@ button {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.16);
 }
 
+.timeline-entry-current::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 0;
+  width: 2px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(0, 229, 160, 0.9), rgba(0, 229, 160, 0.16));
+}
+
 .timeline-entry-current:hover {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 26%),
@@ -1668,9 +1679,21 @@ button {
   margin-bottom: 12px;
 }
 
+.timeline-header-meta {
+  display: grid;
+  gap: 8px;
+}
+
 .timeline-company {
   color: var(--accent);
   letter-spacing: 3.2px;
+}
+
+.timeline-focus {
+  color: rgba(226, 239, 232, 0.46);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .timeline-badge {
@@ -1704,6 +1727,28 @@ button {
   color: rgba(226, 239, 232, 0.68);
   font-size: 15px;
   line-height: 1.9;
+}
+
+.timeline-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.timeline-highlight-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(236, 244, 239, 0.78);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
 }
 
 .testimonials-section {
@@ -2485,6 +2530,10 @@ button {
     flex-direction: column;
   }
 
+  .timeline-header-meta {
+    gap: 6px;
+  }
+
   .timeline-badge {
     min-height: 30px;
     padding: 0 12px;
@@ -2719,6 +2768,17 @@ button {
   .timeline-content p {
     font-size: 14px;
     line-height: 1.85;
+  }
+
+  .timeline-highlights {
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .timeline-highlight-chip {
+    min-height: 28px;
+    padding: 0 10px;
+    font-size: 9px;
   }
 
   .testimonials-side-score strong,

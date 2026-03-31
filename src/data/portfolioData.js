@@ -264,16 +264,20 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
         period: 'Mar 2023 - Present',
         company: 'SOFTNOX TECHNOLOGIES',
         title: 'Senior Full Stack Developer',
+        focus: 'Architecture / Payments / Systems',
         description:
           'Architected multi-tenant systems across healthcare, travel, and eCommerce. Owned 6+ payment gateway integrations. Built GoDaddy domain automation. Mentored juniors. Defined REST API architecture standards across the org.',
+        highlights: ['6+ gateway integrations', 'Multi-tenant platforms', 'API standards ownership'],
         badge: 'Current',
       },
       {
         period: 'Jun 2021 - Feb 2023',
         company: 'DIGI TRESTLE',
         title: 'Associate Backend Developer',
+        focus: 'Commerce / ERP / Backend',
         description:
           'Built and maintained 20+ live eCommerce stores. Contributed to ERP systems via Laravel Lumen. Optimized backend performance and collaborated on API design with senior engineers.',
+        highlights: ['20+ live stores', 'Laravel Lumen ERP work', 'Backend performance tuning'],
         badge: '2 yrs',
       },
     ],

@@ -35,11 +35,21 @@ function Experience({ data }) {
               </div>
               <div className="timeline-content">
                 <div className="timeline-header-row">
-                  <span className="timeline-company">{item.company}</span>
+                  <div className="timeline-header-meta">
+                    <span className="timeline-company">{item.company}</span>
+                    <span className="timeline-focus">{item.focus}</span>
+                  </div>
                   <span className="timeline-badge">{item.badge}</span>
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
+                <div className="timeline-highlights" aria-label={`${item.company} highlights`}>
+                  {item.highlights.map((highlight) => (
+                    <span key={highlight} className="timeline-highlight-chip">
+                      {highlight}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.article>
           ))}
