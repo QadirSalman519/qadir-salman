@@ -8,9 +8,7 @@ function Footer({ personal }) {
           <span className="footer-copyright-icon" aria-hidden="true">
             &copy;
           </span>
-          <span>
-            Copyright {personal.name} {currentYear}. All Rights Reserved
-          </span>
+          <span>{personal.name} {currentYear}. All Rights Reserved</span>
         </p>
       </div>
     </footer>
