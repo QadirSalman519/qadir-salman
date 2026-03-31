@@ -258,6 +258,7 @@ Five years in. Multi-tenant systems, 6 payment gateways, ERP automation, healthc
   },
   experience: {
     heading: "Where I've shipped.",
+    subtext: 'Roles where ownership meant architecture, delivery pressure, and systems that had to survive real usage.',
     items: [
       {
         period: 'Mar 2023 - Present',
