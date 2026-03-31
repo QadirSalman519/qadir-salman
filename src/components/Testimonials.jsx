@@ -57,29 +57,16 @@ function Testimonials({ data }) {
               <span>Client confidence</span>
             </div>
 
-            <div className="testimonials-trust-row">
-                <div className="testimonials-avatar-stack">
-                  {data.items.slice(0, 3).map((item) => (
-                    <span key={item.name} className="testimonial-avatar-chip" aria-hidden="true">
-                      <span>{avatarInitial(item.name)}</span>
-                    </span>
-                  ))}
-                  <span className="testimonial-avatar-chip testimonial-avatar-chip-accent" aria-hidden="true">
-                    <span>+</span>
-                  </span>
-                </div>
-
-              <div className="testimonials-trust-copy">
-                <strong>{data.summary.trustLine}</strong>
-              </div>
-            </div>
-
-            <div className="testimonials-signal-row">
-              {data.signals.map((signal) => (
-                <span key={signal} className="testimonials-signal-pill">
-                  {signal}
+            <div className="testimonials-side-author">
+              <span className="testimonial-slide-avatar">
+                <span>{avatarInitial(activeItem.name)}</span>
+              </span>
+              <div>
+                <strong>{activeItem.name}</strong>
+                <span>
+                  {activeItem.role} / {activeItem.company}
                 </span>
-              ))}
+              </div>
             </div>
 
             <div className="testimonials-side-controls">
@@ -124,20 +111,6 @@ function Testimonials({ data }) {
                   </svg>
                 </span>
                 <p className="testimonial-slide-quote">{activeItem.quote}</p>
-
-                <div className="testimonial-slide-footer">
-                  <div className="testimonial-slide-author">
-                    <span className="testimonial-slide-avatar">
-                      <span>{avatarInitial(activeItem.name)}</span>
-                    </span>
-                    <div>
-                      <strong>{activeItem.name}</strong>
-                      <span>
-                        {activeItem.role} / {activeItem.company}
-                      </span>
-                    </div>
-                  </div>
-                </div>
               </motion.article>
             </AnimatePresence>
           </div>
