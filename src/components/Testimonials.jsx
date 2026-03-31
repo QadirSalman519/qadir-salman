@@ -16,6 +16,7 @@ function Testimonials({ data }) {
   const goToSlide = (index) => setActiveIndex(index);
   const goToPrevious = () => setActiveIndex((current) => (current - 1 + data.items.length) % data.items.length);
   const goToNext = () => setActiveIndex((current) => (current + 1) % data.items.length);
+  const avatarInitial = (name) => name.trim().charAt(0).toUpperCase();
 
   return (
     <section id="testimonials" className="section-block testimonials-section">
@@ -51,16 +52,16 @@ function Testimonials({ data }) {
             </div>
 
             <div className="testimonials-trust-row">
-              <div className="testimonials-avatar-stack">
-                {data.items.slice(0, 3).map((item) => (
-                  <span key={item.name} className="testimonial-avatar-chip" aria-hidden="true">
-                    {item.name.charAt(0)}
+                <div className="testimonials-avatar-stack">
+                  {data.items.slice(0, 3).map((item) => (
+                    <span key={item.name} className="testimonial-avatar-chip" aria-hidden="true">
+                      <span>{avatarInitial(item.name)}</span>
+                    </span>
+                  ))}
+                  <span className="testimonial-avatar-chip testimonial-avatar-chip-accent" aria-hidden="true">
+                    <span>+</span>
                   </span>
-                ))}
-                <span className="testimonial-avatar-chip testimonial-avatar-chip-accent" aria-hidden="true">
-                  +
-                </span>
-              </div>
+                </div>
 
               <div className="testimonials-trust-copy">
                 <strong>{data.summary.trustLine}</strong>
@@ -95,11 +96,21 @@ function Testimonials({ data }) {
                 exit={{ opacity: 0, y: -18 }}
                 transition={{ duration: 0.38, ease: 'easeOut' }}
               >
+                <span className="testimonial-quote-icon" aria-hidden="true">
+                  <svg viewBox="0 0 64 64">
+                    <path
+                      fill="currentColor"
+                      d="M24 18c-8.5 3.7-13.5 10.4-14 21.6h10.9c-.5 4 1.9 7.4 6.5 7.4 4.7 0 8.1-3.6 8.1-8.8 0-7.7-5.3-12.5-11.5-12.5H21c1.1-2.8 3.3-5 6.6-6.7L24 18Zm26 0c-8.5 3.7-13.5 10.4-14 21.6h10.9c-.5 4 1.9 7.4 6.5 7.4 4.7 0 8.1-3.6 8.1-8.8 0-7.7-5.3-12.5-11.5-12.5H47c1.1-2.8 3.3-5 6.6-6.7L50 18Z"
+                    />
+                  </svg>
+                </span>
                 <p className="testimonial-slide-quote">{activeItem.quote}</p>
 
                 <div className="testimonial-slide-footer">
                   <div className="testimonial-slide-author">
-                    <span className="testimonial-slide-avatar">{activeItem.name.charAt(0)}</span>
+                    <span className="testimonial-slide-avatar">
+                      <span>{avatarInitial(activeItem.name)}</span>
+                    </span>
                     <div>
                       <strong>{activeItem.name}</strong>
                       <span>
