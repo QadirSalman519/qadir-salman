@@ -13,7 +13,7 @@ function Experience({ data }) {
         >
           <span className="ghost-number">05</span>
           <div className="section-intro-copy">
-            <p className="eyebrow-label">Experience</p>
+            <p className="eyebrow-label">Career Path</p>
             <h2>{data.heading}</h2>
             <p>{data.subtext}</p>
           </div>
