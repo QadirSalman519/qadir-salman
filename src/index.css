@@ -1662,25 +1662,44 @@ button {
 
 .testimonials-side-score {
   display: grid;
-  gap: 6px;
+  gap: 10px;
 }
 
 .testimonials-side-score strong {
-  font-family: 'Syne', sans-serif;
+  display: block;
+  font-family: 'Arial', sans-serif;
   font-size: clamp(54px, 7vw, 88px);
-  font-weight: 800;
-  line-height: 0.88;
-  letter-spacing: -4px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
   color: rgba(246, 251, 248, 0.98);
 }
 
 .testimonials-side-score span {
-  color: rgba(226, 239, 232, 0.58);
-  font-family: 'Syne', sans-serif;
-  font-size: 13px;
-  font-style: italic;
-  font-weight: 600;
-  letter-spacing: 0.2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 6px 10px 6px 8px;
+  border: 1px solid rgba(0, 229, 160, 0.12);
+  border-radius: 999px;
+  background: rgba(0, 229, 160, 0.06);
+  color: rgba(226, 239, 232, 0.72);
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.testimonials-side-score span::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 12px rgba(0, 229, 160, 0.45);
 }
 
 .testimonials-side-author {
