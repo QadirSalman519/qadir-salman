@@ -152,7 +152,7 @@ button {
   margin: 0;
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: 30px;
+  font-size: 25px;
   line-height: 1.06;
   letter-spacing: -0.8px;
 }
@@ -180,29 +180,29 @@ button {
 }
 
 .stack-section-intro {
-  margin-bottom: 42px;
+  margin-bottom: 30px;
 }
 
 .stack-ghost-number {
-  top: -48px;
-  font-size: clamp(88px, 13vw, 128px);
-  color: rgba(0, 229, 160, 0.07);
+  top: -34px;
+  font-size: clamp(80px, 12vw, 90px);
+  color: rgba(226, 239, 232, 0.03);
 }
 
 .stack-intro-copy {
-  max-width: 760px;
+  max-width: 580px;
 }
 
 .stack-intro-copy h2 {
-  font-size: clamp(36px, 4.6vw, 58px);
-  letter-spacing: -1.8px;
-  line-height: 0.95;
+  font-size: 25px;
+  letter-spacing: -0.8px;
+  line-height: 1.06;
 }
 
 .stack-intro-copy p:last-child {
-  max-width: 700px;
-  font-size: 16px;
-  line-height: 1.95;
+  max-width: 620px;
+  font-size: 15px;
+  line-height: 1.9;
 }
 
 .cursor-dot,
