@@ -59,11 +59,11 @@ function Testimonials({ data }) {
 
             <div className="testimonials-side-author">
               <span className="testimonial-slide-avatar">
-                <span>{avatarInitial(activeItem.name)}</span>
+                <span className="testimonial-slide-avatar-text">{avatarInitial(activeItem.name)}</span>
               </span>
               <div>
                 <strong>{activeItem.name}</strong>
-                <span>
+                <span className="testimonials-side-author-meta">
                   {activeItem.role} / {activeItem.company}
                 </span>
               </div>

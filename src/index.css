@@ -1700,7 +1700,7 @@ button {
   color: rgba(246, 251, 248, 0.96);
 }
 
-.testimonials-side-author span {
+.testimonials-side-author-meta {
   display: block;
   margin-top: 6px;
   color: rgba(226, 239, 232, 0.58);
@@ -1815,7 +1815,7 @@ button {
   overflow: hidden;
 }
 
-.testimonial-slide-avatar span {
+.testimonial-slide-avatar-text {
   display: block;
   line-height: 1;
   transform: translateY(1px);
