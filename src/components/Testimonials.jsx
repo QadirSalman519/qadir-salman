@@ -16,7 +16,13 @@ function Testimonials({ data }) {
   const goToSlide = (index) => setActiveIndex(index);
   const goToPrevious = () => setActiveIndex((current) => (current - 1 + data.items.length) % data.items.length);
   const goToNext = () => setActiveIndex((current) => (current + 1) % data.items.length);
-  const avatarInitial = (name) => name.trim().charAt(0).toUpperCase();
+  const avatarInitial = (name) =>
+    name
+      .trim()
+      .split(/\s+/)
+      .slice(0, 2)
+      .map((part) => part.charAt(0).toUpperCase())
+      .join('');
 
   return (
     <section id="testimonials" className="section-block testimonials-section">
