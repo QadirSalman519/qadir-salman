@@ -106,7 +106,7 @@ button {
 .mobile-nav-link {
   text-transform: uppercase;
   letter-spacing: 5px;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 300;
 }
 
@@ -1376,15 +1376,25 @@ button {
 
 .projects-shell {
   position: relative;
+  z-index: 1;
 }
 
 .projects-section {
-  background:
-    radial-gradient(circle at 18% 22%, rgba(0, 229, 160, 0.06), transparent 24%),
-    radial-gradient(circle at 82% 78%, rgba(110, 196, 255, 0.05), transparent 26%),
-    linear-gradient(180deg, rgba(8, 18, 14, 0.74), rgba(5, 11, 9, 0.18));
+  position: relative;
+  isolation: isolate;
   border-top: 1px solid rgba(255, 255, 255, 0.03);
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.projects-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(0, 229, 160, 0.08), transparent 24%),
+    radial-gradient(circle at 84% 76%, rgba(82, 188, 255, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(8, 18, 14, 0.86) 0%, rgba(7, 17, 14, 0.72) 42%, rgba(7, 20, 18, 0.86) 100%);
 }
 
 .filter-tabs {
@@ -2059,14 +2069,26 @@ button {
 }
 
 .contact-section {
+  position: relative;
+  isolation: isolate;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   background:
-    radial-gradient(circle at left bottom, rgba(0, 229, 160, 0.07), transparent 34%),
-    radial-gradient(circle at right top, rgba(255, 255, 255, 0.03), transparent 26%),
-    var(--surface-3);
+    radial-gradient(circle at 16% 18%, rgba(0, 229, 160, 0.08), transparent 24%),
+    radial-gradient(circle at 84% 76%, rgba(82, 188, 255, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(8, 18, 14, 0.86) 0%, rgba(7, 17, 14, 0.72) 42%, rgba(7, 20, 18, 0.86) 100%);
 }
 
 .contact-grid {
   position: relative;
+  z-index: 1;
   grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr);
   gap: 0;
   border: 1px solid var(--border-faint);
@@ -2429,7 +2451,7 @@ button {
   gap: 10px;
   margin: 0;
   color: rgba(226, 239, 232, 0.58);
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 2.2px;
   text-transform: uppercase;
 }
