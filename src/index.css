@@ -1378,6 +1378,15 @@ button {
   position: relative;
 }
 
+.projects-section {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(0, 229, 160, 0.06), transparent 24%),
+    radial-gradient(circle at 82% 78%, rgba(110, 196, 255, 0.05), transparent 26%),
+    linear-gradient(180deg, rgba(8, 18, 14, 0.74), rgba(5, 11, 9, 0.18));
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
 .filter-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -2212,7 +2221,7 @@ button {
 
 .contact-info-copy small {
   color: rgba(226, 239, 232, 0.42);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -2336,7 +2345,7 @@ button {
   left: 18px;
   color: var(--text-muted);
   letter-spacing: 2px;
-  font-size: 8px;
+  font-size: 12px;
   text-transform: uppercase;
   transition: transform 0.2s ease, color 0.2s ease;
   pointer-events: none;

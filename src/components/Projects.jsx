@@ -41,7 +41,7 @@ function Projects({ data }) {
   };
 
   return (
-    <section id="work" className="section-block">
+    <section id="work" className="section-block projects-section">
       <div className="container-shell projects-shell">
         <motion.div
           className="section-intro"
