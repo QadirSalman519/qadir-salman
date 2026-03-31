@@ -1796,6 +1796,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 54px;
   width: 54px;
   height: 54px;
   border-radius: 999px;
@@ -1808,17 +1809,16 @@ button {
   font-family: 'Syne', sans-serif;
   font-size: 16px;
   font-weight: 700;
-  line-height: 54px;
+  line-height: 1;
   letter-spacing: -0.6px;
   text-align: center;
   overflow: hidden;
 }
 
 .testimonial-slide-avatar span {
-  display: inline-block;
-  width: 100%;
+  display: block;
   line-height: 1;
-  transform: none;
+  transform: translateY(1px);
 }
 
 .testimonial-slide-author strong {
