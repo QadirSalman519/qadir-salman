@@ -1,5 +1,15 @@
 import { motion } from 'framer-motion';
 
+const cardReveal = {
+  hidden: { opacity: 0, y: 28, filter: 'blur(6px)' },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
 function Experience({ data }) {
   return (
     <section id="experience" className="section-block experience-section">
@@ -24,10 +34,12 @@ function Experience({ data }) {
             <motion.article
               key={item.company}
               className={`experience-card interactive ${item.badge.toLowerCase().includes('current') ? 'experience-card-current' : ''}`}
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true, amount: 0.07 }}
-              transition={{ duration: 0.65, delay: index * 0.08, ease: 'easeOut' }}
+              variants={cardReveal}
+              custom={index * 0.08}
+              whileHover={{ y: -8, scale: 1.005 }}
             >
               <div className="experience-card-side">
                 <span className="experience-card-label">

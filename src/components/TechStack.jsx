@@ -155,6 +155,7 @@ function TechStack({ data }) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.55, delay: index * 0.05, ease: 'easeOut' }}
+                  whileHover={{ y: -6, scale: 1.01 }}
                 >
                   <div className="stack-step-header">
                     <span className="stack-step-index">{String(index + 1).padStart(2, '0')}</span>

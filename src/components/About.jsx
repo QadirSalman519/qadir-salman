@@ -9,6 +9,26 @@ const reveal = {
   }),
 };
 
+const staggerGroup = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.06,
+    },
+  },
+};
+
+const cardReveal = {
+  hidden: { opacity: 0, y: 24, filter: 'blur(8px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
 function About({ data }) {
   const { personal, about } = data;
   const bioParts = personal.bio.split('\n\n');
@@ -56,23 +76,41 @@ function About({ data }) {
               </div>
 
               <aside className="about-side-rail">
-                <div className="about-proof-grid">
+                <motion.div
+                  className="about-proof-grid"
+                  variants={staggerGroup}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.15 }}
+                >
                   {about.highlights.map((item) => (
-                    <article key={item.label} className="about-highlight-card">
+                    <motion.article
+                      key={item.label}
+                      className="about-highlight-card"
+                      variants={cardReveal}
+                      whileHover={{ y: -6, scale: 1.01 }}
+                      transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                    >
                       <span className="about-highlight-label">{item.label}</span>
                       <p>{item.text}</p>
-                    </article>
+                    </motion.article>
                   ))}
-                </div>
+                </motion.div>
 
-                <div className="about-stats-grid">
+                <motion.div
+                  className="about-stats-grid"
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ duration: 0.55, delay: 0.14, ease: [0.22, 1, 0.36, 1] }}
+                >
                   {featuredStats.map((item) => (
                     <div key={item.label} className="about-stat-cell">
                       <strong>{item.value}</strong>
                       <span>{item.label}</span>
                     </div>
                   ))}
-                </div>
+                </motion.div>
               </aside>
             </div>
           </motion.article>

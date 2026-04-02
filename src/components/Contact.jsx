@@ -167,10 +167,11 @@ function Contact({ data }) {
         <div className="contact-grid">
           <motion.article
             className="contact-panel contact-left"
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true, amount: 0.07 }}
-            transition={{ duration: 0.65, delay: 0.08, ease: 'easeOut' }}
+            transition={{ duration: 0.65, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -4 }}
           >
             <div className="contact-left-top">
               <h3>
@@ -224,10 +225,11 @@ function Contact({ data }) {
 
           <motion.article
             className="contact-panel contact-right"
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true, amount: 0.07 }}
-            transition={{ duration: 0.65, delay: 0.16, ease: 'easeOut' }}
+            transition={{ duration: 0.65, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -4 }}
           >
             <div className="contact-form-head">
               <p className="contact-form-title">{contact.formTitle}</p>

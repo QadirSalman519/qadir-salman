@@ -44,14 +44,19 @@ function Testimonials({ data }) {
 
         <motion.div
           className="testimonials-slider"
-          initial={{ opacity: 0, y: 22 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 26, filter: 'blur(8px)' }}
+          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.07 }}
-          transition={{ duration: 0.65, delay: 0.04, ease: 'easeOut' }}
+          transition={{ duration: 0.7, delay: 0.04, ease: [0.22, 1, 0.36, 1] }}
+          whileHover={{ y: -4 }}
         >
           <div className="testimonials-slider-pattern" aria-hidden="true" />
 
-          <div className="testimonials-slider-side">
+          <motion.div
+            className="testimonials-slider-side"
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.35, ease: 'easeOut' }}
+          >
             <div className="testimonials-timer" aria-hidden="true">
               <motion.span
                 key={activeIndex}
@@ -103,17 +108,21 @@ function Testimonials({ data }) {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="testimonials-slider-main">
+          <motion.div
+            className="testimonials-slider-main"
+            animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+            transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+          >
             <AnimatePresence mode="wait">
               <motion.article
                 key={activeItem.name}
                 className="testimonial-slide"
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -18 }}
-                transition={{ duration: 0.38, ease: 'easeOut' }}
+                initial={{ opacity: 0, y: 18, scale: 0.985 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -18, scale: 0.985 }}
+                transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
               >
                 <span className="testimonial-quote-icon" aria-hidden="true">
                   <svg viewBox="0 0 64 64">
@@ -123,7 +132,7 @@ function Testimonials({ data }) {
                 <p className="testimonial-slide-quote">{activeItem.quote}</p>
               </motion.article>
             </AnimatePresence>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
