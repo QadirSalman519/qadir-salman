@@ -93,7 +93,6 @@ function SocialDock({ personal, contact }) {
             target={isExternal ? '_blank' : undefined}
             rel={isExternal ? 'noreferrer' : undefined}
             aria-label={item.name}
-            title={item.name}
             initial={{ opacity: 0, x: 12 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4, delay: 1.18 + index * 0.06, ease: [0.22, 1, 0.36, 1] }}
@@ -101,6 +100,9 @@ function SocialDock({ personal, contact }) {
           >
             <span className="social-dock-icon" aria-hidden="true">
               <DockIcon name={item.name} />
+            </span>
+            <span className="social-dock-tooltip" aria-hidden="true">
+              {item.name}
             </span>
           </motion.a>
         );
