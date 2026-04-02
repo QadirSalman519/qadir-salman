@@ -59,9 +59,8 @@ My core strength is backend architecture, API design, payment systems, and scala
       badge: 'Available for new work',
     },
     headline: [
-      { text: 'Senior full-stack', accent: false },
-      { text: 'engineering for', accent: false },
-      { text: 'business-critical', accent: false },
+      { text: 'Full-stack engineering', accent: false },
+      { text: 'for business-critical', accent: false },
       { text: 'systems that ship', accent: true },
       { text: 'and stay stable.', accentDim: true },
     ],
