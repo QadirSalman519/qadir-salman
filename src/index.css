@@ -203,6 +203,86 @@ button {
   text-transform: uppercase;
 }
 
+.social-dock {
+  position: fixed;
+  top: 50%;
+  right: 22px;
+  z-index: 84;
+  display: grid;
+  gap: 10px;
+  transform: translateY(-50%);
+}
+
+.social-dock-link {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 229, 160, 0.14);
+  background:
+    linear-gradient(180deg, rgba(12, 21, 17, 0.88), rgba(7, 13, 10, 0.94)),
+    rgba(6, 13, 10, 0.78);
+  box-shadow:
+    0 18px 28px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(18px);
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s ease,
+    box-shadow 0.28s ease,
+    background 0.28s ease;
+}
+
+.social-dock-link:hover {
+  border-color: rgba(0, 229, 160, 0.24);
+  box-shadow:
+    0 22px 36px rgba(0, 0, 0, 0.3),
+    0 0 24px rgba(0, 229, 160, 0.12);
+}
+
+.social-dock-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  color: var(--accent);
+}
+
+.social-dock-icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.social-dock-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 229, 160, 0.12);
+  background: rgba(7, 13, 10, 0.92);
+  color: rgba(226, 239, 232, 0.84);
+  display: inline-flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.social-dock-link:hover .social-dock-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
 .site-ambient {
   position: fixed;
   inset: 0;
@@ -3200,6 +3280,17 @@ button {
     width: 64px;
   }
 
+  .social-dock {
+    right: 16px;
+    gap: 8px;
+  }
+
+  .social-dock-link {
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+  }
+
   .about-stage-layout,
   .about-proof-grid,
   .contact-highlight-grid {
@@ -3354,6 +3445,29 @@ button {
   .back-to-top-label {
     font-size: 8px;
     letter-spacing: 2px;
+  }
+
+  .social-dock {
+    right: 12px;
+    top: auto;
+    bottom: 86px;
+    transform: none;
+  }
+
+  .social-dock-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+  }
+
+  .social-dock-icon,
+  .social-dock-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .social-dock-tooltip {
+    display: none;
   }
 
   .hero-grid {
