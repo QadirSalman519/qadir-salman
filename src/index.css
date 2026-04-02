@@ -745,10 +745,10 @@ button {
 .hero-headline {
   margin: 0;
   font-family: 'Syne', sans-serif;
-  font-size: clamp(48px, 6vw, 76px);
+  font-size: clamp(48px, 6vw, 60px);
   font-weight: 800;
   letter-spacing: -3px;
-  line-height: 0.93;
+  line-height: 1;
 }
 
 .hero-headline.dim {

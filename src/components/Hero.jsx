@@ -196,7 +196,7 @@ function Hero({ data }) {
             ))}
           </motion.div>
 
-          <motion.div className="hero-metric-grid" variants={fadeUp} initial="hidden" animate="show" custom={0.98}>
+          {/* <motion.div className="hero-metric-grid" variants={fadeUp} initial="hidden" animate="show" custom={0.98}>
             {hero.cards.map((card, index) => (
               <motion.article
                 key={card.label}
@@ -210,7 +210,7 @@ function Hero({ data }) {
                 <strong>{card.value}</strong>
               </motion.article>
             ))}
-          </motion.div>
+          </motion.div> */}
         </div>
 
         <div className="hero-visual">
