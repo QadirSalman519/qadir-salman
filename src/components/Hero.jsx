@@ -16,6 +16,11 @@ function Hero({ data }) {
   const personal = data.personal;
   const hero = data.hero;
   const hasProfileImage = Boolean(hero.profileImage?.enabled && hero.profileImage?.src);
+  const proofPoints = [
+    { label: 'Experience', value: personal.experience },
+    { label: 'Location', value: personal.locationShort },
+    { label: 'Focus', value: 'Production systems' },
+  ];
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -181,13 +186,58 @@ function Hero({ data }) {
               Download CV
             </a>
           </motion.div>
+
+          <motion.div className="hero-proof-strip" variants={fadeUp} initial="hidden" animate="show" custom={0.86}>
+            {proofPoints.map((item) => (
+              <div key={item.label} className="hero-proof-chip">
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.div className="hero-metric-grid" variants={fadeUp} initial="hidden" animate="show" custom={0.98}>
+            {hero.cards.map((card, index) => (
+              <motion.article
+                key={card.label}
+                className="hero-metric-card"
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.02 + index * 0.12, ease: 'easeOut' }}
+                whileHover={{ y: -6, transition: { duration: 0.22 } }}
+              >
+                <span>{card.label}</span>
+                <strong>{card.value}</strong>
+              </motion.article>
+            ))}
+          </motion.div>
         </div>
 
         <div className="hero-visual">
           <div className="hero-visual-glow" aria-hidden="true" />
           <motion.div className="hero-visual-stage" variants={fadeUp} initial="hidden" animate="show" custom={0.3}>
+            <motion.div
+              className="hero-floating-card hero-floating-card-top"
+              animate={{ y: [0, -14, 0], rotate: [0, -2, 0] }}
+              transition={{ duration: 7.2, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <span>Trusted Stack</span>
+              <strong>{hero.cards[0].value}</strong>
+            </motion.div>
+
+            <motion.div
+              className="hero-floating-card hero-floating-card-bottom"
+              animate={{ y: [0, 12, 0], rotate: [0, 2, 0] }}
+              transition={{ duration: 6.4, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
+            >
+              <span>Built For</span>
+              <strong>Scale, stability, and ownership</strong>
+            </motion.div>
+
             {hasProfileImage ? (
               <div className="profile-figure-wrap">
+                <div className="profile-halo-ring profile-halo-ring-a" aria-hidden="true" />
+                <div className="profile-halo-ring profile-halo-ring-b" aria-hidden="true" />
                 <div className="profile-frame-outline" aria-hidden="true" />
                 <div className="profile-figure">
                   <img
@@ -207,6 +257,7 @@ function Hero({ data }) {
 
             <div className="hero-image-caption">
               <span>{personal.name}</span>
+              <small>{personal.heroTitle}</small>
             </div>
           </motion.div>
         </div>

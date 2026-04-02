@@ -1,6 +1,26 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
+const listReveal = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.04,
+    },
+  },
+};
+
+const rowReveal = {
+  hidden: { opacity: 0, y: 28, filter: 'blur(6px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+  },
+};
+
 function Projects({ data }) {
   const [activeFilter, setActiveFilter] = useState('All');
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -74,11 +94,19 @@ function Projects({ data }) {
           ))}
         </div>
 
-        <div className="projects-list">
+        <motion.div
+          className="projects-list"
+          variants={listReveal}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.08 }}
+        >
           {filteredProjects.map((project) => (
-            <article
+            <motion.article
               key={project.id}
               className="project-row interactive"
+              variants={rowReveal}
+              whileHover={{ y: -4 }}
               onMouseEnter={() => setHoveredProject(project)}
               onMouseLeave={() => setHoveredProject(null)}
               onMouseMove={handleMouseMove}
@@ -103,9 +131,9 @@ function Projects({ data }) {
               <span className="project-link-arrow" aria-hidden="true">
                 ↗
               </span>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
 
       </div>
 

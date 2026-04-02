@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import { Toaster } from 'react-hot-toast';
 import Cursor from './components/Cursor';
 import Navbar from './components/Navbar';
@@ -18,6 +19,12 @@ const sectionIds = ['home', 'about', 'stack', 'work', 'experience', 'testimonial
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const progressScale = useSpring(scrollYProgress, {
+    stiffness: 140,
+    damping: 26,
+    mass: 0.22,
+  });
 
   useEffect(() => {
     const touchCapable =
@@ -76,7 +83,14 @@ function App() {
   return (
     <>
       {!isTouchDevice && <Cursor />}
+      <motion.div className="site-progress" style={{ scaleX: progressScale }} />
       <div className="site-shell">
+        <div className="site-ambient" aria-hidden="true">
+          <span className="site-ambient-orb site-ambient-orb-a" />
+          <span className="site-ambient-orb site-ambient-orb-b" />
+          <span className="site-ambient-grid" />
+          <span className="site-ambient-noise" />
+        </div>
         <Navbar sections={sections} activeSection={activeSection} personal={portfolioData.personal} />
         <main>
           <Hero data={portfolioData} />

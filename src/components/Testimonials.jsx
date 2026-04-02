@@ -52,6 +52,16 @@ function Testimonials({ data }) {
           <div className="testimonials-slider-pattern" aria-hidden="true" />
 
           <div className="testimonials-slider-side">
+            <div className="testimonials-timer" aria-hidden="true">
+              <motion.span
+                key={activeIndex}
+                className="testimonials-timer-bar"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 4.5, ease: 'linear' }}
+              />
+            </div>
+
             <div className="testimonials-side-score">
               <span>{data.summary.label}</span>
               <strong>{data.summary.score}</strong>

@@ -29,7 +29,13 @@ function Navbar({ sections, activeSection, personal }) {
         <button type="button" className="logo-block interactive" onClick={() => scrollToSection('home')}>
           <span className="logo-badge" aria-hidden="true">
             <span className="logo-badge-ring" />
-            <span className="logo-badge-text">{personal.shortName}</span>
+            <motion.span
+              className="logo-badge-text"
+              animate={{ scale: [1, 1.05, 1] }}
+              transition={{ duration: 4.8, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              {personal.shortName}
+            </motion.span>
           </span>
           <span className="logo-copy">
             <span className="logo-name">{personal.name}</span>
@@ -51,13 +57,17 @@ function Navbar({ sections, activeSection, personal }) {
         </nav>
 
         <div className="navbar-cta">
-          <div className="availability-pill">
+          <motion.div
+            className="availability-pill"
+            animate={{ y: [0, -2, 0] }}
+            transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
+          >
             <span className="availability-pulse" aria-hidden="true" />
             <span className="availability-copy">
               <strong>Available</strong>
               <small>For projects</small>
             </span>
-          </div>
+          </motion.div>
           <button type="button" className="hire-button interactive" onClick={() => scrollToSection('contact')}>
             Book a Call
           </button>
