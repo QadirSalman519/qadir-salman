@@ -206,10 +206,21 @@ button {
 .social-dock {
   position: fixed;
   top: 50%;
-  right: 22px;
+  right: 0;
   z-index: 84;
   display: grid;
-  gap: 10px;
+  gap: 6px;
+  padding: 12px 8px 12px 10px;
+  border-radius: 22px 0 0 22px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-right: 0;
+  background:
+    linear-gradient(180deg, rgba(10, 18, 14, 0.84), rgba(7, 12, 10, 0.96)),
+    rgba(6, 13, 10, 0.78);
+  box-shadow:
+    -16px 24px 46px rgba(0, 0, 0, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(22px);
   transform: translateY(-50%);
 }
 
@@ -217,70 +228,57 @@ button {
   position: relative;
   display: inline-grid;
   place-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 18px;
-  border: 1px solid rgba(0, 229, 160, 0.14);
-  background:
-    linear-gradient(180deg, rgba(12, 21, 17, 0.88), rgba(7, 13, 10, 0.94)),
-    rgba(6, 13, 10, 0.78);
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.025);
   box-shadow:
-    0 18px 28px rgba(0, 0, 0, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(18px);
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
   transition:
     transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
     border-color 0.28s ease,
     box-shadow 0.28s ease,
     background 0.28s ease;
+  overflow: hidden;
+}
+
+.social-dock-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(0, 229, 160, 0.14), transparent 72%);
+  opacity: 0.88;
+  pointer-events: none;
 }
 
 .social-dock-link:hover {
-  border-color: rgba(0, 229, 160, 0.24);
+  border-color: rgba(0, 229, 160, 0.14);
+  background:
+    linear-gradient(180deg, rgba(0, 229, 160, 0.08), rgba(255, 255, 255, 0.02)),
+    rgba(255, 255, 255, 0.03);
   box-shadow:
-    0 22px 36px rgba(0, 0, 0, 0.3),
-    0 0 24px rgba(0, 229, 160, 0.12);
+    0 16px 28px rgba(0, 0, 0, 0.24),
+    0 0 22px rgba(0, 229, 160, 0.08);
 }
 
 .social-dock-icon {
+  position: relative;
+  z-index: 1;
   display: inline-grid;
   place-items: center;
-  width: 22px;
-  height: 22px;
-  color: var(--accent);
+  width: 100%;
+  height: 100%;
+  color: rgba(244, 250, 247, 0.96);
 }
 
 .social-dock-icon svg {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   display: block;
-}
-
-.social-dock-tooltip {
-  position: absolute;
-  right: calc(100% + 12px);
-  top: 50%;
-  transform: translateY(-50%) translateX(8px);
-  min-height: 32px;
-  padding: 0 12px;
-  border-radius: 999px;
-  border: 1px solid rgba(0, 229, 160, 0.12);
-  background: rgba(7, 13, 10, 0.92);
-  color: rgba(226, 239, 232, 0.84);
-  display: inline-flex;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  white-space: nowrap;
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  transition: opacity 0.22s ease, transform 0.22s ease;
-}
-
-.social-dock-link:hover .social-dock-tooltip {
-  opacity: 1;
-  transform: translateY(-50%) translateX(0);
 }
 
 .site-ambient {
@@ -3281,13 +3279,12 @@ button {
   }
 
   .social-dock {
-    right: 16px;
-    gap: 8px;
+    padding: 10px 7px 10px 9px;
   }
 
   .social-dock-link {
-    width: 48px;
-    height: 48px;
+    width: 42px;
+    height: 42px;
     border-radius: 16px;
   }
 
@@ -3448,26 +3445,28 @@ button {
   }
 
   .social-dock {
-    right: 12px;
+    right: 0;
     top: auto;
     bottom: 86px;
     transform: none;
+    padding: 8px 6px 8px 8px;
   }
 
   .social-dock-link {
-    width: 44px;
-    height: 44px;
+    width: 38px;
+    min-height: 40px;
     border-radius: 14px;
   }
 
   .social-dock-icon,
-  .social-dock-icon svg {
-    width: 19px;
-    height: 19px;
+  .social-dock-icon {
+    width: 28px;
+    height: 28px;
   }
 
-  .social-dock-tooltip {
-    display: none;
+  .social-dock-icon svg {
+    width: 15px;
+    height: 15px;
   }
 
   .hero-grid {

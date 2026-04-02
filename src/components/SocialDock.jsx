@@ -83,11 +83,12 @@ function SocialDock({ personal, contact }) {
     >
       {dockItems.map((item, index) => {
         const isExternal = !['Email', 'Call'].includes(item.name);
+        const itemClass = `social-dock-link social-dock-link-${item.name.toLowerCase()} interactive magnetic`;
 
         return (
           <motion.a
             key={item.name}
-            className="social-dock-link interactive magnetic"
+            className={itemClass}
             href={item.href}
             target={isExternal ? '_blank' : undefined}
             rel={isExternal ? 'noreferrer' : undefined}
@@ -101,7 +102,6 @@ function SocialDock({ personal, contact }) {
             <span className="social-dock-icon" aria-hidden="true">
               <DockIcon name={item.name} />
             </span>
-            <span className="social-dock-tooltip">{item.name}</span>
           </motion.a>
         );
       })}
