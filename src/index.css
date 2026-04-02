@@ -88,6 +88,47 @@ button {
   position: relative;
 }
 
+.magnetic,
+.tilt-card {
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  --pointer-xp: 50%;
+  --pointer-yp: 50%;
+}
+
+.magnetic {
+  transform: translate3d(var(--magnetic-x, 0), var(--magnetic-y, 0), 0);
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s ease,
+    border-color 0.28s ease,
+    background 0.28s ease;
+  will-change: transform;
+}
+
+.magnetic:hover {
+  transform: translate3d(var(--magnetic-x, 0), calc(var(--magnetic-y, 0) - 3px), 0) scale(1.01);
+}
+
+.tilt-card {
+  transform-style: preserve-3d;
+  transform:
+    perspective(1400px)
+    rotateX(var(--tilt-rotate-x, 0deg))
+    rotateY(var(--tilt-rotate-y, 0deg))
+    translate3d(var(--tilt-shift-x, 0), var(--tilt-shift-y, 0), 0);
+  transition:
+    transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.32s ease,
+    border-color 0.32s ease,
+    background 0.32s ease;
+  will-change: transform;
+}
+
+.tilt-card::before {
+  background-position: var(--pointer-xp) var(--pointer-yp);
+}
+
 .site-progress {
   position: fixed;
   top: 0;

@@ -185,12 +185,12 @@ function Hero({ data }) {
           <motion.div className="hero-actions" variants={fadeUp} initial="hidden" animate="show" custom={0.72}>
             <button
               type="button"
-              className="primary-button interactive"
+              className="primary-button interactive magnetic"
               onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View My Work
             </button>
-            <a className="ghost-button cv-button interactive" href="/qadir-salman-cv.txt" download>
+            <a className="ghost-button cv-button interactive magnetic" href="/qadir-salman-cv.txt" download>
               <span className="cv-button-icon" aria-hidden="true">
                 ↓
               </span>
@@ -228,7 +228,7 @@ function Hero({ data }) {
           <div className="hero-visual-glow" aria-hidden="true" />
           <motion.div className="hero-visual-stage" variants={fadeUp} initial="hidden" animate="show" custom={0.3}>
             <motion.div
-              className="hero-floating-card hero-floating-card-top"
+              className="hero-floating-card hero-floating-card-top tilt-card"
               animate={{ y: [0, -14, 0], rotate: [0, -2, 0] }}
               transition={{ duration: 7.2, repeat: Infinity, ease: 'easeInOut' }}
             >
@@ -237,7 +237,7 @@ function Hero({ data }) {
             </motion.div>
 
             <motion.div
-              className="hero-floating-card hero-floating-card-bottom"
+              className="hero-floating-card hero-floating-card-bottom tilt-card"
               animate={{ y: [0, 12, 0], rotate: [0, 2, 0] }}
               transition={{ duration: 6.4, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
             >
@@ -247,7 +247,7 @@ function Hero({ data }) {
 
             {hasProfileImage ? (
               <motion.div
-                className="profile-figure-wrap"
+                className="profile-figure-wrap tilt-card"
                 animate={{ y: [0, -8, 0], rotate: [0, -1, 0] }}
                 transition={{ duration: 8.5, repeat: Infinity, ease: 'easeInOut' }}
               >

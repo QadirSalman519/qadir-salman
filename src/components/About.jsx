@@ -55,7 +55,7 @@ function About({ data }) {
 
         <div className="about-grid">
           <motion.article
-            className="about-stage"
+            className="about-stage tilt-card"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.07 }}

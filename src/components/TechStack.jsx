@@ -85,7 +85,7 @@ function TechStack({ data }) {
 
         <div className="stack-story">
           <div className="stack-spotlight">
-            <div className="stack-spotlight-inner">
+            <div className="stack-spotlight-inner tilt-card">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentCategory.name}

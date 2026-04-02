@@ -166,7 +166,7 @@ function Contact({ data }) {
 
         <div className="contact-grid">
           <motion.article
-            className="contact-panel contact-left"
+            className="contact-panel contact-left tilt-card"
             initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true, amount: 0.07 }}
@@ -208,7 +208,7 @@ function Contact({ data }) {
                 {contact.social.map((social) => (
                   <a
                     key={social.name}
-                    className="social-button interactive"
+                    className="social-button interactive magnetic"
                     href={social.href}
                     target="_blank"
                     rel="noreferrer"
@@ -224,7 +224,7 @@ function Contact({ data }) {
           </motion.article>
 
           <motion.article
-            className="contact-panel contact-right"
+            className="contact-panel contact-right tilt-card"
             initial={{ opacity: 0, y: 24, filter: 'blur(8px)' }}
             whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             viewport={{ once: true, amount: 0.07 }}
@@ -268,7 +268,7 @@ function Contact({ data }) {
               </label>
 
               <div className="contact-submit-row">
-                <button type="submit" className="submit-button interactive" disabled={isSubmitting}>
+                <button type="submit" className="submit-button interactive magnetic" disabled={isSubmitting}>
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </div>

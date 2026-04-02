@@ -104,7 +104,7 @@ function Projects({ data }) {
           {filteredProjects.map((project) => (
             <motion.article
               key={project.id}
-              className="project-row interactive"
+              className="project-row interactive tilt-card"
               variants={rowReveal}
               whileHover={{ y: -4 }}
               onMouseEnter={() => setHoveredProject(project)}

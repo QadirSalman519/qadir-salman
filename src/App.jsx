@@ -67,6 +67,65 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    if (isTouchDevice || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return undefined;
+    }
+
+    const interactiveElements = Array.from(document.querySelectorAll('.magnetic, .tilt-card'));
+    const cleanups = interactiveElements.map((element) => {
+      const onMove = (event) => {
+        const rect = element.getBoundingClientRect();
+        const offsetX = event.clientX - rect.left;
+        const offsetY = event.clientY - rect.top;
+        const normalizedX = (offsetX / rect.width - 0.5) * 2;
+        const normalizedY = (offsetY / rect.height - 0.5) * 2;
+
+        element.style.setProperty('--pointer-x', `${offsetX}px`);
+        element.style.setProperty('--pointer-y', `${offsetY}px`);
+        element.style.setProperty('--pointer-xp', `${(offsetX / rect.width) * 100}%`);
+        element.style.setProperty('--pointer-yp', `${(offsetY / rect.height) * 100}%`);
+
+        if (element.classList.contains('magnetic')) {
+          element.style.setProperty('--magnetic-x', `${normalizedX * 8}px`);
+          element.style.setProperty('--magnetic-y', `${normalizedY * 8}px`);
+        }
+
+        if (element.classList.contains('tilt-card')) {
+          element.style.setProperty('--tilt-rotate-x', `${normalizedY * -5}deg`);
+          element.style.setProperty('--tilt-rotate-y', `${normalizedX * 7}deg`);
+          element.style.setProperty('--tilt-shift-x', `${normalizedX * 10}px`);
+          element.style.setProperty('--tilt-shift-y', `${normalizedY * 10}px`);
+        }
+      };
+
+      const onLeave = () => {
+        element.style.removeProperty('--pointer-x');
+        element.style.removeProperty('--pointer-y');
+        element.style.removeProperty('--pointer-xp');
+        element.style.removeProperty('--pointer-yp');
+        element.style.removeProperty('--magnetic-x');
+        element.style.removeProperty('--magnetic-y');
+        element.style.removeProperty('--tilt-rotate-x');
+        element.style.removeProperty('--tilt-rotate-y');
+        element.style.removeProperty('--tilt-shift-x');
+        element.style.removeProperty('--tilt-shift-y');
+      };
+
+      element.addEventListener('mousemove', onMove);
+      element.addEventListener('mouseleave', onLeave);
+
+      return () => {
+        element.removeEventListener('mousemove', onMove);
+        element.removeEventListener('mouseleave', onLeave);
+      };
+    });
+
+    return () => {
+      cleanups.forEach((cleanup) => cleanup());
+    };
+  }, [isTouchDevice]);
+
   const sections = useMemo(
     () => [
       { id: 'home', label: 'Home' },

@@ -33,7 +33,7 @@ function Experience({ data }) {
           {data.items.map((item, index) => (
             <motion.article
               key={item.company}
-              className={`experience-card interactive ${item.badge.toLowerCase().includes('current') ? 'experience-card-current' : ''}`}
+              className={`experience-card interactive tilt-card ${item.badge.toLowerCase().includes('current') ? 'experience-card-current' : ''}`}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.07 }}
