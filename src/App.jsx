@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Toaster } from 'react-hot-toast';
 import Cursor from './components/Cursor';
+import BackToTop from './components/BackToTop';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Ticker from './components/Ticker';
@@ -143,6 +144,7 @@ function App() {
     <>
       {!isTouchDevice && <Cursor />}
       <motion.div className="site-progress" style={{ scaleX: progressScale }} />
+      <BackToTop />
       <div className="site-shell">
         <div className="site-ambient" aria-hidden="true">
           <span className="site-ambient-orb site-ambient-orb-a" />
