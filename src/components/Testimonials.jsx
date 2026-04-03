@@ -26,6 +26,12 @@ function Testimonials({ data }) {
 
   return (
     <section id="testimonials" className="section-block testimonials-section">
+      <div className="testimonials-motion-field" aria-hidden="true">
+        <span className="testimonials-motion-orbit testimonials-motion-orbit-a" />
+        <span className="testimonials-motion-orbit testimonials-motion-orbit-b" />
+        <span className="testimonials-motion-pulse testimonials-motion-pulse-a" />
+        <span className="testimonials-motion-pulse testimonials-motion-pulse-b" />
+      </div>
       <div className="container-shell">
         <motion.div
           className="section-intro"

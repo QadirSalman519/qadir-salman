@@ -2033,6 +2033,7 @@ button {
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
+
 .projects-section::before {
   content: '';
   position: absolute;
@@ -2182,6 +2183,76 @@ button {
 
 .experience-section {
   padding-top: 36px;
+}
+
+.experience-motion-field,
+.experience-motion-rail,
+.experience-motion-node,
+.experience-motion-ring,
+.testimonials-motion-field,
+.testimonials-motion-orbit,
+.testimonials-motion-pulse {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.experience-motion-field,
+.testimonials-motion-field {
+  inset: 0;
+  overflow: hidden;
+}
+
+.experience-motion-rail {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 160, 0.28), transparent);
+  opacity: 0.72;
+}
+
+.experience-motion-rail-a {
+  top: 118px;
+  left: -20%;
+  width: 52%;
+  animation: experience-rail-drift-a 9s linear infinite;
+}
+
+.experience-motion-rail-b {
+  bottom: 144px;
+  right: -18%;
+  width: 44%;
+  animation: experience-rail-drift-b 11s linear infinite;
+}
+
+.experience-motion-node {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(0, 229, 160, 0.94);
+  box-shadow: 0 0 14px rgba(0, 229, 160, 0.32);
+}
+
+.experience-motion-node-a {
+  top: 114px;
+  left: 12%;
+  animation: experience-node-travel-a 9s linear infinite;
+}
+
+.experience-motion-node-b {
+  bottom: 140px;
+  right: 12%;
+  animation: experience-node-travel-b 11s linear infinite;
+}
+
+.experience-motion-ring {
+  top: 186px;
+  right: 10%;
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 229, 160, 0.24);
+  background: radial-gradient(circle, rgba(0, 229, 160, 0.08), transparent 68%);
+  opacity: 0.56;
+  animation: experience-ring-breathe 4.4s ease-in-out infinite;
 }
 
 .project-preview {
@@ -2425,6 +2496,48 @@ button {
 
 .testimonials-section {
   padding-top: 22px;
+}
+
+.testimonials-motion-orbit {
+  border-radius: 999px;
+  border: 1px solid rgba(0, 229, 160, 0.18);
+  opacity: 0.48;
+}
+
+.testimonials-motion-orbit-a {
+  top: 118px;
+  left: -42px;
+  width: 220px;
+  height: 220px;
+  animation: testimonials-orbit-spin 18s linear infinite;
+}
+
+.testimonials-motion-orbit-b {
+  right: 6%;
+  bottom: 58px;
+  width: 120px;
+  height: 120px;
+  animation: testimonials-orbit-spin 12s linear infinite reverse;
+}
+
+.testimonials-motion-pulse {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(0, 229, 160, 0.92);
+  box-shadow: 0 0 14px rgba(0, 229, 160, 0.3);
+}
+
+.testimonials-motion-pulse-a {
+  top: 208px;
+  left: 14%;
+  animation: testimonials-pulse-hop 5.2s ease-in-out infinite;
+}
+
+.testimonials-motion-pulse-b {
+  right: 14%;
+  bottom: 148px;
+  animation: testimonials-pulse-hop 4.4s ease-in-out infinite reverse;
 }
 
 .testimonials-slider {
@@ -3001,6 +3114,45 @@ button {
 
 .contact-right {
   position: relative;
+}
+
+@keyframes experience-rail-drift-a {
+  0% { transform: translate3d(-10%, 0, 0); opacity: 0; }
+  12%, 86% { opacity: 0.72; }
+  100% { transform: translate3d(30%, 0, 0); opacity: 0; }
+}
+
+@keyframes experience-rail-drift-b {
+  0% { transform: translate3d(10%, 0, 0); opacity: 0; }
+  12%, 86% { opacity: 0.64; }
+  100% { transform: translate3d(-28%, 0, 0); opacity: 0; }
+}
+
+@keyframes experience-node-travel-a {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  8%, 86% { opacity: 1; }
+  100% { transform: translate3d(640px, 0, 0); opacity: 0; }
+}
+
+@keyframes experience-node-travel-b {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  8%, 86% { opacity: 1; }
+  100% { transform: translate3d(-560px, 0, 0); opacity: 0; }
+}
+
+@keyframes experience-ring-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.44; }
+  50% { transform: scale(1.12); opacity: 0.78; }
+}
+
+@keyframes testimonials-orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes testimonials-pulse-hop {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.42; }
+  50% { transform: translate3d(0, -12px, 0) scale(1.35); opacity: 1; }
 }
 
 .contact-form-head {

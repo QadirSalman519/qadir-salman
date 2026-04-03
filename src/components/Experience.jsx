@@ -13,6 +13,13 @@ const cardReveal = {
 function Experience({ data }) {
   return (
     <section id="experience" className="section-block experience-section">
+      <div className="experience-motion-field" aria-hidden="true">
+        <span className="experience-motion-rail experience-motion-rail-a" />
+        <span className="experience-motion-rail experience-motion-rail-b" />
+        <span className="experience-motion-node experience-motion-node-a" />
+        <span className="experience-motion-node experience-motion-node-b" />
+        <span className="experience-motion-ring" />
+      </div>
       <div className="container-shell">
         <motion.div
           className="section-intro"
