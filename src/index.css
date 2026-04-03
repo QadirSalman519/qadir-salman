@@ -2033,6 +2033,8 @@ button {
 }
 
 .project-row {
+  --project-light-x: 50%;
+  --project-light-y: 50%;
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(260px, 320px) 64px;
@@ -2050,11 +2052,32 @@ button {
     box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.project-row::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(
+      280px circle at var(--project-light-x) var(--project-light-y),
+      rgba(0, 229, 160, 0.12),
+      rgba(0, 229, 160, 0.06) 22%,
+      transparent 58%
+    );
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  pointer-events: none;
+}
+
 .project-row:hover {
   background: rgba(0, 229, 160, 0.04);
   border-color: rgba(0, 229, 160, 0.08);
   transform: translateY(-6px);
   box-shadow: 0 26px 48px rgba(0, 0, 0, 0.24);
+}
+
+.project-row:hover::before {
+  opacity: 1;
 }
 
 .project-bar {

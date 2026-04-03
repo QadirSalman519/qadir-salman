@@ -58,6 +58,16 @@ function Projects({ data }) {
       y: event.clientY - 36,
       renderLeft,
     };
+
+    const rect = event.currentTarget.getBoundingClientRect();
+    event.currentTarget.style.setProperty('--project-light-x', `${event.clientX - rect.left}px`);
+    event.currentTarget.style.setProperty('--project-light-y', `${event.clientY - rect.top}px`);
+  };
+
+  const handleMouseLeave = (event) => {
+    setHoveredProject(null);
+    event.currentTarget.style.setProperty('--project-light-x', '50%');
+    event.currentTarget.style.setProperty('--project-light-y', '50%');
   };
 
   return (
@@ -108,7 +118,7 @@ function Projects({ data }) {
               variants={rowReveal}
               whileHover={{ y: -4 }}
               onMouseEnter={() => setHoveredProject(project)}
-              onMouseLeave={() => setHoveredProject(null)}
+              onMouseLeave={handleMouseLeave}
               onMouseMove={handleMouseMove}
             >
               <span className="project-bar" aria-hidden="true" />
