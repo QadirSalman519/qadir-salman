@@ -2184,14 +2184,6 @@ button {
   padding-top: 36px;
 }
 
-.experience-section .section-intro-copy p:last-child {
-  padding-left: 0;
-}
-
-.experience-section .section-intro-copy p:last-child::before {
-  display: none;
-}
-
 .project-preview {
   position: fixed;
   top: 0;
