@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
@@ -11,22 +11,11 @@ const fadeUp = {
 };
 
 function Hero({ data }) {
-  const sectionRef = useRef(null);
   const canvasRef = useRef(null);
   const mouseRef = useRef({ x: null, y: null });
   const personal = data.personal;
   const hero = data.hero;
   const hasProfileImage = Boolean(hero.profileImage?.enabled && hero.profileImage?.src);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  });
-  const copyY = useTransform(scrollYProgress, [0, 1], [0, -34]);
-  const copyOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.45]);
-  const visualY = useTransform(scrollYProgress, [0, 1], [0, -60]);
-  const visualRotate = useTransform(scrollYProgress, [0, 1], [0, -2.5]);
-  const radialScale = useTransform(scrollYProgress, [0, 1], [1, 1.16]);
-  const radialOpacity = useTransform(scrollYProgress, [0, 0.8], [0.92, 0.42]);
   const proofPoints = [
     { label: 'Experience', value: personal.experience },
     { label: 'Location', value: personal.locationShort },
@@ -143,11 +132,11 @@ function Hero({ data }) {
   }, []);
 
   return (
-    <section ref={sectionRef} id="home" className="hero-section">
+    <section id="home" className="hero-section">
       <canvas ref={canvasRef} className="hero-canvas" aria-hidden="true" />
-      <motion.div className="hero-radial" aria-hidden="true" style={{ scale: radialScale, opacity: radialOpacity }} />
+      <div className="hero-radial" aria-hidden="true" />
       <div className="container-shell hero-grid">
-        <motion.div className="hero-copy" style={{ y: copyY, opacity: copyOpacity }}>
+        <motion.div className="hero-copy">
           <motion.div className="hero-kicker" variants={fadeUp} initial="hidden" animate="show" custom={0}>
             <span className="hero-kicker-label">Intro</span>
             <span className="hero-kicker-divider" aria-hidden="true" />
@@ -224,7 +213,7 @@ function Hero({ data }) {
           </motion.div> */}
         </motion.div>
 
-        <motion.div className="hero-visual" style={{ y: visualY, rotate: visualRotate }}>
+        <motion.div className="hero-visual">
           <div className="hero-visual-glow" aria-hidden="true" />
           <motion.div className="hero-visual-stage" variants={fadeUp} initial="hidden" animate="show" custom={0.3}>
             <motion.div

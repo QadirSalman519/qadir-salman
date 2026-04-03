@@ -912,6 +912,7 @@ button {
   width: 100%;
   height: 100%;
   opacity: 0.92;
+  pointer-events: none;
 }
 
 .hero-radial {
@@ -1331,6 +1332,7 @@ button {
 
 .scroll-indicator {
   position: absolute;
+  z-index: 3;
   left: 50%;
   bottom: 24px;
   transform: translateX(-50%);
@@ -1346,7 +1348,17 @@ button {
   letter-spacing: 5px;
   font-size: 10px;
   font-weight: 600;
+  cursor: pointer;
   animation: pulse-soft 1.8s infinite;
+}
+
+#about,
+#stack,
+#work,
+#experience,
+#testimonials,
+#contact {
+  scroll-margin-top: 112px;
 }
 
 .scroll-line {
