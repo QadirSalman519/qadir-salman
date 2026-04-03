@@ -225,15 +225,6 @@ function Hero({ data }) {
               <strong>{hero.cards[0].value}</strong>
             </motion.div>
 
-            <motion.div
-              className="hero-floating-card hero-floating-card-bottom tilt-card"
-              animate={{ y: [0, 12, 0], rotate: [0, 2, 0] }}
-              transition={{ duration: 6.4, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
-            >
-              <span>Built For</span>
-              <strong>Scale, stability, and ownership</strong>
-            </motion.div>
-
             {hasProfileImage ? (
               <motion.div
                 className="profile-figure-wrap tilt-card"
