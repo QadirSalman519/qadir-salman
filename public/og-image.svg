@@ -1,0 +1,60 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="96" y1="54" x2="1092" y2="576" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1510"/>
+      <stop offset="1" stop-color="#06100C"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(260 116) rotate(41) scale(320 280)">
+      <stop stop-color="#00E5A0" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#00E5A0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(974 154) rotate(133) scale(296 258)">
+      <stop stop-color="#9BFFE1" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#9BFFE1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="153" y1="486" x2="438" y2="486" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00E5A0"/>
+      <stop offset="1" stop-color="#00E5A0" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" rx="0" fill="#050C09"/>
+  <rect width="1200" height="630" fill="url(#glowA)"/>
+  <rect width="1200" height="630" fill="url(#glowB)"/>
+
+  <rect x="64" y="64" width="1072" height="502" rx="36" fill="url(#bg)" stroke="rgba(255,255,255,0.08)"/>
+  <rect x="96" y="96" width="1008" height="438" rx="30" fill="#09120E" fill-opacity="0.9" stroke="rgba(255,255,255,0.06)"/>
+
+  <rect x="136" y="132" width="210" height="44" rx="22" fill="#0D2119" stroke="rgba(0,229,160,0.22)"/>
+  <circle cx="161" cy="154" r="6" fill="#00E5A0"/>
+  <text x="180" y="160" fill="#DFF8EE" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700" letter-spacing="2.4">AVAILABLE FOR PROJECTS</text>
+
+  <text x="136" y="250" fill="#F3FBF7" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="700">Qadir Salman</text>
+  <text x="136" y="318" fill="#00E5A0" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" letter-spacing="1.2">Senior Full-Stack Software Engineer</text>
+  <text x="136" y="392" fill="#D7EAE2" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="400">
+    Production-grade systems, backend architecture,
+  </text>
+  <text x="136" y="430" fill="#D7EAE2" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="400">
+    APIs, payment integrations, and scalable execution.
+  </text>
+  <rect x="136" y="474" width="302" height="4" rx="2" fill="url(#accentLine)"/>
+
+  <rect x="770" y="140" width="246" height="322" rx="28" fill="#101B16" stroke="rgba(0,229,160,0.14)"/>
+  <rect x="790" y="160" width="206" height="220" rx="22" fill="#14231D"/>
+  <rect x="826" y="194" width="134" height="152" rx="28" fill="#0D1B15" stroke="rgba(255,255,255,0.06)"/>
+  <circle cx="893" cy="246" r="42" fill="#11211B" stroke="rgba(0,229,160,0.16)"/>
+  <text x="861" y="260" fill="#00E5A0" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">QS</text>
+  <rect x="835" y="308" width="116" height="10" rx="5" fill="rgba(243,251,247,0.84)"/>
+  <rect x="850" y="327" width="86" height="8" rx="4" fill="rgba(243,251,247,0.28)"/>
+  <rect x="790" y="160" width="206" height="220" rx="22" fill="url(#glowB)" fill-opacity="0.35"/>
+
+  <rect x="730" y="188" width="194" height="84" rx="22" fill="#151F1B" fill-opacity="0.92" stroke="rgba(255,255,255,0.06)"/>
+  <text x="754" y="218" fill="#8A9B93" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="2">TRUSTED STACK</text>
+  <text x="754" y="248" fill="#F3FBF7" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Laravel / React /</text>
+  <text x="754" y="272" fill="#F3FBF7" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Next.js / Node.js</text>
+
+  <rect x="826" y="420" width="220" height="82" rx="22" fill="#151F1B" fill-opacity="0.92" stroke="rgba(255,255,255,0.06)"/>
+  <text x="850" y="449" fill="#8A9B93" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" letter-spacing="2">FOCUS</text>
+  <text x="850" y="478" fill="#F3FBF7" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Architecture / APIs /</text>
+  <text x="850" y="501" fill="#F3FBF7" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Payments / Scale</text>
+</svg>
