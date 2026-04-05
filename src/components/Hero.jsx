@@ -16,11 +16,6 @@ function Hero({ data }) {
   const personal = data.personal;
   const hero = data.hero;
   const hasProfileImage = Boolean(hero.profileImage?.enabled && hero.profileImage?.src);
-  const proofPoints = [
-    { label: 'Experience', value: personal.experience },
-    { label: 'Location', value: personal.locationShort },
-    { label: 'Focus', value: 'Production systems' },
-  ];
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -187,15 +182,6 @@ function Hero({ data }) {
             </a>
           </motion.div>
 
-          <motion.div className="hero-proof-strip" variants={fadeUp} initial="hidden" animate="show" custom={0.86}>
-            {proofPoints.map((item) => (
-              <div key={item.label} className="hero-proof-chip">
-                <span>{item.label}</span>
-                <strong>{item.value}</strong>
-              </div>
-            ))}
-          </motion.div>
-
           {/* <motion.div className="hero-metric-grid" variants={fadeUp} initial="hidden" animate="show" custom={0.98}>
             {hero.cards.map((card, index) => (
               <motion.article
@@ -244,7 +230,6 @@ function Hero({ data }) {
                   />
                   <div className="profile-image-overlay" aria-hidden="true" />
                 </div>
-                <div className="profile-badge-chip">{hero.profileImage.badge}</div>
               </motion.div>
             ) : (
               <div className="profile-figure profile-figure-placeholder">
@@ -260,17 +245,6 @@ function Hero({ data }) {
         </motion.div>
       </div>
 
-      <motion.button
-        type="button"
-        className="scroll-indicator interactive"
-        initial={{ opacity: 0, y: 18 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.65, delay: 1.08, ease: 'easeOut' }}
-        onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-      >
-        <span className="scroll-line" />
-        <span>SCROLL</span>
-      </motion.button>
     </section>
   );
 }
