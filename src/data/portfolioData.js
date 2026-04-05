@@ -120,7 +120,7 @@ My core strength is backend architecture, API design, payment systems, and scala
   },
   techStack: {
     heading: 'Capability as system, not a list.',
-    subtext: 'These tools were used on real production systems across commerce, ERP, healthcare, travel, and internal platforms.',
+    subtext: 'Every tool listed here has been used in live, production-grade systems - not just tutorials.',
     categories: [
       {
         name: 'Frontend',
@@ -163,7 +163,7 @@ My core strength is backend architecture, API design, payment systems, and scala
       {
         name: 'Architecture & Systems',
         icon: 'AS',
-        tools: ['Multi-Tenant', 'RBAC', 'Performance Opt.', 'ERP Systems', 'Automation', 'Reporting'],
+        tools: ['Multi-Tenant', 'Role-Based Access Control', 'Performance Optimization', 'ERP Systems', 'Automation', 'Reporting'],
       },
     ],
   },
