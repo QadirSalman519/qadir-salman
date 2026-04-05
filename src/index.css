@@ -3775,6 +3775,23 @@ button {
     text-align: center;
   }
 
+  .stack-spotlight {
+    display: none;
+  }
+
+  .stack-story {
+    gap: 0;
+  }
+
+  .stack-steps {
+    gap: 14px;
+  }
+
+  .stack-step-card,
+  .stack-step-card.active {
+    transform: none;
+  }
+
   .hero-proof-strip,
   .hero-metric-grid {
     grid-template-columns: 1fr;
