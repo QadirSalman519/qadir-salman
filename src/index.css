@@ -3327,7 +3327,7 @@ button {
 
 .contact-left {
   display: grid;
-  gap: 24px;
+  gap: 16px;
 }
 
 .contact-right {
@@ -3354,7 +3354,7 @@ button {
 }
 
 .contact-left h3 {
-  margin: 18px 0 14px;
+  margin: 14px 0 10px;
   max-width: 620px;
   font-size: clamp(30px, 4vw, 48px);
   line-height: 0.98;
@@ -3407,7 +3407,7 @@ button {
 
 .contact-direct-card {
   display: grid;
-  gap: 20px;
+  gap: 16px;
   padding: 24px;
   border-radius: 28px;
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -3556,8 +3556,8 @@ button {
 
 .contact-form-head {
   position: relative;
-  margin-bottom: 26px;
-  padding-bottom: 18px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
 }
 
 .contact-form-head::after {
@@ -3571,14 +3571,14 @@ button {
 }
 
 .contact-form-title {
-  max-width: 420px;
+  max-width: 260px;
   color: rgba(246, 251, 248, 0.98);
-  letter-spacing: -1.2px;
+  letter-spacing: -0.8px;
   margin: 0;
   font-family: 'Syne', sans-serif;
-  font-size: clamp(32px, 3.4vw, 44px);
+  font-size: clamp(24px, 2.2vw, 30px);
   font-weight: 700;
-  line-height: 0.94;
+  line-height: 1;
   text-transform: none;
   text-wrap: balance;
   text-shadow: 0 0 18px rgba(0, 229, 160, 0.04);

@@ -335,7 +335,7 @@ testimonials: {
   contact: {
     heading: "Let's talk about your project.",
     intro: 'Get in Touch',
-    formTitle: "Tell me what you're building",
+    formTitle: 'Project Form',
     leftHeading: {
       before: 'Building something serious?',
       accent: 'Let\'s make it',
