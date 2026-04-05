@@ -937,6 +937,7 @@ button {
 
 .hero-copy {
   max-width: 700px;
+  min-width: 0;
 }
 
 .hero-copy > * {
@@ -1011,6 +1012,8 @@ button {
   font-weight: 800;
   letter-spacing: -3px;
   line-height: 1;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .hero-headline.dim {
@@ -1032,6 +1035,7 @@ button {
   gap: 14px;
   margin-bottom: 18px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .hero-proof-strip {
@@ -3685,11 +3689,12 @@ button {
   }
 
   .social-dock {
-    right: 0;
+    right: 8px;
     top: auto;
     bottom: 86px;
     transform: none;
     padding: 8px 6px 8px 8px;
+    max-width: calc(100vw - 8px);
   }
 
   .social-dock-link {
@@ -3717,6 +3722,29 @@ button {
     width: min(100% - 24px, 1200px);
     padding-top: 108px;
     gap: 28px;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-copy,
+  .hero-headline-wrap,
+  .hero-tagline {
+    max-width: 100%;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.55rem, 12vw, 4.15rem);
+    line-height: 0.92;
+    letter-spacing: -2px;
+  }
+
+  .hero-tagline {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .scroll-indicator {
+    display: none;
   }
 
   .scroll-indicator {
@@ -3735,6 +3763,16 @@ button {
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
+  }
+
+  .hero-actions .primary-button,
+  .hero-actions .ghost-button,
+  .hero-actions .cv-button {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 
   .hero-proof-strip,
@@ -3908,6 +3946,71 @@ button {
     font-size: 9px;
     letter-spacing: 1.4px;
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-shell,
+  .hero-grid,
+  .mobile-menu {
+    width: min(100% - 16px, 1200px);
+  }
+
+  .hero-section {
+    padding-bottom: 44px;
+  }
+
+  .hero-grid {
+    padding-top: 96px;
+    gap: 22px;
+  }
+
+  .hero-kicker {
+    gap: 10px;
+    padding: 0 12px;
+    margin-bottom: 14px;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.15rem, 10.8vw, 3.45rem);
+    letter-spacing: -1.6px;
+  }
+
+  .hero-headline-wrap::after {
+    width: 92px;
+    bottom: -10px;
+  }
+
+  .hero-tagline {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .hero-proof-chip {
+    min-height: 42px;
+    padding: 0 14px;
+  }
+
+  .social-dock {
+    right: 6px;
+    bottom: 80px;
+    padding: 6px 5px 6px 7px;
+  }
+
+  .social-dock-link {
+    width: 34px;
+    min-height: 36px;
+    border-radius: 12px;
+  }
+
+  .social-dock-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .social-dock-icon svg {
+    width: 13px;
+    height: 13px;
   }
 }
 
