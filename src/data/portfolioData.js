@@ -46,8 +46,11 @@ const portfolioData = {
     available: 'Yes',
     established: '2019',
     experience: '6+ years',
-    quote: 'I take full responsibility for production - not just the code, the outcome.',
-    bio: `Senior Full-Stack Software Engineer with 6+ years of experience architecting, building, and owning production-grade applications across eCommerce, SaaS, ERP, and multi-tenant systems.
+    quote: "I don't just ship features - I own what happens after.",
+    bio: `Senior Full-Stack Engineer with 6+ years owning 
+production-grade platforms across eCommerce, SaaS, 
+ERP, and multi-tenant systems — from first commit 
+to live deployment.
 
 My core strength is backend architecture, API design, payment systems, and scalable full-stack execution using Laravel, PHP, Node.js, React, and Next.js.`,
   },
@@ -65,7 +68,7 @@ My core strength is backend architecture, API design, payment systems, and scala
     ],
     tagline:
       '6+ years building production-grade platforms across eCommerce, SaaS, ERP, and multi-tenant systems. I handle the full stack — architecture, APIs, payments, and deployment — so your product ships fast and stays stable.',
-    stats: ['6+ Years Exp.', '40+ Projects', '6+ Gateways'],
+    stats: ['6+ Years Exp.', '50+ Projects', '100% Ownership'],
     cards: [
       { label: 'Core Stack', value: 'Laravel · React · Next.js · Node.js' },
       { label: 'Payments', value: 'Stripe / PayPal / Clover / Square' },
@@ -91,27 +94,27 @@ My core strength is backend architecture, API design, payment systems, and scala
   about: {
     heading: 'Built for ownership, not task completion.',
     subtext: 'From architecture to deployment to production issues, I work with full responsibility for the system.',
-    quote: 'I take full responsibility for production - not just the code, the outcome.',
+    quote: "I don't just ship features - I own what happens after.",
     lead: 'I build reliable products with the mindset that launch is the start of responsibility, not the finish line.',
     highlights: [
       {
         label: 'Systems Thinking',
-        text: 'I design systems with maintainability, performance, and clear service boundaries in mind, especially for live multi-user products.',
+        text: 'I design with maintainability and clear service boundaries in mind - built for teams and scale.',
       },
       {
         label: 'Production Ownership',
-        text: 'I handle deployment realities, production bottlenecks, payment flows, automation jobs, and the issues that appear after launch.',
+        text: 'Deployment, bottlenecks, payment flows, background jobs - I handle what happens after launch too.',
       },
       {
         label: 'Team Impact',
-        text: 'I mentor junior engineers, improve code quality through reviews, and help teams move faster with cleaner patterns and technical clarity.',
+        text: 'I mentor junior engineers through code reviews and architectural guidance - raising team quality overall.',
       },
     ],
     skills: ['Laravel', 'React', 'Next.js', 'Node.js', 'MySQL', 'AWS', 'Docker', 'REST APIs'],
     stats: [
       { label: 'Years', value: '6+' },
       { label: 'Projects', value: '40+' },
-      { label: 'Gateways', value: '6+' },
+      { label: 'GatewaysA', value: '6+' },
       { label: 'Stores', value: '20+' },
     ],
   },
