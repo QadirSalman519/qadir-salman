@@ -113,8 +113,8 @@ My core strength is backend architecture, API design, payment systems, and scala
     skills: ['Laravel', 'React', 'Next.js', 'Node.js', 'MySQL', 'AWS', 'Docker', 'REST APIs'],
     stats: [
       { label: 'Years', value: '6+' },
-      { label: 'Projects', value: '40+' },
-      { label: 'GatewaysA', value: '6+' },
+      { label: 'Projects', value: '50+' },
+      { label: 'Ownership', value: '100%' },
       { label: 'Stores', value: '20+' },
     ],
   },
