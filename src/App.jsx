@@ -160,11 +160,11 @@ function App() {
   const sections = useMemo(
     () => [
       { id: 'home', label: 'Home' },
-      { id: 'about', label: 'About Me' },
-      { id: 'stack', label: 'Tech Stack' },
-      { id: 'work', label: 'Projects' },
+      { id: 'about', label: 'About' },
+      { id: 'stack', label: 'Stack' },
+      { id: 'work', label: 'Work' },
       { id: 'experience', label: 'Experience' },
-      { id: 'testimonials', label: 'Testimonials' },
+      { id: 'testimonials', label: 'Voices' },
       { id: 'contact', label: 'Contact' },
     ],
     [],
