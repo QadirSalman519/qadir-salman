@@ -104,7 +104,6 @@ function TechStack({ data }) {
                     <span className="stack-icon-box stack-icon-box-large">{currentCategory.icon}</span>
                     <div>
                       <h3>{currentCategory.name}</h3>
-                      <p>{data.subtext}</p>
                     </div>
                   </div>
 
