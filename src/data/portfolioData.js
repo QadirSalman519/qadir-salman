@@ -288,8 +288,8 @@ testimonials: {
     heading: 'Clients who trusted the system.',
     subtext: 'Feedback from founders and CTOs across eCommerce, SaaS, and multi-tenant platforms.',
     summary: {
-      label: 'Years Shipped',
-      score: '6+',
+      label: 'Client\'s Rating',
+      score: '5.0',
       stats: [
         { label: 'Role', value: 'Full-Stack Engineer' },
         { label: 'Focus', value: 'Ownership & Delivery' },
@@ -338,7 +338,7 @@ testimonials: {
     formTitle: "Tell me what you're building",
     leftHeading: {
       before: 'Need help with a production build,',
-      accent: 'system cleanup,',
+      accent: 'system integration,',
       after: ' or architecture review?',
     },
     leftCopy:
