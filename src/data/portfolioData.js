@@ -337,12 +337,12 @@ testimonials: {
     intro: 'Get in Touch',
     formTitle: "Tell me what you're building",
     leftHeading: {
-      before: 'Need help with a production build,',
-      accent: 'system integration,',
-      after: ' or architecture review?',
+      before: 'Building something serious?',
+      accent: 'Let\'s make it',
+      after: ' ship and scale.',
     },
     leftCopy:
-      'If you are planning a new platform, improving an existing codebase, or need help with APIs, payments, architecture, or production stability, send the details here and I will review it properly.',
+      "Planning a new platform or scaling an existing one? I work on APIs, payments, architecture, and production systems - send the details and I'll get back within 24 hours.",
     directCopy: 'Prefer email, phone, or WhatsApp? Reach out directly using the details below.',
     social: [
       { name: 'GitHub', href: 'https://github.com/qadirsalman' },

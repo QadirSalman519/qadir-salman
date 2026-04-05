@@ -182,9 +182,6 @@ function Contact({ data }) {
             </div>
 
             <div className="contact-direct-card">
-              <div className="contact-direct-head">
-                <span className="contact-direct-badge">Direct Contact</span>
-              </div>
 
               <div className="contact-info-list">
                 {infoRows.map((row) => (
