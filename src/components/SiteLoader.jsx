@@ -14,6 +14,7 @@ function SiteLoader() {
         <span className="site-loader-glow site-loader-glow-a" />
         <span className="site-loader-glow site-loader-glow-b" />
         <span className="site-loader-grid" />
+        <span className="site-loader-vignette" />
       </div>
 
       <div className="site-loader-core">
@@ -51,12 +52,12 @@ function SiteLoader() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.14, ease: 'easeOut' } }}
         >
-          <span className="site-loader-kicker">Initializing</span>
-          <strong className="site-loader-title">Crafting the experience...</strong>
+          <span className="site-loader-kicker">Initializing Portfolio</span>
+          <strong className="site-loader-title">Loading experience</strong>
+          <p className="site-loader-subtitle">A focused showcase of systems, products, and production-grade engineering.</p>
           <div className="site-loader-bars" aria-hidden="true">
             <span className="site-loader-bar site-loader-bar-a" />
             <span className="site-loader-bar site-loader-bar-b" />
-            <span className="site-loader-bar site-loader-bar-c" />
           </div>
         </motion.div>
       </div>
