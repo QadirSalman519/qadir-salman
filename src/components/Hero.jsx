@@ -132,12 +132,6 @@ function Hero({ data }) {
       <div className="hero-radial" aria-hidden="true" />
       <div className="container-shell hero-grid">
         <motion.div className="hero-copy">
-          <motion.div className="hero-kicker" variants={fadeUp} initial="hidden" animate="show" custom={0}>
-            <span className="hero-kicker-label">Intro</span>
-            <span className="hero-kicker-divider" aria-hidden="true" />
-            <span className="hero-kicker-index">01</span>
-          </motion.div>
-
           <div className="hero-headline-wrap">
             {hero.headline.map((line, index) => (
               <motion.h1

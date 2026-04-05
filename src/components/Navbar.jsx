@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 function Navbar({ sections, activeSection, personal }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const whatsappHref =
+    'https://wa.me/923102010954?text=Hi%20Qadir%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project.';
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 60);
@@ -68,9 +70,9 @@ function Navbar({ sections, activeSection, personal }) {
               <small>For projects</small>
             </span>
           </motion.div>
-          <button type="button" className="hire-button interactive" onClick={() => scrollToSection('contact')}>
-            Book a Call
-          </button>
+          <a className="hire-button interactive" href={whatsappHref} target="_blank" rel="noreferrer">
+            Chat on WhatsApp
+          </a>
           <button
             type="button"
             className={`menu-toggle interactive ${menuOpen ? 'open' : ''}`}
