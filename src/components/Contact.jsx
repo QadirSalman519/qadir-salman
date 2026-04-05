@@ -161,6 +161,7 @@ function Contact({ data }) {
           <div className="section-intro-copy">
             <p className="eyebrow-label">Contact</p>
             <h2>{contact.heading}</h2>
+            <p>{contact.leftCopy}</p>
           </div>
         </motion.div>
 
@@ -178,7 +179,6 @@ function Contact({ data }) {
                 {contact.leftHeading.before} <span className="accent-italic">{contact.leftHeading.accent}</span>
                 {contact.leftHeading.after}
               </h3>
-              <p className="contact-lead-copy">{contact.leftCopy}</p>
             </div>
 
             <div className="contact-direct-card">
