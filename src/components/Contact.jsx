@@ -228,9 +228,6 @@ function Contact({ data }) {
             transition={{ duration: 0.65, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
             whileHover={{ y: -4 }}
           >
-            <div className="contact-form-head">
-              <p className="contact-form-title">{contact.formTitle}</p>
-            </div>
             <form className="contact-form" onSubmit={submitForm} noValidate>
               <div className="contact-form-grid">
                 {[
