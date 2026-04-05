@@ -59,10 +59,9 @@ My core strength is backend architecture, API design, payment systems, and scala
       badge: 'Available for new work',
     },
     headline: [
-      { text: 'Full-stack engineering', accent: false },
-      { text: 'for business-critical', accent: false },
-      { text: 'systems that ship', accent: true },
-      { text: 'and stay stable.', accentDim: true },
+      { text: 'Systems that scale.', accent: false },
+      { text: 'Full-stack engineer.', accent: true },
+      { text: 'Code that never breaks', accentDim: true },
     ],
     tagline:
       'I build secure, scalable products across eCommerce, SaaS, ERP, and multi-tenant platforms, with strong focus on backend architecture, payments, APIs, and long-term maintainability.',
