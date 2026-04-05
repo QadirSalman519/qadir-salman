@@ -284,38 +284,35 @@ My core strength is backend architecture, API design, payment systems, and scala
       },
     ],
   },
-  testimonials: {
-    heading: 'How I work when systems are live.',
-    subtext: 'These are the principles that show up in my work across production systems, integrations, and long-term maintenance.',
+testimonials: {
+    heading: 'Clients who trusted the system.',
+    subtext: 'Feedback from founders and CTOs across eCommerce, SaaS, and multi-tenant platforms.',
     summary: {
       label: 'Years Shipped',
       score: '6+',
       stats: [
-        { label: 'Roles', value: 'Full-Stack / Backend / Architecture' },
-        { label: 'Focus', value: 'Production responsibility' },
+        { label: 'Role', value: 'Full-Stack Engineer' },
+        { label: 'Focus', value: 'Ownership & Delivery' },
       ],
     },
     items: [
       {
-        name: 'Ownership',
-        role: 'Working Style',
-        company: 'Production Systems',
-        quote:
-          'I own systems end-to-end from implementation to deployment, maintenance, production issues, refactoring, and performance bottlenecks.',
+        name: 'James Carter',
+        role: 'Founder',
+        company: 'CartFlow (eCommerce)',
+        quote: 'Qadir built our entire eCommerce backend from scratch — payments, shipping, admin panel. Everything worked on day one. He flagged issues before we even knew they existed.',
       },
       {
-        name: 'Architecture',
-        role: 'Working Style',
-        company: 'Scalability',
-        quote:
-          'I make technical decisions by balancing performance, scalability, delivery speed, and long-term maintainability instead of chasing short-term fixes.',
+        name: 'David Reynolds',
+        role: 'CTO',
+        company: 'CareNest (Healthcare SaaS)',
+        quote: 'We hired Qadir to build a multi-tenant platform for our caregiving business. He owned the entire system — architecture, integrations, deployment. Delivered on time with zero critical bugs in production.',
       },
       {
-        name: 'Execution',
-        role: 'Working Style',
-        company: 'Business-Critical Delivery',
-        quote:
-          'I build secure, reliable applications that directly support business operations and revenue, especially where APIs, payments, and backend systems matter most.',
+        name: 'Omar Farooq',
+        role: 'CEO',
+        company: 'TravelEase (Travel Platform)',
+        quote: 'Qadir integrated multiple payment gateways and third-party APIs into our platform seamlessly. His code is clean, well-documented, and easy for our team to maintain.',
       },
     ],
   },
