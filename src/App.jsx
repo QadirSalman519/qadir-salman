@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion';
 import { Toaster } from 'react-hot-toast';
 import Cursor from './components/Cursor';
 import BackToTop from './components/BackToTop';
 import SocialDock from './components/SocialDock';
 import Navbar from './components/Navbar';
+import SiteLoader from './components/SiteLoader';
 import Hero from './components/Hero';
 import Ticker from './components/Ticker';
 import About from './components/About';
@@ -21,6 +22,7 @@ const sectionIds = ['home', 'about', 'stack', 'work', 'experience', 'testimonial
 function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const { scrollYProgress } = useScroll();
   const progressScale = useSpring(scrollYProgress, {
     stiffness: 140,
@@ -33,6 +35,33 @@ function App() {
       window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     setIsTouchDevice(touchCapable);
     document.body.classList.toggle('custom-cursor-enabled', !touchCapable);
+  }, []);
+
+  useEffect(() => {
+    const minDuration = 1700;
+    const startedAt = Date.now();
+    document.body.classList.add('app-loading');
+
+    const finish = () => {
+      const remaining = Math.max(minDuration - (Date.now() - startedAt), 0);
+
+      window.setTimeout(() => {
+        setIsLoading(false);
+        document.body.classList.remove('app-loading');
+      }, remaining);
+    };
+
+    if (document.readyState === 'complete') {
+      finish();
+      return undefined;
+    }
+
+    window.addEventListener('load', finish, { once: true });
+
+    return () => {
+      document.body.classList.remove('app-loading');
+      window.removeEventListener('load', finish);
+    };
   }, []);
 
   useEffect(() => {
@@ -143,11 +172,22 @@ function App() {
 
   return (
     <>
+      <AnimatePresence>{isLoading ? <SiteLoader /> : null}</AnimatePresence>
       {!isTouchDevice && <Cursor />}
       <motion.div className="site-progress" style={{ scaleX: progressScale }} />
       <BackToTop />
       <SocialDock personal={portfolioData.personal} contact={portfolioData.contact} />
-      <div className="site-shell">
+      <motion.div
+        className="site-shell"
+        initial={false}
+        animate={{
+          opacity: isLoading ? 0 : 1,
+          y: isLoading ? 18 : 0,
+          filter: isLoading ? 'blur(12px)' : 'blur(0px)',
+        }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        aria-hidden={isLoading}
+      >
         <div className="site-ambient" aria-hidden="true">
           <span className="site-ambient-orb site-ambient-orb-a" />
           <span className="site-ambient-orb site-ambient-orb-b" />
@@ -166,7 +206,7 @@ function App() {
           <Contact data={portfolioData} />
         </main>
         <Footer personal={portfolioData.personal} />
-      </div>
+      </motion.div>
       <Toaster
         position="top-right"
         toastOptions={{
