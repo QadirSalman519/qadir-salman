@@ -3891,7 +3891,7 @@ button {
 
   .project-row {
     grid-template-columns: 1fr;
-    padding: 20px 18px 20px 26px;
+    padding: 20px 10px 20px 10px;
     gap: 12px;
   }
 
@@ -4001,12 +4001,12 @@ button {
     padding: 60px 0px 20px 0px;
   }
 
-  .projects-section,
+  /* .projects-section,
   .experience-section,
   .contact-section {
     padding-top: 60px;
     padding-bottom: 0px;
-  }
+  } */
 
   .section-intro,
   .stack-section-intro {
