@@ -64,7 +64,7 @@ My core strength is backend architecture, API design, payment systems, and scala
       { text: 'Code that never breaks', accentDim: true },
     ],
     tagline:
-      'I build secure, scalable products across eCommerce, SaaS, ERP, and multi-tenant platforms, with strong focus on backend architecture, payments, APIs, and long-term maintainability.',
+      '6+ years building production-grade platforms across eCommerce, SaaS, ERP, and multi-tenant systems. I handle the full stack — architecture, APIs, payments, and deployment — so your product ships fast and stays stable',
     stats: ['6+ Years Exp.', '40+ Projects', '6+ Gateways'],
     cards: [
       { label: 'Core Stack', value: 'Laravel / React / Next.js / Node.js' },
