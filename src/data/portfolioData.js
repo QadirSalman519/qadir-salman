@@ -258,19 +258,19 @@ My core strength is backend architecture, API design, payment systems, and scala
       { label: 'Production Ownership', line: '30%' },
     ],
   },
-  experience: {
+experience: {
     heading: "Where I've shipped.",
     subtext: 'From backend execution to architecture ownership, each role pushed me closer to shipping under real pressure.',
     items: [
       {
         period: 'Mar 2023 - Present',
         company: 'SOFTNOX TECHNOLOGIES',
-        title: 'Senior Full Stack Developer',
+        title: 'Senior Full-Stack Developer',
         focus: 'Architecture / Payments / Systems',
         description:
-          'Architected multi-tenant systems across healthcare, travel, and eCommerce. Owned 6+ payment gateway integrations. Built GoDaddy domain automation. Mentored juniors. Defined REST API architecture standards across the org.',
-        highlights: ['6+ gateway integrations', 'Multi-tenant platforms', 'API standards ownership'],
-        badge: 'Current',
+          'Led architecture and full ownership of production-grade multi-tenant platforms across healthcare, travel, and eCommerce. Made independent technical decisions on system design, API standards, and scalability. Drove payment infrastructure across 6+ gateways. Built internal automation systems reducing manual operations. Established coding standards and elevated junior engineers through structured mentorship and architectural guidance.',
+        highlights: ['6+ Gateway Integrations', 'Multi-Tenant Platforms', 'API Standards Ownership'],
+        badge: '3+ YRS / Current',
       },
       {
         period: 'Jun 2021 - Feb 2023',
@@ -278,9 +278,19 @@ My core strength is backend architecture, API design, payment systems, and scala
         title: 'Associate Backend Developer',
         focus: 'Commerce / ERP / Backend',
         description:
-          'Built and maintained 20+ live eCommerce stores. Contributed to ERP systems via Laravel Lumen. Optimized backend performance and collaborated on API design with senior engineers.',
-        highlights: ['20+ live stores', 'Laravel Lumen ERP work', 'Backend performance tuning'],
-        badge: '2 yrs',
+          'Built and maintained 20+ live eCommerce stores using Laravel and PHP. Contributed to ERP systems and operational workflows via Laravel Lumen. Optimized backend performance across production platforms and collaborated with senior engineers on API design and architecture.',
+        highlights: ['20+ Live Stores', 'Laravel Lumen ERP Work', 'Backend Performance Tuning'],
+        badge: '1.5+ YRS',
+      },
+      {
+        period: 'Oct 2019 - May 2021',
+        company: 'FLEVIO',
+        title: 'Junior Full-Stack Developer',
+        focus: 'Frontend / WordPress / PHP',
+        description:
+          'Built eCommerce stores, landing pages, and client-facing web applications using PHP and WordPress. Developed frontend interfaces and gained hands-on experience across multiple client projects.',
+        highlights: ['PHP & WordPress', 'eCommerce Stores', 'Frontend Interfaces'],
+        badge: '1.5 YRS',
       },
     ],
   },
