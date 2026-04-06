@@ -270,7 +270,7 @@ experience: {
         description:
           'Led architecture and full ownership of production-grade multi-tenant platforms across healthcare, travel, and eCommerce. Made independent technical decisions on system design, API standards, and scalability. Drove payment infrastructure across 6+ gateways. Built internal automation systems reducing manual operations. Established coding standards and elevated junior engineers through structured mentorship and architectural guidance.',
         highlights: ['6+ Gateway Integrations', 'Multi-Tenant Platforms', 'API Standards Ownership'],
-        badge: '3+ YRS / Current',
+        badge: '3+ YRS',
       },
       {
         period: 'Jun 2021 - Feb 2023',

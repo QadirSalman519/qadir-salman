@@ -37,10 +37,13 @@ function Experience({ data }) {
         </motion.div>
 
         <div className="experience-list">
-          {data.items.map((item, index) => (
+          {data.items.map((item, index) => {
+            const isCurrentRole = item.period.toLowerCase().includes('present');
+
+            return (
             <motion.article
               key={item.company}
-              className={`experience-card interactive tilt-card ${item.badge.toLowerCase().includes('current') ? 'experience-card-current' : ''}`}
+              className={`experience-card interactive tilt-card ${isCurrentRole ? 'experience-card-current' : ''}`}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.07 }}
@@ -50,7 +53,7 @@ function Experience({ data }) {
             >
               <div className="experience-card-side">
                 <span className="experience-card-label">
-                  {item.badge.toLowerCase().includes('current') ? 'Current Chapter' : 'Previous Chapter'}
+                  {isCurrentRole ? 'Current Chapter' : 'Previous Chapter'}
                 </span>
                 <span className="experience-card-period">{item.period}</span>
                 <span className="experience-card-company">{item.company}</span>
@@ -72,7 +75,7 @@ function Experience({ data }) {
                 </div>
               </div>
             </motion.article>
-          ))}
+          )})}
         </div>
       </div>
     </section>
