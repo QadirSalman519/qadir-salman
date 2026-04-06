@@ -2687,6 +2687,24 @@ button {
   letter-spacing: -0.7px;
 }
 
+@media (min-width: 1025px) {
+  .stack-step-header {
+    grid-template-columns: 1fr;
+    margin-bottom: 0;
+  }
+
+  .stack-step-index,
+  .stack-step-badge,
+  .stack-step-preview {
+    display: none;
+  }
+
+  .stack-step-card {
+    min-height: 122px;
+    align-content: center;
+  }
+}
+
 .projects-shell {
   position: relative;
   z-index: 1;
