@@ -355,7 +355,7 @@ testimonials: {
       "Planning a new platform or scaling an existing one? I work on APIs, payments, architecture, and production systems - send the details and I'll get back within 24 hours.",
     directCopy: 'Prefer email, phone, or WhatsApp? Reach out directly using the details below.',
     social: [
-      { name: 'GitHub', href: 'https://github.com/qadirsalman' },
+      { name: 'GitHub', href: 'https://github.com/QadirSalman519' },
       { name: 'LinkedIn', href: 'https://www.linkedin.com/in/qadirsalman' },
       { name: 'WhatsApp', href: 'https://wa.me/923102010954' },
     ],
