@@ -14,7 +14,7 @@ function TechStack({ data }) {
   const [activeCategory, setActiveCategory] = useState(data.categories[0]?.name || '');
   const [isCompactStackNav, setIsCompactStackNav] = useState(false);
   const frameRef = useRef(null);
-  const stepsRef = useRef(null);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 1024px)');
@@ -27,13 +27,31 @@ function TechStack({ data }) {
   }, []);
 
   useEffect(() => {
-    if (isCompactStackNav) return undefined;
-
     const updateActiveCategory = () => {
-      const cards = Array.from(stepsRef.current?.querySelectorAll('[data-stack-step]') || []);
+      if (isCompactStackNav) {
+        const section = sectionRef.current;
+        if (!section || !data.categories.length) return;
+
+        const rect = section.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const travel = rect.height - viewportHeight * 0.45;
+
+        if (travel <= 0) {
+          setActiveCategory(data.categories[0]?.name || '');
+          return;
+        }
+
+        const progress = Math.min(Math.max((viewportHeight * 0.2 - rect.top) / travel, 0), 0.999);
+        const nextIndex = Math.min(data.categories.length - 1, Math.floor(progress * data.categories.length));
+        const nextCategory = data.categories[nextIndex]?.name || data.categories[0]?.name || '';
+        setActiveCategory((current) => (current === nextCategory ? current : nextCategory));
+        return;
+      }
+
+      const cards = Array.from(sectionRef.current?.querySelectorAll('[data-stack-step]') || []);
       if (!cards.length) return;
 
-      const viewportAnchor = window.innerHeight * 0.42;
+      const viewportAnchor = isCompactStackNav ? window.innerHeight * 0.48 : window.innerHeight * 0.42;
       let closestCard = cards[0];
       let closestDistance = Number.POSITIVE_INFINITY;
 
@@ -71,15 +89,30 @@ function TechStack({ data }) {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
     };
-  }, [isCompactStackNav]);
+  }, [data.categories, isCompactStackNav]);
 
   const currentCategory = useMemo(
     () => data.categories.find((category) => category.name === activeCategory) || data.categories[0],
     [activeCategory, data.categories],
   );
 
+  const scrollToStep = (categoryName) => {
+    if (isCompactStackNav && sectionRef.current) {
+      const categoryIndex = data.categories.findIndex((category) => category.name === categoryName);
+      const viewportHeight = window.innerHeight;
+      const sectionTop = sectionRef.current.getBoundingClientRect().top + window.scrollY;
+      const sectionHeight = sectionRef.current.offsetHeight;
+      const travel = Math.max(sectionHeight - viewportHeight * 0.45, 1);
+      const ratio = data.categories.length > 1 ? categoryIndex / (data.categories.length - 1) : 0;
+      const targetTop = sectionTop + travel * ratio - viewportHeight * 0.2;
+      window.scrollTo({ top: targetTop, behavior: 'smooth' });
+    }
+
+    setActiveCategory(categoryName);
+  };
+
   return (
-    <section id="stack" className="section-block stack-section">
+    <section id="stack" ref={sectionRef} className="section-block stack-section">
       <div className="container-shell">
         <motion.div
           className="section-intro stack-section-intro"
@@ -97,49 +130,51 @@ function TechStack({ data }) {
         </motion.div>
 
         <div className="stack-story">
-          <div className="stack-spotlight">
-            <div className="stack-spotlight-inner tilt-card">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentCategory.name}
-                  className="stack-spotlight-content"
-                  initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
-                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                  exit={{ opacity: 0, y: -12, filter: 'blur(6px)' }}
-                  transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <div className="stack-spotlight-top">
-                    <span className="stack-spotlight-kicker">Active Capability</span>
-                    <span className="stack-spotlight-count">{currentCategory.tools.length} tools</span>
-                  </div>
-
-                  <div className="stack-hero-row">
-                    <span className="stack-icon-box stack-icon-box-large">{currentCategory.icon}</span>
-                    <div>
-                      <h3>{currentCategory.name}</h3>
+          {!isCompactStackNav ? (
+            <div className="stack-spotlight">
+              <div className="stack-spotlight-inner tilt-card">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentCategory.name}
+                    className="stack-spotlight-content"
+                    initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
+                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                    exit={{ opacity: 0, y: -12, filter: 'blur(6px)' }}
+                    transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <div className="stack-spotlight-top">
+                      <span className="stack-spotlight-kicker">Active Capability</span>
+                      <span className="stack-spotlight-count">{currentCategory.tools.length} tools</span>
                     </div>
-                  </div>
 
-                  <div className="stack-spotlight-line" />
+                    <div className="stack-hero-row">
+                      <span className="stack-icon-box stack-icon-box-large">{currentCategory.icon}</span>
+                      <div>
+                        <h3>{currentCategory.name}</h3>
+                      </div>
+                    </div>
 
-                  <div className="stack-tool-cloud">
-                    {currentCategory.tools.map((toolName, toolIndex) => (
-                      <motion.span
-                        key={toolName}
-                        className="stack-tool-pill"
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -6 }}
-                        transition={{ duration: 0.24, delay: toolIndex * 0.018, ease: 'easeOut' }}
-                      >
-                        {toolName}
-                      </motion.span>
-                    ))}
-                  </div>
-                </motion.div>
-              </AnimatePresence>
+                    <div className="stack-spotlight-line" />
+
+                    <div className="stack-tool-cloud">
+                      {currentCategory.tools.map((toolName, toolIndex) => (
+                        <motion.span
+                          key={toolName}
+                          className="stack-tool-pill"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -6 }}
+                          transition={{ duration: 0.24, delay: toolIndex * 0.018, ease: 'easeOut' }}
+                        >
+                          {toolName}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
             </div>
-          </div>
+          ) : null}
 
           <div className="stack-process-rail" aria-label="Stack categories">
             {data.categories.map((category, index) => {
@@ -150,7 +185,7 @@ function TechStack({ data }) {
                   <button
                     type="button"
                     className="stack-process-node interactive"
-                    onClick={() => setActiveCategory(category.name)}
+                    onClick={() => scrollToStep(category.name)}
                     aria-pressed={isActive}
                     aria-label={`${category.name} capability`}
                   >
@@ -162,7 +197,7 @@ function TechStack({ data }) {
             })}
           </div>
 
-          <div ref={stepsRef} className="stack-steps">
+          <div className="stack-steps">
             {data.categories.map((category, index) => {
               const isActive = currentCategory.name === category.name;
 
@@ -194,6 +229,52 @@ function TechStack({ data }) {
               );
             })}
           </div>
+
+          {isCompactStackNav ? (
+            <div className="stack-spotlight stack-spotlight-compact">
+              <div className="stack-spotlight-inner tilt-card">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentCategory.name}
+                    className="stack-spotlight-content"
+                    initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
+                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                    exit={{ opacity: 0, y: -12, filter: 'blur(6px)' }}
+                    transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <div className="stack-spotlight-top">
+                      <span className="stack-spotlight-kicker">Active Capability</span>
+                      <span className="stack-spotlight-count">{currentCategory.tools.length} tools</span>
+                    </div>
+
+                    <div className="stack-hero-row">
+                      <span className="stack-icon-box stack-icon-box-large">{currentCategory.icon}</span>
+                      <div>
+                        <h3>{currentCategory.name}</h3>
+                      </div>
+                    </div>
+
+                    <div className="stack-spotlight-line" />
+
+                    <div className="stack-tool-cloud">
+                      {currentCategory.tools.map((toolName, toolIndex) => (
+                        <motion.span
+                          key={toolName}
+                          className="stack-tool-pill"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -6 }}
+                          transition={{ duration: 0.24, delay: toolIndex * 0.018, ease: 'easeOut' }}
+                        >
+                          {toolName}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+          ) : null}
         </div>
       </div>
     </section>
