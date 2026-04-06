@@ -3823,30 +3823,36 @@ button {
 }
 
 .social-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
 }
 
 .social-button {
+  width: 100%;
+  justify-content: center;
   min-height: 46px;
   gap: 12px;
-  padding: 0 18px 0 14px;
+  padding: 0 16px;
   border-color: rgba(0, 229, 160, 0.12);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01));
   border-radius: 999px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
   white-space: nowrap;
 }
 
 .social-button-icon {
-  display: inline-grid;
-  place-items: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 28px;
   height: 28px;
   border-radius: 999px;
   background: rgba(0, 229, 160, 0.08);
   color: var(--accent);
+  flex: 0 0 28px;
 }
 
 .social-button-icon svg {
