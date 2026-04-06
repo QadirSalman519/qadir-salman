@@ -4461,8 +4461,7 @@ button {
 @media (max-width: 1024px) {
   .hero-grid,
   .contact-grid,
-  .skills-shell,
-  .stack-story {
+  .skills-shell {
     grid-template-columns: 1fr;
   }
 
@@ -4490,6 +4489,14 @@ button {
 
   .stack-spotlight {
     position: static;
+    order: 2;
+    min-width: 0;
+  }
+
+  .stack-story {
+    grid-template-columns: 74px minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
   }
 
   .testimonials-slider {
@@ -4515,6 +4522,23 @@ button {
   }
 
   .stack-process-rail {
+    position: sticky;
+    top: 108px;
+    order: 1;
+    display: grid;
+    justify-items: center;
+    align-content: start;
+    gap: 0;
+    padding-top: 8px;
+  }
+
+  .stack-process-node {
+    width: 50px;
+    height: 50px;
+    font-size: 13px;
+  }
+
+  .stack-steps {
     display: none;
   }
 
@@ -4756,15 +4780,40 @@ button {
   }
 
   .stack-spotlight {
-    display: none;
+    display: block;
+    order: 2;
+    min-width: 0;
   }
 
   .stack-story {
-    gap: 0;
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .stack-process-rail {
+    display: grid;
+    position: sticky;
+    top: 92px;
+    order: 1;
+    padding-top: 2px;
+  }
+
+  .stack-process-node {
+    width: 40px;
+    height: 40px;
+    font-size: 11px;
+  }
+
+  .stack-process-line {
+    height: 40px;
+  }
+
+  .stack-spotlight-top {
+    display: none;
   }
 
   .stack-steps {
-    gap: 14px;
+    display: none;
   }
 
   .stack-step-card,

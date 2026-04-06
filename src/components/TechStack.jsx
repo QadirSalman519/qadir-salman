@@ -12,10 +12,23 @@ const introReveal = {
 
 function TechStack({ data }) {
   const [activeCategory, setActiveCategory] = useState(data.categories[0]?.name || '');
+  const [isCompactStackNav, setIsCompactStackNav] = useState(false);
   const frameRef = useRef(null);
   const stepsRef = useRef(null);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 1024px)');
+    const syncCompactLayout = () => setIsCompactStackNav(mediaQuery.matches);
+
+    syncCompactLayout();
+    mediaQuery.addEventListener('change', syncCompactLayout);
+
+    return () => mediaQuery.removeEventListener('change', syncCompactLayout);
+  }, []);
+
+  useEffect(() => {
+    if (isCompactStackNav) return undefined;
+
     const updateActiveCategory = () => {
       const cards = Array.from(stepsRef.current?.querySelectorAll('[data-stack-step]') || []);
       if (!cards.length) return;
@@ -58,7 +71,7 @@ function TechStack({ data }) {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
     };
-  }, []);
+  }, [isCompactStackNav]);
 
   const currentCategory = useMemo(
     () => data.categories.find((category) => category.name === activeCategory) || data.categories[0],
@@ -128,13 +141,21 @@ function TechStack({ data }) {
             </div>
           </div>
 
-          <div className="stack-process-rail" aria-hidden="true">
+          <div className="stack-process-rail" aria-label="Stack categories">
             {data.categories.map((category, index) => {
               const isActive = currentCategory.name === category.name;
 
               return (
                 <div key={category.name} className={`stack-process-step ${isActive ? 'active' : ''}`}>
-                  <div className="stack-process-node">{category.icon}</div>
+                  <button
+                    type="button"
+                    className="stack-process-node interactive"
+                    onClick={() => setActiveCategory(category.name)}
+                    aria-pressed={isActive}
+                    aria-label={`${category.name} capability`}
+                  >
+                    {category.icon}
+                  </button>
                   {index < data.categories.length - 1 ? <div className="stack-process-line" /> : null}
                 </div>
               );
