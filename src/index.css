@@ -3770,28 +3770,31 @@ button {
 }
 
 .social-button {
-  gap: 10px;
-  padding: 0 16px 0 12px;
+  min-height: 46px;
+  gap: 12px;
+  padding: 0 18px 0 14px;
   border-color: rgba(0, 229, 160, 0.12);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01));
   border-radius: 999px;
   font-size: 14px;
   font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
 }
 
 .social-button-icon {
   display: inline-grid;
   place-items: center;
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 999px;
   background: rgba(0, 229, 160, 0.08);
   color: var(--accent);
 }
 
 .social-button-icon svg {
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   display: block;
 }
 
@@ -5155,20 +5158,20 @@ button {
 
   .contact-direct-card .social-row {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
   }
 
   .contact-direct-card .social-button {
     width: 100%;
-    min-height: 40px;
-    justify-content: center;
-    padding: 0 14px 0 12px;
+    min-height: 44px;
+    justify-content: flex-start;
+    padding: 0 16px 0 14px;
     font-size: 13px;
   }
 
   .contact-direct-card .social-button:last-child {
-    grid-column: 1 / -1;
+    grid-column: auto;
   }
 
   .stack-spotlight-inner,
@@ -5337,8 +5340,8 @@ button {
   .contact-direct-card .social-button,
   .contact-direct-card .social-button:last-child {
     grid-column: auto;
-    min-height: 38px;
-    padding: 0 12px;
+    min-height: 42px;
+    padding: 0 14px;
     font-size: 12.5px;
   }
 }
