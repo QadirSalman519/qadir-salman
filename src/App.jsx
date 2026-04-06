@@ -202,7 +202,7 @@ function App() {
         initial={false}
         animate={{
           opacity: isLoading ? 0 : 1,
-          y: isLoading ? 18 : 0,
+          y: 0,
           filter: isLoading ? 'blur(12px)' : 'blur(0px)',
         }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
