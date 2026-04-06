@@ -4807,6 +4807,71 @@ button {
   }
 }
 
+@media (max-width: 1024px) and (min-width: 768px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    align-items: center;
+    gap: 22px;
+    padding-top: 98px;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.3rem, 5.1vw, 3.35rem);
+    line-height: 0.96;
+    letter-spacing: -1.7px;
+  }
+
+  .hero-tagline {
+    max-width: 100%;
+    margin-bottom: 18px;
+    font-size: 13.5px;
+    line-height: 1.62;
+  }
+
+  .hero-actions {
+    gap: 8px;
+  }
+
+  .hero-actions .primary-button,
+  .hero-actions .ghost-button,
+  .hero-actions .cv-button {
+    min-height: 42px;
+    padding: 0 14px;
+    font-size: 13px;
+  }
+
+  .hero-visual {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 0;
+  }
+
+  .hero-visual-stage {
+    width: min(100%, 380px);
+    min-height: auto;
+  }
+
+  .profile-figure-wrap {
+    width: min(100%, 360px);
+    margin: 0 0 0 auto;
+  }
+
+  .profile-figure {
+    height: clamp(360px, 48vw, 430px);
+  }
+
+  .hero-image-caption {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 10px 12px;
+  }
+}
+
 @media (max-width: 900px) and (min-width: 768px) {
   .project-row {
     grid-template-columns: minmax(0, 1fr) auto;
