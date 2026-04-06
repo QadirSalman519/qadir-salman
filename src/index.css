@@ -1750,6 +1750,10 @@ button {
   animation: pulse-soft 1.8s infinite;
 }
 
+#about {
+  padding-bottom: 10px;
+}
+
 #about,
 #stack,
 #work,
