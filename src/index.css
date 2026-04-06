@@ -1519,8 +1519,14 @@ button {
   position: relative;
   width: 42px;
   height: 42px;
-  border: 1px solid var(--border-faint);
+  border: 1px solid rgba(0, 229, 160, 0.42);
   border-radius: 999px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(0, 229, 160, 0.14), rgba(0, 229, 160, 0.03) 58%, transparent 80%),
+    rgba(9, 18, 14, 0.54);
+  box-shadow:
+    0 0 0 1px rgba(0, 229, 160, 0.08),
+    0 0 18px rgba(0, 229, 160, 0.12);
 }
 
 .menu-toggle span {
@@ -1528,8 +1534,9 @@ button {
   left: 11px;
   right: 11px;
   height: 1px;
-  background: var(--text-primary);
-  transition: transform 0.2s ease, top 0.2s ease;
+  background: #5cffc8;
+  box-shadow: 0 0 10px rgba(92, 255, 200, 0.45);
+  transition: transform 0.2s ease, top 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .menu-toggle span:first-child {
@@ -4952,7 +4959,12 @@ button {
   }
 
   .logo-subtitle {
-    display: none;
+    display: block;
+    font-size: 8px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .menu-toggle,
