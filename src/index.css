@@ -4634,7 +4634,7 @@ button {
   .contact-direct-card .social-button {
     width: 100%;
     min-height: 40px;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 0 14px 0 12px;
     font-size: 13px;
   }
