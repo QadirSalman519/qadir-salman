@@ -1197,7 +1197,6 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
   padding: 0 18px;
   border: 1px solid var(--border-faint);
   border-radius: 999px;
@@ -3487,28 +3486,32 @@ button {
 }
 
 .social-row {
-  gap: 8px;
+  gap: 10px;
 }
 
 .social-button {
-  gap: 8px;
-  min-height: 36px;
-  padding: 0 12px;
-  border-color: rgba(255, 255, 255, 0.08);
-  background: transparent;
-  font-size: 13px;
+  gap: 10px;
+  padding: 0 16px 0 12px;
+  border-color: rgba(0, 229, 160, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01));
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .social-button-icon {
   display: inline-grid;
   place-items: center;
-  width: 16px;
-  height: 16px;
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: rgba(0, 229, 160, 0.08);
   color: var(--accent);
 }
 
 .social-button-icon svg {
-  width: 18px;
+  width: 15px;
+  height: 15px;
   display: block;
 }
 

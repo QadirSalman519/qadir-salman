@@ -252,7 +252,7 @@ function Contact({ data }) {
               <label className={`field-shell field-shell-message ${errors.message ? 'has-error' : ''}`}>
                 <textarea
                   name="message"
-                  rows="6"
+                  rows="4"
                   placeholder=" "
                   value={formValues.message}
                   onChange={handleChange}
