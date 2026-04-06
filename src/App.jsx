@@ -23,6 +23,7 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [loaderProgress, setLoaderProgress] = useState(1);
   const { scrollYProgress } = useScroll();
   const progressScale = useSpring(scrollYProgress, {
     stiffness: 140,
@@ -40,14 +41,31 @@ function App() {
   useEffect(() => {
     const minDuration = 1700;
     const startedAt = Date.now();
+    let progressFrame = 0;
+    let finished = false;
     document.body.classList.add('app-loading');
+
+    const animateProgress = () => {
+      if (finished) return;
+      const elapsed = Date.now() - startedAt;
+      const nextProgress = Math.max(1, Math.min(94, Math.round((elapsed / minDuration) * 94)));
+      setLoaderProgress((current) => (nextProgress > current ? nextProgress : current));
+      progressFrame = window.requestAnimationFrame(animateProgress);
+    };
+
+    progressFrame = window.requestAnimationFrame(animateProgress);
 
     const finish = () => {
       const remaining = Math.max(minDuration - (Date.now() - startedAt), 0);
+      finished = true;
+      window.cancelAnimationFrame(progressFrame);
+      setLoaderProgress(100);
 
       window.setTimeout(() => {
-        setIsLoading(false);
-        document.body.classList.remove('app-loading');
+        window.setTimeout(() => {
+          setIsLoading(false);
+          document.body.classList.remove('app-loading');
+        }, 180);
       }, remaining);
     };
 
@@ -59,6 +77,8 @@ function App() {
     window.addEventListener('load', finish, { once: true });
 
     return () => {
+      finished = true;
+      window.cancelAnimationFrame(progressFrame);
       document.body.classList.remove('app-loading');
       window.removeEventListener('load', finish);
     };
@@ -172,7 +192,7 @@ function App() {
 
   return (
     <>
-      <AnimatePresence>{isLoading ? <SiteLoader /> : null}</AnimatePresence>
+      <AnimatePresence>{isLoading ? <SiteLoader progress={loaderProgress} /> : null}</AnimatePresence>
       {!isTouchDevice && <Cursor />}
       <motion.div className="site-progress" style={{ scaleX: progressScale }} />
       <BackToTop />
