@@ -4625,6 +4625,24 @@ button {
     font-size: 14px;
   }
 
+  .contact-direct-card .social-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .contact-direct-card .social-button {
+    width: 100%;
+    min-height: 40px;
+    justify-content: flex-start;
+    padding: 0 14px 0 12px;
+    font-size: 13px;
+  }
+
+  .contact-direct-card .social-button:last-child {
+    grid-column: 1 / -1;
+  }
+
   .stack-spotlight-inner,
   .stack-step-card {
     padding: 22px;
@@ -4788,6 +4806,19 @@ button {
   .social-dock-icon svg {
     width: 13px;
     height: 13px;
+  }
+
+  .contact-direct-card .social-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .contact-direct-card .social-button,
+  .contact-direct-card .social-button:last-child {
+    grid-column: auto;
+    min-height: 38px;
+    padding: 0 12px;
+    font-size: 12.5px;
   }
 }
 
