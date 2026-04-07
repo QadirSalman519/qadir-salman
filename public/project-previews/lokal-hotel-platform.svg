@@ -1,0 +1,15 @@
+<svg width="800" height="520" viewBox="0 0 800 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="520" rx="34" fill="#0E1209"/>
+  <rect x="36" y="36" width="728" height="448" rx="28" fill="#1A1F14" stroke="#475634"/>
+  <rect x="74" y="86" width="146" height="34" rx="17" fill="#A3E070" fill-opacity="0.18"/>
+  <text x="94" y="108" fill="#F5FDEB" font-family="Arial, sans-serif" font-size="13" letter-spacing="2">HOSPITALITY</text>
+  <text x="74" y="172" fill="#FAFEEF" font-family="Arial, sans-serif" font-size="40" font-weight="700">Lokal Hotel Platform</text>
+  <text x="74" y="216" fill="#BECEAB" font-family="Arial, sans-serif" font-size="22">Properties, destinations, and brand storytelling</text>
+  <rect x="74" y="280" width="652" height="138" rx="24" fill="#13170F" stroke="#39452A"/>
+  <rect x="102" y="316" width="194" height="18" rx="9" fill="#A3E070"/>
+  <rect x="102" y="352" width="292" height="12" rx="6" fill="#88A16F"/>
+  <rect x="102" y="378" width="248" height="12" rx="6" fill="#586A47"/>
+  <path d="M528 198V150L598 118L668 150V198" stroke="#A3E070" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="548" y="156" width="24" height="42" rx="8" fill="#A3E070" fill-opacity="0.2"/>
+  <rect x="624" y="156" width="24" height="42" rx="8" fill="#A3E070" fill-opacity="0.12"/>
+</svg>

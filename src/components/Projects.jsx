@@ -22,6 +22,18 @@ const rowReveal = {
   },
 };
 
+const getProjectPreviewSource = (project) =>
+  project.imagePath || project.previewImagePath || project.previewImage || null;
+
+const getProjectImageLabel = (project) => {
+  const source = getProjectPreviewSource(project);
+
+  if (!source) return 'No image path';
+  if (source.startsWith('data:')) return 'Embedded preview image';
+
+  return source;
+};
+
 function Projects({ data }) {
   const [activeFilter, setActiveFilter] = useState('All');
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -178,11 +190,23 @@ function Projects({ data }) {
             >
               <div className="preview-visual">
                 <span className="preview-accent-tag">{hoveredProject.accent || hoveredProject.category}</span>
-                <img className="preview-image" src={hoveredProject.previewImage} alt={`${hoveredProject.title} preview`} />
+                <div
+                  className="preview-image"
+                  role="img"
+                  aria-label={`${hoveredProject.title} preview`}
+                  style={
+                    getProjectPreviewSource(hoveredProject)
+                      ? { backgroundImage: `url("${getProjectPreviewSource(hoveredProject)}")` }
+                      : undefined
+                  }
+                />
               </div>
               <div className="preview-meta">
-                <strong>{hoveredProject.title}</strong>
-                <span>{hoveredProject.category}</span>
+                <div className="preview-copy">
+                  <strong>{hoveredProject.title}</strong>
+                  <span>{hoveredProject.category}</span>
+                </div>
+                <code className="preview-path">{getProjectImageLabel(hoveredProject)}</code>
               </div>
             </motion.div>
           )}

@@ -33,6 +33,9 @@ const createProjectPreview = (title, accent, palette) => {
   return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
 };
 
+// Optional per-project thumbnail from /public:
+// previewImagePath: "/projects/your-image.jpg"
+
 const portfolioData = {
   personal: {
     name: "Qadir Salman",
@@ -226,6 +229,7 @@ My core strength is backend architecture, API design, payment systems, and scala
         filterGroup: "eCommerce",
         type: "Full-Stack",
         year: "2024",
+        imagePath: "/project-previews/custom-ecommerce-platform.svg",
         stack: ["Laravel", "React.js", "Stripe", "PayPal", "ShipStation"],
         description:
           "Built and maintained production commerce systems with payment integrations, shipping APIs, checkout improvements, and stable admin workflows.",
@@ -244,6 +248,7 @@ My core strength is backend architecture, API design, payment systems, and scala
         filterGroup: "SaaS",
         type: "Multi-Tenant",
         year: "2024",
+        imagePath: "/project-previews/multi-tenant-web-portal.svg",
         stack: ["Laravel", "React", "RBAC", "MySQL", "Tailwind"],
         description:
           "Implemented role-based access, secure admin dashboards, multi-user controls, and reporting systems for production web portals.",
@@ -262,6 +267,7 @@ My core strength is backend architecture, API design, payment systems, and scala
         filterGroup: "ERP",
         type: "Automation",
         year: "2023",
+        imagePath: "/project-previews/domain-management-automation.svg",
         stack: ["Laravel", "Node.js", "GoDaddy API", "CRON"],
         description:
           "Built internal domain lifecycle workflows using GoDaddy APIs, scheduled jobs, renewals, discovery, and client notification automation.",
@@ -275,56 +281,116 @@ My core strength is backend architecture, API design, payment systems, and scala
       {
         id: 4,
         number: "04",
-        title: "Healthcare Coordination System",
-        category: "Healthcare",
-        filterGroup: "Healthcare",
-        type: "Real-time",
-        year: "2023",
-        stack: ["React", "Pusher", "Firebase FCM", "Twilio", "Google Maps"],
+        title: "YesStyle — Fashion eCommerce",
+        category: "eCommerce",
+        filterGroup: "eCommerce",
+        type: "Full-Stack",
+        year: "2024",
+        link: "https://www.yesstyle.com/en/home.html",
+        imagePath: "/project-previews/yesstyle-fashion-ecommerce.svg",
+        stack: ["React", "Node.js", "MongoDB", "TypeScript", "REST API"],
         description:
-          "Supported healthcare and caregiving applications with real-time workflows, notifications, geolocation features, and reliable user-facing operations.",
-        accent: "Health",
-        previewImage: createProjectPreview("Healthcare System", "Health", [
-          "#152227",
-          "#0B1317",
-          "#59D6FF",
+          "Contributed to a large-scale Asian fashion eCommerce platform with product discovery, cart flows, and scalable frontend architecture across a high-traffic storefront.",
+        accent: "Commerce",
+        previewImage: createProjectPreview("YesStyle eCommerce", "Commerce", [
+          "#15261F",
+          "#0C1411",
+          "#36E9AE",
         ]),
       },
       {
         id: 5,
         number: "05",
-        title: "Quality Control ERP Workflow",
-        category: "Internal Tools",
+        title: "Premier Physicians of Michigan",
+        category: "Healthcare",
+        filterGroup: "Healthcare",
+        type: "Portal",
+        year: "2024",
+        link: "https://ppomdr-frontend-stage.devdesignbuild.com/",
+        imagePath: "/project-previews/premier-physicians-of-michigan.svg",
+        stack: [
+          "React",
+          "Node.js",
+          "MongoDB",
+          "TypeScript",
+          "RBAC",
+          "JavaScript",
+        ],
+        description:
+          "Built a full patient management portal with appointment scheduling, RBAC, doctor/patient dashboards, and dental service workflows for a Michigan-based medical practice.",
+        accent: "Health",
+        previewImage: createProjectPreview(
+          "Premier Physicians Portal",
+          "Health",
+          ["#152227", "#0B1317", "#59D6FF"],
+        ),
+      },
+      {
+        id: 6,
+        number: "06",
+        title: "Habib Metro Financial Services",
+        category: "FinTech",
+        filterGroup: "SaaS",
+        type: "CMS",
+        year: "2024",
+        link: "https://hmfs-frontend.devdesignbuild.com/",
+        imagePath: "/project-previews/habib-metro-financial-services.svg",
+        stack: ["React", "Node.js", "MongoDB", "TypeScript", "REST API", "CMS"],
+        description:
+          "Developed a CMS-backed financial services platform with investor onboarding, service management workflows, market access tools, and admin content controls.",
+        accent: "Finance",
+        previewImage: createProjectPreview("HMFS Platform", "Finance", [
+          "#161E28",
+          "#0B1016",
+          "#7BB8FF",
+        ]),
+      },
+      {
+        id: 7,
+        number: "07",
+        title: "Masters Custom Patches — ERP",
+        category: "ERP",
         filterGroup: "ERP",
         type: "Manufacturing",
         year: "2023",
-        stack: ["Laravel", "AJAX", "MySQL", "jQuery"],
+        link: "https://partners.masterscustompatches.com/",
+        imagePath: "/project-previews/masters-custom-patches-erp.svg",
+        stack: [
+          "Laravel",
+          "React",
+          "JavaScript",
+          "MySQL",
+          "REST API",
+          "Reporting",
+        ],
         description:
-          "Developed manufacturing and internal ERP workflows focused on quality control operations, process efficiency, and business-critical reporting.",
+          "Built a complete business management ERP for a US/UK patch manufacturer — covering order tracking, production reporting, partner portals, and operational workflows.",
         accent: "Quality",
-        previewImage: createProjectPreview("Quality Control ERP", "Quality", [
+        previewImage: createProjectPreview("Masters Patches ERP", "Quality", [
           "#221D18",
           "#11100D",
           "#FFB86E",
         ]),
       },
       {
-        id: 6,
-        number: "06",
-        title: "Travel Booking Platform",
-        category: "Travel",
+        id: 8,
+        number: "08",
+        title: "Lokal.pk — Hotel Platform",
+        category: "Hospitality",
         filterGroup: "SaaS",
-        type: "Multi-domain",
-        year: "2022",
-        stack: ["Laravel", "Tailwind", "MySQL", "Node.js"],
+        type: "Static",
+        year: "2024",
+        link: "https://lokal.pk/",
+        imagePath: "/project-previews/lokal-pk.png",
+        stack: ["PHP", "HTML/CSS", "JavaScript", "Bootstrap", "jQuery"],
         description:
-          "Worked on travel systems with multi-domain structure, scalable booking flows, and backend foundations built for long-term maintenance.",
-        accent: "Travel",
-        previewImage: createProjectPreview("Travel Platform", "Travel", [
-          "#161E28",
-          "#0B1016",
-          "#7BB8FF",
-        ]),
+          "Built a static marketing platform for Pakistan's first budget hotel chain — showcasing properties, local experiences, and brand storytelling across multiple city destinations.",
+        accent: "Hospitality",
+        previewImage: createProjectPreview(
+          "Lokal Hotel Platform",
+          "Hospitality",
+          ["#1A1F14", "#0E1209", "#A3E070"],
+        ),
       },
     ],
     stats: [
