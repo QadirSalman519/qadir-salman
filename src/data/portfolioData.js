@@ -59,7 +59,7 @@ My core strength is backend architecture, API design, payment systems, and scala
   },
   hero: {
     profileImage: {
-      src: "/profile-hero.jpg",
+      src: "/qadir-salman.png",
       alt: "Qadir Salman profile portrait",
       enabled: true,
       badge: "Available for new work",
