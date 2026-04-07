@@ -3007,7 +3007,7 @@ button {
 
 .preview-visual {
   position: relative;
-  height: 214px;
+  aspect-ratio: 4 / 3;
   padding: 14px;
   background:
     radial-gradient(circle at 50% 55%, rgba(0, 229, 160, 0.18), transparent 42%),
@@ -3047,16 +3047,11 @@ button {
 }
 
 .preview-meta {
-  display: grid;
-  gap: 10px;
-  padding: 16px 18px 18px;
-}
-
-.preview-copy {
   display: flex;
   justify-content: space-between;
   gap: 12px;
   align-items: center;
+  padding: 16px 18px 18px;
 }
 
 .preview-meta strong {
@@ -3070,21 +3065,6 @@ button {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 8px;
-}
-
-.preview-path {
-  display: block;
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(255, 255, 255, 0.03);
-  color: rgba(226, 239, 232, 0.74);
-  font-size: 10px;
-  line-height: 1.5;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .experience-list {
