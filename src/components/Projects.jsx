@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const listReveal = {
@@ -51,14 +52,23 @@ function Projects({ data }) {
     return () => window.cancelAnimationFrame(frameId);
   }, []);
 
-  const handleMouseMove = (event) => {
-    const renderLeft = event.clientX > window.innerWidth - 360;
-    targetRef.current = {
-      x: event.clientX + (renderLeft ? -320 : 26),
-      y: event.clientY - 36,
-      renderLeft,
-    };
+  const updatePreviewPos = (clientX, clientY) => {
+    const renderLeft = clientX > window.innerWidth - 360;
+    const x = clientX + (renderLeft ? -320 : 26);
+    const y = clientY - 36;
+    targetRef.current = { x, y, renderLeft };
+    return { x, y, renderLeft };
+  };
 
+  const handleMouseEnter = (event, project) => {
+    const { x, y, renderLeft } = updatePreviewPos(event.clientX, event.clientY);
+    currentRef.current = { x, y };
+    setPreviewPosition({ x, y, renderLeft });
+    setHoveredProject(project);
+  };
+
+  const handleMouseMove = (event) => {
+    updatePreviewPos(event.clientX, event.clientY);
     const rect = event.currentTarget.getBoundingClientRect();
     event.currentTarget.style.setProperty('--project-light-x', `${event.clientX - rect.left}px`);
     event.currentTarget.style.setProperty('--project-light-y', `${event.clientY - rect.top}px`);
@@ -71,6 +81,7 @@ function Projects({ data }) {
   };
 
   return (
+    <>
     <section id="work" className="section-block projects-section">
       <div className="container-shell projects-shell">
         <motion.div
@@ -117,7 +128,7 @@ function Projects({ data }) {
               className="project-row interactive tilt-card"
               variants={rowReveal}
               whileHover={{ y: -4 }}
-              onMouseEnter={() => setHoveredProject(project)}
+              onMouseEnter={(e) => handleMouseEnter(e, project)}
               onMouseLeave={handleMouseLeave}
               onMouseMove={handleMouseMove}
             >
@@ -147,33 +158,38 @@ function Projects({ data }) {
 
       </div>
 
-      <AnimatePresence>
-        {hoveredProject && (
-          <motion.div
-            className={`project-preview ${previewPosition.renderLeft ? 'left' : ''}`}
-            initial={{ opacity: 0, scale: 0.92, rotate: -1 }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              rotate: 0,
-              x: previewPosition.x,
-              y: previewPosition.y,
-            }}
-            exit={{ opacity: 0, scale: 0.92, rotate: -1 }}
-            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="preview-visual">
-              <span className="preview-accent-tag">{hoveredProject.accent || hoveredProject.category}</span>
-              <img className="preview-image" src={hoveredProject.previewImage} alt={`${hoveredProject.title} preview`} />
-            </div>
-            <div className="preview-meta">
-              <strong>{hoveredProject.title}</strong>
-              <span>{hoveredProject.category}</span>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
+
+      {createPortal(
+        <AnimatePresence>
+          {hoveredProject && (
+            <motion.div
+              className={`project-preview ${previewPosition.renderLeft ? 'left' : ''}`}
+              initial={{ opacity: 0, scale: 0.92, rotate: -1 }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                rotate: 0,
+                x: previewPosition.x,
+                y: previewPosition.y,
+              }}
+              exit={{ opacity: 0, scale: 0.92, rotate: -1 }}
+              transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <div className="preview-visual">
+                <span className="preview-accent-tag">{hoveredProject.accent || hoveredProject.category}</span>
+                <img className="preview-image" src={hoveredProject.previewImage} alt={`${hoveredProject.title} preview`} />
+              </div>
+              <div className="preview-meta">
+                <strong>{hoveredProject.title}</strong>
+                <span>{hoveredProject.category}</span>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
+    </>
   );
 }
 
