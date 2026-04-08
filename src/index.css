@@ -861,10 +861,7 @@ button {
   z-index: 84;
   display: grid;
   gap: 6px;
-  padding: 12px 8px 12px 10px;
-  border-radius: 22px 0 0 22px;
-  border: 1px solid rgba(0, 229, 160, 0.18);
-  border-right: 0;
+  border-top: 1px solid rgba(0, 229, 160, 0.55);
   background:
     linear-gradient(180deg, rgba(10, 18, 14, 0.84), rgba(7, 12, 10, 0.96)),
     rgba(6, 13, 10, 0.78);
@@ -5074,7 +5071,7 @@ button {
 
   .back-to-top {
     right: 14px;
-    bottom: 14px;
+    bottom: 72px;
     width: 58px;
     gap: 6px;
     padding: 9px 0 10px;
@@ -5099,7 +5096,7 @@ button {
     top: auto;
     right: auto;
     left: 0;
-    bottom: 18px;
+    bottom: 0;
     transform: none;
     translate: 0 0;
     width: 100vw;
@@ -5582,7 +5579,7 @@ button {
   }
 
   .social-dock {
-    bottom: 12px;
+    bottom: 0;
     left: 0;
     width: 100vw;
     gap: 8px;
@@ -5637,7 +5634,7 @@ button {
 
   .back-to-top {
     right: 12px;
-    bottom: 82px;
+    bottom: 68px;
     width: 54px;
     padding: 8px 0 9px;
   }
