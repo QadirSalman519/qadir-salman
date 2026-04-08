@@ -5040,6 +5040,10 @@ button {
     padding-bottom: 34px;
   }
 
+  .projects-list {
+    padding-bottom: 8px;
+  }
+
   .section-intro,
   .stack-section-intro {
     margin-bottom: 24px;
@@ -5093,16 +5097,24 @@ button {
 
   .social-dock {
     top: auto;
-    bottom: 86px;
+    right: auto;
+    left: 50%;
+    bottom: 18px;
     transform: none;
-    padding: 8px 6px 8px 8px;
-    max-width: calc(100vw - 8px);
+    translate: -50% 0;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 4px;
+    padding: 7px;
+    border-radius: 999px;
+    border-right: 1px solid rgba(0, 229, 160, 0.18);
+    max-width: calc(100vw - 24px);
   }
 
   .social-dock-link {
-    width: 38px;
+    width: 40px;
     min-height: 40px;
-    border-radius: 14px;
+    border-radius: 999px;
   }
 
   .social-dock-icon,
@@ -5118,6 +5130,54 @@ button {
 
   .social-dock-tooltip {
     display: none;
+  }
+
+  .project-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 14px;
+    min-height: 0;
+    padding: 20px 18px;
+    border-radius: 20px;
+  }
+
+  .project-main {
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .project-title-block h3 {
+    font-size: clamp(1.7rem, 6.6vw, 2rem);
+    line-height: 1.04;
+    letter-spacing: -0.9px;
+  }
+
+  .project-pills {
+    gap: 7px;
+  }
+
+  .project-pill {
+    min-height: 32px;
+    padding: 0 11px;
+    font-size: 10px;
+    letter-spacing: 1.6px;
+  }
+
+  .project-description {
+    grid-column: 1 / -1;
+    margin: 2px 0 0;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .project-link-arrow {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    align-self: start;
+    width: 42px;
+    height: 42px;
+    margin-left: 0;
+    font-size: 20px;
   }
 
   .hero-grid {
@@ -5438,6 +5498,10 @@ button {
     padding: 60px 0px 20px 0px;
   }
 
+  .projects-section {
+    padding-bottom: 110px;
+  }
+
   .section-intro,
   .stack-section-intro {
     margin-bottom: 20px;
@@ -5511,14 +5575,16 @@ button {
   }
 
   .social-dock {
-    bottom: 80px;
-    padding: 6px 5px 6px 7px;
+    bottom: 12px;
+    gap: 3px;
+    padding: 6px;
+    max-width: calc(100vw - 16px);
   }
 
   .social-dock-link {
-    width: 34px;
+    width: 36px;
     min-height: 36px;
-    border-radius: 12px;
+    border-radius: 999px;
   }
 
   .social-dock-icon {
@@ -5529,6 +5595,39 @@ button {
   .social-dock-icon svg {
     width: 13px;
     height: 13px;
+  }
+
+  .project-row {
+    gap: 12px 12px;
+    padding: 18px 14px;
+  }
+
+  .project-title-block h3 {
+    font-size: clamp(1.55rem, 7vw, 1.9rem);
+  }
+
+  .project-pill {
+    min-height: 30px;
+    padding: 0 10px;
+    font-size: 9px;
+    letter-spacing: 1.4px;
+  }
+
+  .project-description {
+    display: none;
+  }
+
+  .project-link-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .back-to-top {
+    right: 12px;
+    bottom: 82px;
+    width: 54px;
+    padding: 8px 0 9px;
   }
 
   .contact-direct-card .social-row {
