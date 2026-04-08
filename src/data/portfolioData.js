@@ -221,9 +221,7 @@ My core strength is backend architecture, API design, payment systems, and scala
     items: [
       {
         id: 1,
-        number: "01",
         title: "Premier Physicians of Michigan",
-        type: "Portal",
         link: "https://ppomdr-frontend-stage.devdesignbuild.com/",
         imagePath: "/project-previews/premier-physicians-of-michigan.png",
         stack: [
@@ -237,84 +235,49 @@ My core strength is backend architecture, API design, payment systems, and scala
         description:
           "Built a full patient management portal with appointment scheduling, RBAC, doctor/patient dashboards, and dental service workflows for a Michigan-based medical practice.",
         accent: "Health",
-        previewImage: createProjectPreview(
-          "Premier Physicians Portal",
-          "Health",
-          ["#152227", "#0B1317", "#59D6FF"],
-        ),
       },
       {
         id: 2,
-        number: "02",
         title: "Habib Metro Financial Services",
-        type: "CMS",
         link: "https://hmfs-frontend.devdesignbuild.com/",
         imagePath: "/project-previews/habib-metro-financial-services.png",
         stack: ["React", "Node.js", "MongoDB", "TypeScript", "REST API", "CMS"],
         description:
           "Developed a CMS-backed financial services platform with investor onboarding, service management workflows, market access tools, and admin content controls.",
         accent: "Finance",
-        previewImage: createProjectPreview("HMFS Platform", "Finance", [
-          "#161E28",
-          "#0B1016",
-          "#7BB8FF",
-        ]),
       },
       {
         id: 3,
-        number: "03",
         title: "Lokal.pk — Hotel Platform",
-        type: "Static",
         link: "https://lokal.pk/",
         imagePath: "/project-previews/lokal-pk.png",
         stack: ["PHP", "HTML/CSS", "JavaScript", "Bootstrap", "jQuery"],
         description:
           "Built a static marketing platform for Pakistan's first budget hotel chain — showcasing properties, local experiences, and brand storytelling across multiple city destinations.",
         accent: "Hospitality",
-        previewImage: createProjectPreview(
-          "Lokal Hotel Platform",
-          "Hospitality",
-          ["#1A1F14", "#0E1209", "#A3E070"],
-        ),
       },
       {
         id: 4,
-        number: "04",
         title: "Domain Management Automation",
-        type: "Automation",
         imagePath: "/project-previews/domain-management-system.png",
         stack: ["Laravel", "Node.js", "GoDaddy API", "CRON"],
         description:
           "Built internal domain lifecycle workflows using GoDaddy APIs, scheduled jobs, renewals, discovery, and client notification automation.",
         accent: "Automation",
-        previewImage: createProjectPreview("Domain Automation", "Automation", [
-          "#1A2118",
-          "#0C130F",
-          "#8BEA6B",
-        ]),
       },
       {
         id: 5,
-        number: "05",
         title: "YesStyle — Fashion eCommerce",
-        type: "Full-Stack",
         link: "https://www.yesstyle.com/en/home.html",
         imagePath: "/project-previews/yes-style.png",
         stack: ["React", "Node.js", "MongoDB", "TypeScript", "REST API"],
         description:
           "Contributed to a large-scale Asian fashion eCommerce platform with product discovery, cart flows, and scalable frontend architecture across a high-traffic storefront.",
         accent: "Commerce",
-        previewImage: createProjectPreview("YesStyle eCommerce", "Commerce", [
-          "#15261F",
-          "#0C1411",
-          "#36E9AE",
-        ]),
       },
       {
         id: 6,
-        number: "06",
         title: "Masters Custom Patches — ERP",
-        type: "Manufacturing",
         link: "https://partners.masterscustompatches.com/",
         imagePath: "/project-previews/masters-custom-patches.png",
         stack: [
@@ -328,18 +291,7 @@ My core strength is backend architecture, API design, payment systems, and scala
         description:
           "Built a complete business management ERP for a US/UK patch manufacturer — covering order tracking, production reporting, partner portals, and operational workflows.",
         accent: "Quality",
-        previewImage: createProjectPreview("Masters Patches ERP", "Quality", [
-          "#221D18",
-          "#11100D",
-          "#FFB86E",
-        ]),
       },
-    ],
-    stats: [
-      { label: "40+ Projects", line: "100%" },
-      { label: "6+ Payment Gateways", line: "72%" },
-      { label: "20+ Live Stores", line: "46%" },
-      { label: "Production Ownership", line: "30%" },
     ],
   },
   experience: {
