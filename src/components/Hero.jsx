@@ -196,15 +196,6 @@ function Hero({ data }) {
         <motion.div className="hero-visual">
           <div className="hero-visual-glow" aria-hidden="true" />
           <motion.div className="hero-visual-stage" variants={fadeUp} initial="hidden" animate="show" custom={0.3}>
-            <motion.div
-              className="hero-floating-card hero-floating-card-top tilt-card"
-              animate={{ y: [0, -14, 0], rotate: [0, -2, 0] }}
-              transition={{ duration: 7.2, repeat: Infinity, ease: 'easeInOut' }}
-            >
-              <span>Trusted Stack</span>
-              <strong>{hero.cards[0].value}</strong>
-            </motion.div>
-
             {hasProfileImage ? (
               <motion.div
                 className="profile-figure-wrap tilt-card"

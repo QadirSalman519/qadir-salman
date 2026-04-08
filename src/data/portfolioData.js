@@ -73,7 +73,6 @@ My core strength is backend architecture, API design, payment systems, and scala
       "6+ years building production-grade platforms across eCommerce, SaaS, ERP, and multi-tenant systems. I handle the full stack — architecture, APIs, payments, and deployment — so your product ships fast and stays stable.",
     stats: ["6+ Years Exp.", "50+ Projects", "100% Ownership"],
     cards: [
-      { label: "Core Stack", value: "Laravel · React · Next.js · Node.js" },
       { label: "Payments", value: "Stripe / PayPal / Clover / Square" },
       { label: "Focus", value: "Architecture / APIs / Multi-Tenant Systems" },
     ],
@@ -381,7 +380,7 @@ My core strength is backend architecture, API design, payment systems, and scala
         type: "Static",
         year: "2024",
         link: "https://lokal.pk/",
-        imagePath: "/project-previews/lokal-pk.png",
+        imagePath: "/project-previews/lokal-pk.PNG",
         stack: ["PHP", "HTML/CSS", "JavaScript", "Bootstrap", "jQuery"],
         description:
           "Built a static marketing platform for Pakistan's first budget hotel chain — showcasing properties, local experiences, and brand storytelling across multiple city destinations.",
