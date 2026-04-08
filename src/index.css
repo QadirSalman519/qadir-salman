@@ -4634,7 +4634,7 @@ button {
     top: auto;
     right: 0;
     left: 0;
-    bottom: 0;
+    bottom: -32px;
     inset: auto 0 0 0;
     transform: none;
     translate: 0 0;
@@ -5119,7 +5119,7 @@ button {
     top: auto;
     right: 0;
     left: 0;
-    bottom: 0;
+    bottom: -32px;
     inset: auto 0 0 0;
     transform: none;
     translate: 0 0;
@@ -5611,7 +5611,7 @@ button {
     top: auto;
     right: 0;
     left: 0;
-    bottom: 0;
+    bottom: -30px;
     inset: auto 0 0 0;
     width: auto;
     gap: 8px;
