@@ -5636,7 +5636,7 @@ button {
   .social-dock-icon {
     width: 32px;
     height: 32px;
-    display: none;
+    /* display: none; */
   }
 
   .social-dock-icon svg {
