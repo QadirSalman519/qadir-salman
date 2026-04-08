@@ -73,13 +73,11 @@ function SocialDock({ personal, contact }) {
     { name: 'Email', href: `mailto:${personal.email}` },
   ];
 
-  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 1024;
-
   return (
     <motion.aside
       className="social-dock"
-      initial={{ opacity: 0, ...(isMobile ? { y: 20 } : { x: 20 }) }}
-      animate={{ opacity: 1, ...(isMobile ? { y: 0 } : { x: 0 }) }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.6, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
       aria-label="Quick connect links"
     >
