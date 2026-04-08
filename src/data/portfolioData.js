@@ -266,7 +266,7 @@ My core strength is backend architecture, API design, payment systems, and scala
         filterGroup: "ERP",
         type: "Automation",
         year: "2023",
-        imagePath: "/project-previews/dms.PNG",
+        imagePath: "/project-previews/dms.png",
         stack: ["Laravel", "Node.js", "GoDaddy API", "CRON"],
         description:
           "Built internal domain lifecycle workflows using GoDaddy APIs, scheduled jobs, renewals, discovery, and client notification automation.",
