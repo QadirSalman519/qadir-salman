@@ -135,7 +135,7 @@ function Projects({ data }) {
                 </div>
                 <p className="project-description">{project.description}</p>
                 <span className="project-link-arrow" aria-hidden="true">
-                  {project.link ? '↗' : '•'}
+                  {'\u2197'}
                 </span>
               </motion.a>
             ))}
