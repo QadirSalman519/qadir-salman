@@ -49,7 +49,7 @@ const portfolioData = {
     available: "Yes",
     established: "2019",
     experience: "6+ years",
-    quote: "I don't just ship features - I own what happens after.",
+    quote: "aaaaI don't just ship features - I own what happens after.",
     bio: `Senior Full-Stack Engineer with 6+ years owning 
 production-grade platforms across eCommerce, SaaS, 
 ERP, and multi-tenant systems — from first commit 
