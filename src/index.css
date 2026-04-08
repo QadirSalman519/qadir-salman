@@ -980,8 +980,8 @@ button {
 }
 
 .social-dock-icon svg {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   display: block;
 }
 
@@ -4443,8 +4443,8 @@ button {
   }
 
   .social-dock-icon svg {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
   }
 
   .hero-grid {
@@ -5098,36 +5098,38 @@ button {
   .social-dock {
     top: auto;
     right: auto;
-    left: 50%;
+    left: 0;
     bottom: 18px;
     transform: none;
-    translate: -50% 0;
-    width: max-content;
+    translate: 0 0;
+    width: 100vw;
     grid-auto-flow: column;
     justify-content: center;
     align-items: center;
-    gap: 4px;
-    padding: 7px;
-    border-radius: 999px;
-    border-right: 1px solid rgba(0, 229, 160, 0.18);
-    max-width: calc(100vw - 24px);
+    gap: 10px;
+    padding: 7px 12px;
+    border-radius: 0;
+    border-right: 0;
+    max-width: 100vw;
   }
 
   .social-dock-link {
-    width: 40px;
-    min-height: 40px;
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    flex: 0 0 44px;
     border-radius: 999px;
   }
 
   .social-dock-icon,
   .social-dock-icon {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
   }
 
   .social-dock-icon svg {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
   }
 
   .social-dock-tooltip {
@@ -5581,26 +5583,30 @@ button {
 
   .social-dock {
     bottom: 12px;
-    width: calc(100vw - 16px);
-    gap: 3px;
-    padding: 6px;
-    max-width: calc(100vw - 16px);
+    left: 0;
+    width: 100vw;
+    gap: 8px;
+    padding: 6px 10px;
+    max-width: 100vw;
+    border-radius: 0;
   }
 
   .social-dock-link {
-    width: 36px;
-    min-height: 36px;
+    width: 42px;
+    height: 42px;
+    min-height: 42px;
+    flex: 0 0 42px;
     border-radius: 999px;
   }
 
   .social-dock-icon {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
   }
 
   .social-dock-icon svg {
-    width: 13px;
-    height: 13px;
+    width: 25px;
+    height: 25px;
   }
 
   .project-row {
