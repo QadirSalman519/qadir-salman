@@ -251,7 +251,7 @@ My core strength is backend architecture, API design, payment systems, and scala
         title: "Lokal.pk — Hotel Platform",
         link: "https://lokal.pk/",
         imagePath: "/project-previews/lokal-pk.png",
-        stack: ["PHP", "HTML/CSS", "JavaScript", "Bootstrap", "jQuery"],
+        stack: ["Laravel", "JavaScript", "Bootstrap", "jQuery"],
         description:
           "Built a static marketing platform for Pakistan's first budget hotel chain — showcasing properties, local experiences, and brand storytelling across multiple city destinations.",
         accent: "Hospitality",
@@ -260,7 +260,7 @@ My core strength is backend architecture, API design, payment systems, and scala
         id: 4,
         title: "Domain Management Automation",
         imagePath: "/project-previews/domain-management-system.png",
-        stack: ["Laravel", "Node.js", "GoDaddy API", "CRON"],
+        stack: ["Laravel", "GoDaddy API", "CRON"],
         description:
           "Built internal domain lifecycle workflows using GoDaddy APIs, scheduled jobs, renewals, discovery, and client notification automation.",
         accent: "Automation",
