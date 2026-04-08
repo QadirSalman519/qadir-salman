@@ -861,7 +861,10 @@ button {
   z-index: 84;
   display: grid;
   gap: 6px;
-  border-top: 1px solid rgba(0, 229, 160, 0.55);
+  padding: 12px 8px 12px 10px;
+  border-radius: 22px 0 0 22px;
+  border: 1px solid rgba(0, 229, 160, 0.18);
+  border-right: 0;
   background:
     linear-gradient(180deg, rgba(10, 18, 14, 0.84), rgba(7, 12, 10, 0.96)),
     rgba(6, 13, 10, 0.78);
