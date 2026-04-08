@@ -25,15 +25,6 @@ const rowReveal = {
 const getProjectPreviewSource = (project) =>
   project.imagePath || project.previewImagePath || project.previewImage || null;
 
-const getProjectImageLabel = (project) => {
-  const source = getProjectPreviewSource(project);
-
-  if (!source) return 'No image path';
-  if (source.startsWith('data:')) return 'Embedded preview image';
-
-  return source;
-};
-
 function Projects({ data }) {
   const [activeFilter, setActiveFilter] = useState('All');
   const [hoveredProject, setHoveredProject] = useState(null);
@@ -147,9 +138,6 @@ function Projects({ data }) {
               <span className="project-bar" aria-hidden="true" />
               <div className="project-main">
                 <div className="project-title-block">
-                  <span className="project-category">
-                    {project.category} / {project.type}
-                  </span>
                   <h3>{project.title}</h3>
                 </div>
                 <div className="project-pills">
@@ -204,9 +192,7 @@ function Projects({ data }) {
               <div className="preview-meta">
                 <div className="preview-copy">
                   <strong>{hoveredProject.title}</strong>
-                  <span>{hoveredProject.category}</span>
                 </div>
-                <code className="preview-path">{getProjectImageLabel(hoveredProject)}</code>
               </div>
             </motion.div>
           )}
