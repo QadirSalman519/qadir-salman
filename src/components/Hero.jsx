@@ -168,7 +168,7 @@ function Hero({ data }) {
             >
               View My Work
             </button>
-            <a className="ghost-button cv-button interactive magnetic" href="/qadir-salman-cv.txt" download>
+            <a className="ghost-button cv-button interactive magnetic" href="/qadir-salman-resume.pdf" download>
               <span className="cv-button-icon" aria-hidden="true">
                 ↓
               </span>
