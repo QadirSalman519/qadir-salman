@@ -2785,13 +2785,6 @@ button {
     linear-gradient(180deg, rgba(8, 18, 14, 0.86) 0%, rgba(7, 17, 14, 0.72) 42%, rgba(7, 20, 18, 0.86) 100%);
 }
 
-.filter-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 30px;
-}
-
 .projects-list {
   border-bottom: 1px solid var(--border-faint-2);
 }

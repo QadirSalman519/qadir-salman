@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -26,16 +26,10 @@ const getProjectPreviewSource = (project) =>
   project.imagePath || project.previewImagePath || project.previewImage || null;
 
 function Projects({ data }) {
-  const [activeFilter, setActiveFilter] = useState('All');
   const [hoveredProject, setHoveredProject] = useState(null);
   const [previewPosition, setPreviewPosition] = useState({ x: 0, y: 0, renderLeft: false });
   const currentRef = useRef({ x: 0, y: 0 });
   const targetRef = useRef({ x: 0, y: 0, renderLeft: false });
-
-  const filteredProjects = useMemo(() => {
-    if (activeFilter === 'All') return data.items;
-    return data.items.filter((project) => (project.filterGroup || project.category) === activeFilter);
-  }, [activeFilter, data.items]);
 
   useEffect(() => {
     let frameId;
@@ -105,19 +99,6 @@ function Projects({ data }) {
           </div>
         </motion.div>
 
-        <div className="filter-tabs">
-          {data.filters.map((filterName) => (
-            <button
-              key={filterName}
-              type="button"
-              className={`filter-tab interactive ${activeFilter === filterName ? 'active' : ''}`}
-              onClick={() => setActiveFilter(filterName)}
-            >
-              {filterName}
-            </button>
-          ))}
-        </div>
-
         <motion.div
           className="projects-list"
           variants={listReveal}
@@ -125,7 +106,7 @@ function Projects({ data }) {
           whileInView="visible"
           viewport={{ once: true, amount: 0.08 }}
         >
-          {filteredProjects.map((project) => (
+          {data.items.map((project) => (
             <motion.article
               key={project.id}
               className="project-row interactive tilt-card"
