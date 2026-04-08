@@ -49,7 +49,7 @@ const portfolioData = {
     available: "Yes",
     established: "2019",
     experience: "6+ years",
-    quote: "aaaaI don't just ship features - I own what happens after.",
+    quote: "I don't just ship features - I own what happens after.",
     bio: `Senior Full-Stack Engineer with 6+ years owning 
 production-grade platforms across eCommerce, SaaS, 
 ERP, and multi-tenant systems — from first commit 
@@ -136,7 +136,7 @@ My core strength is backend architecture, API design, payment systems, and scala
     ],
   },
   techStack: {
-    heading: "Capability as system, not a list.",
+    heading: "ssssssCapability as system, not a list.",
     subtext:
       "Every tool listed here has been used in live, production-grade systems - not just tutorials.",
     categories: [
