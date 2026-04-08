@@ -4630,6 +4630,7 @@ button {
   }
 
   .social-dock {
+    position: fixed;
     top: auto;
     right: 0;
     left: 0;
@@ -4649,6 +4650,7 @@ button {
     background: rgba(12, 14, 18, 0.98);
     box-shadow: 0 -10px 28px rgba(0, 0, 0, 0.28);
     max-width: none;
+    z-index: 84;
   }
 
   .social-dock-link {
@@ -5113,6 +5115,7 @@ button {
   }
 
   .social-dock {
+    position: fixed;
     top: auto;
     right: 0;
     left: 0;
@@ -5132,6 +5135,7 @@ button {
     background: rgba(12, 14, 18, 0.98);
     box-shadow: 0 -10px 28px rgba(0, 0, 0, 0.28);
     max-width: none;
+    z-index: 84;
   }
 
   .social-dock-link {
@@ -5603,6 +5607,8 @@ button {
   }
 
   .social-dock {
+    position: fixed;
+    top: auto;
     right: 0;
     left: 0;
     bottom: 0;
@@ -5616,6 +5622,7 @@ button {
     border-top: 1px solid rgba(46, 201, 154, 0.34);
     background: rgba(12, 14, 18, 0.99);
     box-shadow: 0 -10px 28px rgba(0, 0, 0, 0.32);
+    z-index: 84;
   }
 
   .social-dock-link {
