@@ -221,44 +221,6 @@ My core strength is backend architecture, API design, payment systems, and scala
     filters: ["All", "eCommerce", "SaaS", "ERP", "Healthcare"],
     items: [
       {
-        id: 1,
-        number: "01",
-        title: "Custom eCommerce Platform",
-        category: "eCommerce",
-        filterGroup: "eCommerce",
-        type: "Full-Stack",
-        year: "2024",
-        imagePath: "/project-previews/custom-ecommerce-platform.svg",
-        stack: ["Laravel", "React.js", "Stripe", "PayPal", "ShipStation"],
-        description:
-          "Built and maintained production commerce systems with payment integrations, shipping APIs, checkout improvements, and stable admin workflows.",
-        accent: "Commerce",
-        previewImage: createProjectPreview("eCommerce Platform", "Commerce", [
-          "#15261F",
-          "#0C1411",
-          "#36E9AE",
-        ]),
-      },
-      {
-        id: 2,
-        number: "02",
-        title: "Multi-Tenant Web Portal",
-        category: "SaaS",
-        filterGroup: "SaaS",
-        type: "Multi-Tenant",
-        year: "2024",
-        imagePath: "/project-previews/multi-tenant-web-portal.svg",
-        stack: ["Laravel", "React", "RBAC", "MySQL", "Tailwind"],
-        description:
-          "Implemented role-based access, secure admin dashboards, multi-user controls, and reporting systems for production web portals.",
-        accent: "Portal",
-        previewImage: createProjectPreview("Multi-Tenant Portal", "Portal", [
-          "#14231F",
-          "#0A1412",
-          "#5BE4D1",
-        ]),
-      },
-      {
         id: 3,
         number: "03",
         title: "Domain Management Automation",
@@ -266,7 +228,7 @@ My core strength is backend architecture, API design, payment systems, and scala
         filterGroup: "ERP",
         type: "Automation",
         year: "2023",
-        imagePath: "/project-previews/dms.png",
+        imagePath: "/project-previews/domain-management-system.png",
         stack: ["Laravel", "Node.js", "GoDaddy API", "CRON"],
         description:
           "Built internal domain lifecycle workflows using GoDaddy APIs, scheduled jobs, renewals, discovery, and client notification automation.",
@@ -286,7 +248,7 @@ My core strength is backend architecture, API design, payment systems, and scala
         type: "Full-Stack",
         year: "2024",
         link: "https://www.yesstyle.com/en/home.html",
-        imagePath: "/project-previews/yesstyle-fashion-ecommerce.svg",
+        imagePath: "/project-previews/yes-style.png",
         stack: ["React", "Node.js", "MongoDB", "TypeScript", "REST API"],
         description:
           "Contributed to a large-scale Asian fashion eCommerce platform with product discovery, cart flows, and scalable frontend architecture across a high-traffic storefront.",
@@ -306,7 +268,7 @@ My core strength is backend architecture, API design, payment systems, and scala
         type: "Portal",
         year: "2024",
         link: "https://ppomdr-frontend-stage.devdesignbuild.com/",
-        imagePath: "/project-previews/premier-physicians-of-michigan.svg",
+        imagePath: "/project-previews/premier-physicians-of-michigan.png",
         stack: [
           "React",
           "Node.js",
@@ -333,7 +295,7 @@ My core strength is backend architecture, API design, payment systems, and scala
         type: "CMS",
         year: "2024",
         link: "https://hmfs-frontend.devdesignbuild.com/",
-        imagePath: "/project-previews/habib-metro-financial-services.svg",
+        imagePath: "/project-previews/habib-metro-financial-services.png",
         stack: ["React", "Node.js", "MongoDB", "TypeScript", "REST API", "CMS"],
         description:
           "Developed a CMS-backed financial services platform with investor onboarding, service management workflows, market access tools, and admin content controls.",
@@ -353,7 +315,7 @@ My core strength is backend architecture, API design, payment systems, and scala
         type: "Manufacturing",
         year: "2023",
         link: "https://partners.masterscustompatches.com/",
-        imagePath: "/project-previews/masters-custom-patches-erp.svg",
+        imagePath: "/project-previews/masters-custom-patches.png",
         stack: [
           "Laravel",
           "React",
@@ -380,7 +342,7 @@ My core strength is backend architecture, API design, payment systems, and scala
         type: "Static",
         year: "2024",
         link: "https://lokal.pk/",
-        imagePath: "/project-previews/lokal-pk.PNG",
+        imagePath: "/project-previews/lokal-pk.png",
         stack: ["PHP", "HTML/CSS", "JavaScript", "Bootstrap", "jQuery"],
         description:
           "Built a static marketing platform for Pakistan's first budget hotel chain — showcasing properties, local experiences, and brand storytelling across multiple city destinations.",
