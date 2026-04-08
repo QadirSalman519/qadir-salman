@@ -2807,6 +2807,8 @@ button {
     border-color 0.35s ease,
     transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  text-decoration: none;
+  color: inherit;
 }
 
 .project-row::before {
@@ -2831,6 +2833,15 @@ button {
   border-color: rgba(0, 229, 160, 0.08);
   transform: translateY(-6px);
   box-shadow: 0 26px 48px rgba(0, 0, 0, 0.24);
+}
+
+.project-row.is-link {
+  cursor: pointer;
+}
+
+.project-row:focus-visible {
+  outline: 2px solid rgba(0, 229, 160, 0.48);
+  outline-offset: 3px;
 }
 
 .project-row:hover::before {

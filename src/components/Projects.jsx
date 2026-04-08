@@ -79,67 +79,69 @@ function Projects({ data }) {
 
   return (
     <>
-    <section id="work" className="section-block projects-section">
-      <div className="container-shell projects-shell">
-        <motion.div
-          className="section-intro"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.07 }}
-          variants={{
-            hidden: { opacity: 0, y: 22 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: 'easeOut' } },
-          }}
-        >
-          <span className="ghost-number">04</span>
-          <div className="section-intro-copy">
-            <p className="eyebrow-label">Selected Work</p>
-            <h2>{data.heading}</h2>
-            <p>{data.subtext}</p>
-          </div>
-        </motion.div>
+      <section id="work" className="section-block projects-section">
+        <div className="container-shell projects-shell">
+          <motion.div
+            className="section-intro"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.07 }}
+            variants={{
+              hidden: { opacity: 0, y: 22 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: 'easeOut' } },
+            }}
+          >
+            <span className="ghost-number">04</span>
+            <div className="section-intro-copy">
+              <p className="eyebrow-label">Selected Work</p>
+              <h2>{data.heading}</h2>
+              <p>{data.subtext}</p>
+            </div>
+          </motion.div>
 
-        <motion.div
-          className="projects-list"
-          variants={listReveal}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.08 }}
-        >
-          {data.items.map((project) => (
-            <motion.article
-              key={project.id}
-              className="project-row interactive tilt-card"
-              variants={rowReveal}
-              whileHover={{ y: -4 }}
-              onMouseEnter={(e) => handleMouseEnter(e, project)}
-              onMouseLeave={handleMouseLeave}
-              onMouseMove={handleMouseMove}
-            >
-              <span className="project-bar" aria-hidden="true" />
-              <div className="project-main">
-                <div className="project-title-block">
-                  <h3>{project.title}</h3>
+          <motion.div
+            className="projects-list"
+            variants={listReveal}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.08 }}
+          >
+            {data.items.map((project) => (
+              <motion.a
+                key={project.id}
+                className={`project-row interactive tilt-card ${project.link ? 'is-link' : ''}`}
+                variants={rowReveal}
+                whileHover={{ y: -4 }}
+                href={project.link || undefined}
+                target={project.link ? '_blank' : undefined}
+                rel={project.link ? 'noreferrer' : undefined}
+                aria-label={project.link ? `Open ${project.title}` : undefined}
+                onMouseEnter={(event) => handleMouseEnter(event, project)}
+                onMouseLeave={handleMouseLeave}
+                onMouseMove={handleMouseMove}
+              >
+                <span className="project-bar" aria-hidden="true" />
+                <div className="project-main">
+                  <div className="project-title-block">
+                    <h3>{project.title}</h3>
+                  </div>
+                  <div className="project-pills">
+                    {project.stack.map((tag) => (
+                      <span key={tag} className="project-pill">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <div className="project-pills">
-                  {project.stack.map((tag) => (
-                    <span key={tag} className="project-pill">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <p className="project-description">{project.description}</p>
-              <span className="project-link-arrow" aria-hidden="true">
-                ↗
-              </span>
-            </motion.article>
-          ))}
-        </motion.div>
-
-      </div>
-
-    </section>
+                <p className="project-description">{project.description}</p>
+                <span className="project-link-arrow" aria-hidden="true">
+                  {project.link ? '↗' : '•'}
+                </span>
+              </motion.a>
+            ))}
+          </motion.div>
+        </div>
+      </section>
 
       {createPortal(
         <AnimatePresence>
@@ -171,9 +173,7 @@ function Projects({ data }) {
                 />
               </div>
               <div className="preview-meta">
-                <div className="preview-copy">
-                  <strong>{hoveredProject.title}</strong>
-                </div>
+                <strong>{hoveredProject.title}</strong>
               </div>
             </motion.div>
           )}
