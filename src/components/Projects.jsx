@@ -138,9 +138,6 @@ function Projects({ data }) {
               <span className="project-bar" aria-hidden="true" />
               <div className="project-main">
                 <div className="project-title-block">
-                  <span className="project-category">
-                    {project.category} / {project.type}
-                  </span>
                   <h3>{project.title}</h3>
                 </div>
                 <div className="project-pills">
@@ -193,7 +190,9 @@ function Projects({ data }) {
                 />
               </div>
               <div className="preview-meta">
-                <strong>{hoveredProject.title}</strong>
+                <div className="preview-copy">
+                  <strong>{hoveredProject.title}</strong>
+                </div>
               </div>
             </motion.div>
           )}
