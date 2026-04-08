@@ -5611,7 +5611,7 @@ button {
     top: auto;
     right: 0;
     left: 0;
-    bottom: -30px;
+    bottom: -30px !important;
     inset: auto 0 0 0;
     width: auto;
     gap: 8px;
@@ -5634,13 +5634,14 @@ button {
   }
 
   .social-dock-icon {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
+    display: none;
   }
 
   .social-dock-icon svg {
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 22px;
   }
 
   .project-row {
